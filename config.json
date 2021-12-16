@@ -1,0 +1,8 @@
+{
+    "nodes" : 5 ,
+    "localnet" : false ,
+    "block_capacity" : 10,
+    "noobcash_ports_range" : [44440,44450] ,
+    "bootstrap_node_ip" : "127.0.0.1" , 
+    "bootstrap_node_port" : 44440
+}
