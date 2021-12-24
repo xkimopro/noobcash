@@ -9,6 +9,8 @@ class Config:
     noobcash_ports_range = [44440,44450]
     bootstrap_node_port = 44440
     bootstrap_node_ip = "127.0.0.1"
+    client_node_port = 44441
+    client_node_ip = "127.0.0.1"
     
     def __init__(self, json_file="config.json"):
         self.json_file = json_file
@@ -24,3 +26,5 @@ class Config:
             self.noobcash_ports_range = data['noobcash_ports_range']
             self.bootstrap_node_port = data['bootstrap_node_port']
             self.bootstrap_node_ip = data['bootstrap_node_ip']
+            self.client_node_port = data['client_node_port']
+            self.client_node_ip = data['client_node_ip']
