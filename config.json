@@ -1,5 +1,5 @@
 {
-    "nodes" : 3 ,
+    "nodes" : 2 ,
     "localnet" : false ,
     "block_capacity" : 10,
     "noobcash_ports_range" : [44440,44450] ,
