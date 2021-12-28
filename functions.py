@@ -6,6 +6,8 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.backends import default_backend
 
+import base64
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -28,6 +30,9 @@ def exitNoobcash(error_code, msg):
 
 def inform(msg):
     print(f"{bcolors.HEADER}{msg}{bcolors.ENDC}")
+
+def informProblem(msg):
+    print(f"{bcolors.FAIL}{msg}{bcolors.ENDC}")
 
 def boldInform(msg):
     print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
@@ -98,6 +103,17 @@ def createMessageSignature(msg , key):
     )
     return signature
 
+def signatureBytesToStr(signature_bytes):
+    signature_b64 = base64.b64encode(signature_bytes)
+    signature_str = signature_b64.decode('utf-8')
+    return signature_str
+
+def signatureStrToBytes(signature_str):
+    signature_b64 = signature_str.encode('utf-8')
+    signature_bytes = base64.b64decode(signature_b64)
+    return signature_bytes
+
+
 def verifyMessage(message ,  signature , public_key ):
     status = {'error_code' : 0 , 'message' : 'Verified successfully'}
     try:
@@ -114,7 +130,7 @@ def verifyMessage(message ,  signature , public_key ):
         exc_type, _ , _ = sys.exc_info()
         message = exc_type.__name__
         status['error_code'] , status['message']  = 1 , message    
-    finally:
+    finally:        
         return status
 
 

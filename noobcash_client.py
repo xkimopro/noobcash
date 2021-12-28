@@ -47,7 +47,7 @@ def addNodesToNodeList(incoming_nodes):
 with socket.socket() as client_socket: 
     attemptBootstrapConnection(client_socket, config)
     greeting = client_socket.recv(2048)
-    messaging = Messaging(client_socket)
+    messaging = Messaging(client_socket,my_key)
     m = messaging.parseToMessage(greeting)    
     if m.isServerGreetingClient():
         inform("Greeted by bootstrap node. Replying...")
@@ -75,7 +75,7 @@ with socket.socket() as client_socket:
                 messaging.startAssignmentPhaseAck()
                 config.client_node_ip , config.client_node_port = client_socket.getsockname()
                 
-            if m.isSendNodesList():
+            if m.isSendNodesList() and m.isAuthenticated(bootstrap_node.public_key):
                 incoming_nodes = m.payload['nodes_list']
                 addNodesToNodeList(incoming_nodes)
                 messaging.sendNodesListAck()

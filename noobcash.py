@@ -87,7 +87,7 @@ class ThreadedClient(threading.Thread):
         self._running = True
         self.connection = connection
         self.client_obj = client_obj
-        self.messaging = Messaging(self.connection)
+        self.messaging = Messaging(self.connection, my_key)
 
     def terminate(self):
         self._running = False
@@ -123,7 +123,7 @@ class ThreadedClient(threading.Thread):
                             inform(self.client_obj.node_str() + " refused acknowledgement")
                             
                     elif noobcash_phase == "broadcasting":
-                        if m.isSendNodesListAck(): 
+                        if m.isSendNodesListAck() and m.isAuthenticated(self.client_obj.public_key): 
                             nodeReceivedList()     
                     else:
                         pass
