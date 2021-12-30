@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from re import I
 import socket , json, sys , os , select
 from config import Config
 import threading , time
@@ -8,20 +9,23 @@ from threading import Thread
 from messaging import *
 from classes import *
 from functions import *
-
+from transaction import Transaction
 
 
 
 client_thread_count = 0
 client_list = []
 noobcash_phase = "entering"
+# noobcash_phase = "testing"
+
 client_threads_stop = False
-
 config = Config('config.json')
-
 my_key = generateInitialkey()
 my_public_key = my_key.public_key()
 my_public_key_bytes = publicKeyBytes(my_key)
+
+
+
 
 def markClientAsAcknowledged():
     global  client_list
@@ -56,6 +60,17 @@ def checkAllClientsReceivedList():
             return
 
     inform("All clients received node list through broadcast")
+    noobcash_phase = "blockchain"
+
+
+
+def reorderNodesList():
+    global client_list
+    i = 1
+    for c in client_list:
+        c.node_thread = i 
+        i += 1
+
 
 
 
@@ -65,6 +80,7 @@ def gracefulClientExit():
     my_thread_id = threading.get_ident()
     for index , c in enumerate(client_list):
         if c.thread_id == my_thread_id:  client_list.pop(index)
+    # reorderNodesList()
     inform(f"Client with thread id {str(my_thread_id)} exited")
     
 
@@ -77,7 +93,7 @@ class BackgroundTasks(threading.Thread):
             print()
 
 # Uncomment below to do start  background task thread
-# t = BackgroundTasks()
+t = BackgroundTasks()
 # t.start()
 
 class ThreadedClient(threading.Thread):
@@ -129,18 +145,28 @@ class ThreadedClient(threading.Thread):
                         pass
 
                 else:                           # No data from client node yet
-                    if client_threads_stop: break
+                    if client_threads_stop: break  # Flag to gracefully terminate all threads
 
+                    if noobcash_phase == "blockchain":  # No client threads needed in blockchain phase, just stop
+                        self.messaging.sendBlockchainStarted()
+                        break
+
+                    
                     if noobcash_phase == "broadcasting":
                         if not node_list_sent: 
                             dict_list = convertToSend(client_list)
                             self.messaging.sendNodesList(dict_list)
                             node_list_sent = True
                         else:
-                            self.messaging.sendBlockchainStarted()
+                            # receiver : bytes = client_list[0].public_key_bytes
+                            # second_transaction = Transaction(my_public_key_bytes.decode(),receiver.decode(),100*config.nodes,[] , [] , None )
+                            # second_transaction.signTransaction(my_key)
+                            # print(second_transaction)
                             time.sleep(0.5) 
+                            print("Waiting")
                             continue
 
+                    
                     if noobcash_phase == "assignment" and not start_assignment_sent: 
                         self.messaging.startAssignmentPhase(config)
                         start_assignment_sent = True    
@@ -179,8 +205,25 @@ with socket.socket() as server_socket:
         elif noobcash_phase == "broadcasting":
             time.sleep(1)
             checkAllClientsReceivedList()
+        
+        elif noobcash_phase == "testing":
+            time.sleep(3) 
+
+            # first_transaction = Transaction(str(0),my_public_key_bytes.decode(),100*config.nodes,[] , None )
+            
+            # receiver : bytes = client_list[0].public_key_bytes
+            # second_transaction = Transaction(my_public_key_bytes.decode(),receiver.decode(),100*config.nodes,[] , [] , None )
+            # second_transaction.signTransaction(my_key)
+            # print(second_transaction)
+
+            # Code for testing features here
+
+        elif noobcash_phase == "blockchain":
+            time.sleep(2)
+            inform("Blockchain started")
+            quit()
         else:
-            time.sleep(1)
+            time.sleep(2)
             checkClientsForAcknowledgment()
 
 

@@ -15,6 +15,7 @@ my_public_key = my_key.public_key()
 my_public_key_bytes = publicKeyBytes(my_key)
 nodes_list = []
 client_phase = "entering"
+# client_phase = "blockchain"
 
 # class BackgroundTasks(threading.Thread):
 #     def run(self,*args,**kwargs):
@@ -79,7 +80,8 @@ with socket.socket() as client_socket:
                 incoming_nodes = m.payload['nodes_list']
                 addNodesToNodeList(incoming_nodes)
                 messaging.sendNodesListAck()
-                client_phase = "blockchain"
-        if client_phase == "blockchain":
-            time.sleep(1.5)
-            print("Blochchain phase")
+                client_phase = "waiting_blockchain"
+        if client_phase == "waiting_blockchain":
+            if m.isSendBlockchainStarted() and m.isAuthenticated(bootstrap_node.public_key):
+                inform("Blockchain started")
+                quit()

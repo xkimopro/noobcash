@@ -38,6 +38,9 @@ class Message:
     
     def isSendNodesListAck(self,):
         return self.code == 6 and self.payload['message'] == 'sendNodesListAck'
+    
+    def isSendBlockchainStarted(self,):
+        return self.code == 7 and self.payload['message'] == 'sendBlockchainStarted'
 
     
 
@@ -129,11 +132,15 @@ class Messaging:
         self.connection.send(str.encode(json.dumps(message)))
     
     def sendBlockchainStarted(self):
+        payload = {
+                'message' : 'sendBlockchainStarted' 
+        }
+        signature_bytes = createMessageSignature(json.dumps(payload).encode('utf-8'),self.key)
+        signature_str = signatureBytesToStr(signature_bytes)
         message = {
             'code' : 7,
-            'payload' : {
-                'message' : 'blockchain started' ,
-            }
+            'payload' : payload,
+            'signature' : signature_str
         }
         self.connection.send(str.encode(json.dumps(message)))
 

@@ -7,5 +7,4 @@
     "bootstrap_node_port" : 44440 , 
     "client_node_port" : 44441 , 
     "client_node_ip" : "127.0.0.1"  
-
 }
