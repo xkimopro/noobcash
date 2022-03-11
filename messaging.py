@@ -21,6 +21,22 @@ class Message:
         else:
             informProblem(f"Message from {bytesFromPublicKeyObj(sender_public_key).decode()} discarded \n-Reason: {json.dumps(status)}")
 
+    def parseClientInitMessage(self, ):
+        if self.code == 1 and self.payload['message'] == 'clientInitMessage':
+            return self.payload['public_key_bytes'] , self.payload['host'] , self.payload['port']
+        return None
+
+    def parseBootstrapSendRing(self, ):
+        if self.code == 2 and self.payload['message'] == 'bootstrapSendRing':
+            return self.payload['ring'] 
+        return None 
+
+    def parseBroadcastBlock(self, ):
+        if self.code == 3 and self.payload['message'] == 'broadcastNewBlock':
+            return self.payload['block'] 
+        return None 
+
+
     def isServerGreetingClient(self,):
         return self.code == 1 and self.payload['message'] == 'serverGreetingClient'
 
@@ -47,7 +63,7 @@ class Message:
 
 
 class Messaging:
-    def __init__(self,connection,key):
+    def __init__(self,connection, key):
         self.connection = connection
         self.key = key
     
@@ -64,15 +80,39 @@ class Messaging:
 
 
 
-    def serverGreetingClient(self, public_key_bytes):
+    def clientInitMessage(self, public_key_bytes, host , port):
         message = {
             'code' : 1,
             'payload' : {
-                'message' : 'serverGreetingClient',
-                'public_key' : public_key_bytes.decode()
+                'message' : 'clientInitMessage',
+                'public_key_bytes' : public_key_bytes.decode(), 
+                'host' : host ,
+                'port' : port
             }
         }
         self.connection.send(str.encode(json.dumps(message)))
+
+
+    def bootstrapSendRing(self, ring):
+        message = {
+            'code' : 2,
+            'payload' : {
+                'message' : 'bootstrapSendRing',
+                'ring' : json.dumps(ring)
+            }
+        }  
+        self.connection.send(str.encode(json.dumps(message)))
+        
+    def broadcastBlock(self, block):
+        message = {
+            'code' : 3,
+            'payload' : {
+                'message' : 'broadcastNewBlock',
+                'block' : str(block)
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+        
 
 
     def clientReplyToGreeting(self, public_key):

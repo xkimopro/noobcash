@@ -1,87 +1,45 @@
 #!/usr/bin/python3
 
-import socket , json , os , time
+import socket , json , os , time,sys
 from functions import *
 from config import Config
-from _thread import *
+
 
 from messaging import *
-from classes import *
-    
+from node import *    
 
-config = Config('config.json')
-my_key = generateInitialkey()
-my_public_key = my_key.public_key()
-my_public_key_bytes = publicKeyBytes(my_key)
-nodes_list = []
-client_phase = "entering"
-# client_phase = "blockchain"
+from event_listener import EventListeningThread
 
-# class BackgroundTasks(threading.Thread):
-#     def run(self,*args,**kwargs):
-#         while True:
-#             time.sleep(2)
-#             print("Nodes List")
-#             for c in nodes_list: print(c)
-#             print()
+config = Config()
 
-
-# t = BackgroundTasks()
-# t.start ()
-
-
-def nodeIsMe(node_public_key):
-    global my_public_key_bytes
-    return my_public_key_bytes.decode('utf-8') == node_public_key 
-
-
-def addNodesToNodeList(incoming_nodes):
-    global nodes_list
-    for i in incoming_nodes:
-        node_host , node_port = i['node_host'] , i['node_port']
-        public_key_bytes, node_thread = i['public_key_bytes'] , i['node_thread']
-        if nodeIsMe(public_key_bytes): continue # Discard yourself from node list
-        new_node = Node(node_host,node_port,node_thread,public_key_bytes)            
-        nodes_list.append(new_node)
+config.client_node_port = int(sys.argv[1])
+# config.client_node_host = socket.gethostbyname(socket.gethostname())
+config.client_node_host = '127.0.0.1'
 
 
 with socket.socket() as client_socket: 
+    client_node = Node(False, config)
     attemptBootstrapConnection(client_socket, config)
-    greeting = client_socket.recv(2048)
-    messaging = Messaging(client_socket,my_key)
-    m = messaging.parseToMessage(greeting)    
-    if m.isServerGreetingClient():
-        inform("Greeted by bootstrap node. Replying...")
-        messaging.clientReplyToGreeting(my_public_key_bytes)
-    else: exitNoobcash(2,"There is no bootstrap node on the other end of the socket")    
+    client_node.messaging = Messaging(client_socket,client_node.wallet.key)
+    m = client_node.messaging.clientInitMessage(client_node.wallet.public_key_bytes,client_node.wallet.host, client_node.wallet.port)    
+    inform("Send my credentials to bootstrap")
+    m = client_node.messaging.parseToMessage(client_socket.recv(2048))
+    ring = json.loads(m.parseBootstrapSendRing())
+    client_node.parse_ring(ring)
     
-    inform("Waiting for assignment phase. Waiting for bootstrap to share credentials...")
     
-    bootstrap_node = Node(config.bootstrap_node_ip , config.bootstrap_node_port, 0 , m.payload['public_key'])
-    nodes_list.append(bootstrap_node)
+# Initiate your socket    
+with socket.socket() as server_socket:
+    try:
+        server_socket.bind((config.client_node_host, config.client_node_port))
+    except socket.error as e:
+        exitNoobcash(1,"Client cannot start its socket server at specified port")  
     
-
-
+    server_socket.listen(5)
+    
+    # Start Event Listening Thread
+    event_listening_thread = EventListeningThread(client_node, server_socket)
+    event_listening_thread.start()
+    
     while True:
-        response = client_socket.recv(2048)
-        print(response)
-        m = messaging.parseToMessage(response)
-        if client_phase == "entering":
-            if m.isStartAssignmentPhase():
-                inform("Bootstrap node initiated assignment phase")
-                bootstrap_nodes = m.payload['nodes']  
-                if bootstrap_nodes != config.nodes:
-                    exitNoobcash(4, "Number of nodes dont match between client and bootstrap node")
-
-                messaging.startAssignmentPhaseAck()
-                config.client_node_ip , config.client_node_port = client_socket.getsockname()
-                
-            if m.isSendNodesList() and m.isAuthenticated(bootstrap_node.public_key):
-                incoming_nodes = m.payload['nodes_list']
-                addNodesToNodeList(incoming_nodes)
-                messaging.sendNodesListAck()
-                client_phase = "waiting_blockchain"
-        if client_phase == "waiting_blockchain":
-            if m.isSendBlockchainStarted() and m.isAuthenticated(bootstrap_node.public_key):
-                inform("Blockchain started")
-                quit()
+        time.sleep(1)

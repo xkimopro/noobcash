@@ -7,6 +7,11 @@ from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.backends import default_backend
 
 import base64
+# from block import Block 
+# from transaction import Transaction 
+
+
+
 
 class bcolors:
     HEADER = '\033[95m'
@@ -52,11 +57,11 @@ def attemptBootstrapConnection(client_socket: socket, config : Config):
     boldInform("Noobcash client started")
     inform("Trying to connect to bootstrap node socket server")
     try:
-        client_socket.connect((config.bootstrap_node_ip, config.bootstrap_node_port))
+        client_socket.connect((config.bootstrap_node_host, config.bootstrap_node_port))
     except socket.error as e:
         client_socket.close()
-        exitNoobcash(1, "Cannot connect to bootstrap node at {}:{}".format(config.bootstrap_node_ip , config.bootstrap_node_port) )
-    inform(f"Connected through TCP at {config.bootstrap_node_ip}:{config.bootstrap_node_port}")
+        exitNoobcash(1, "Cannot connect to bootstrap node at {}:{}".format(config.bootstrap_node_host , config.bootstrap_node_port) )
+    inform(f"Connected through TCP at {config.bootstrap_node_host}:{config.bootstrap_node_port}")
 
 
 
@@ -133,4 +138,13 @@ def verifyMessage(message ,  signature , public_key ):
     finally:        
         return status
 
+
+def startBootstrapSocketServer(server_socket):
+    while True:
+        server_socket.accept()
+
+
+
+    
+    
 

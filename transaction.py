@@ -8,7 +8,7 @@ from functions import *
 
 class Transaction:
 
-    def __init__(self, sender_address, receiver_address, amount , transaction_inputs , transaction_outputs=[] ,transaction_id=None,signature=None):
+    def __init__(self, sender_address, receiver_address, amount , transaction_inputs=[] , transaction_outputs=None ,transaction_id=None,signature=None):
 
 
         ##set
@@ -16,7 +16,7 @@ class Transaction:
         self.receiver_address = receiver_address# To public key του wallet στο οποίο θα καταλήξουν τα χρήματα
         self.amount = amount #το ποσό που θα μεταφερθεί        
         self.transaction_inputs = transaction_inputs
-        self.transaction_outputs = transaction_inputs
+        self.transaction_outputs = transaction_outputs
         self.transaction_id = self.generateHash() if transaction_id is None else transaction_id #το hash του transaction
         self.signature = signature 
 
@@ -27,8 +27,7 @@ class Transaction:
             sender_address = self.sender_address ,
             receiver_address = self.receiver_address ,
             amount = self.amount,
-            transaction_inputs = self.transaction_inputs,
-            transaction_outputs = self.transaction_outputs 
+            transaction_inputs = self.transaction_inputs 
         )
         return json.dumps(d)
 
@@ -38,7 +37,7 @@ class Transaction:
         digest = hashes.Hash(hashes.SHA256(), default_backend())
         digest.update(str_repr.encode('utf-8'))
         final_digest = digest.finalize()
-        return base64.b64encode(final_digest)
+        return base64.b64encode(final_digest).decode()
 
     def toDict(self):
         d = dict(
@@ -56,7 +55,7 @@ class Transaction:
         """
         Sign transaction with private key
         """
-        signature_bytes = createMessageSignature(self.transaction_id , key)
+        signature_bytes = createMessageSignature(self.transaction_id.encode() , key)
         signature = signatureBytesToStr(signature_bytes)
         self.signature = signature
 
@@ -78,15 +77,7 @@ class Transaction:
 
 
     def __repr__(self) -> str:
-        inform("Printing transaction")
-        print('sender_address: '+ self.sender_address)
-        print('receiver_address: '+ self.receiver_address)
-        print('amount: '+ str(self.amount))
-        print('transaction_inputs: '+ str(self.transaction_inputs))
-        print('transaction_outputs: '+ str(self.transaction_outputs))
-        print('transaction_id: '+ str(self.transaction_id))
-        print('signature: '+ str(self.signature))
-        return ""
+        return json.dumps(self.toDict(), indent=4)
         
 
     @staticmethod
@@ -102,6 +93,18 @@ class Transaction:
                      d['transaction_id'], 
                      d['signature'] 
         )
+        
+
+    @staticmethod
+    def parseNewTransaction(transaction_dict):
+        sender_address = transaction_dict['sender_address']
+        receiver_address = transaction_dict['receiver_address']
+        amount = transaction_dict['amount']
+        transaction_inputs = transaction_dict['transaction_inputs']
+        transaction_outputs = transaction_dict['transaction_outputs']
+        transaction_id = transaction_dict['transaction_id']
+        signature = transaction_dict['signature']
+        return Transaction(sender_address,receiver_address,amount, transaction_inputs,transaction_outputs,transaction_id,signature )
         
 
 
