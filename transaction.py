@@ -9,8 +9,6 @@ from functions import *
 class Transaction:
 
     def __init__(self, sender_address, receiver_address, amount , transaction_inputs=[] , transaction_outputs=None ,transaction_id=None,signature=None):
-
-
         ##set
         self.sender_address = sender_address            #To public key του wallet από το οποίο προέρχονται τα χρήματα
         self.receiver_address = receiver_address# To public key του wallet στο οποίο θα καταλήξουν τα χρήματα
@@ -20,9 +18,8 @@ class Transaction:
         self.transaction_id = self.generateHash() if transaction_id is None else transaction_id #το hash του transaction
         self.signature = signature 
 
-
     
-    def transactionStrRepr(self):
+    def transactionStrRepr(self,):
         d = dict(
             sender_address = self.sender_address ,
             receiver_address = self.receiver_address ,
@@ -32,7 +29,7 @@ class Transaction:
         return json.dumps(d)
 
 
-    def generateHash(self):
+    def generateHash(self,):
         str_repr = self.transactionStrRepr()
         digest = hashes.Hash(hashes.SHA256(), default_backend())
         digest.update(str_repr.encode('utf-8'))
@@ -60,22 +57,6 @@ class Transaction:
         self.signature = signature
 
 
-
-    def verifyTransaction(self, all_addresses):
-        if self.sender_address not in all_addresses or self.receiver_address not in all_addresses:
-            raise Exception("Invalid wallet address for sender or receiver")
-        if self.sender_address == self.receiver_address:
-            raise Exception("Sender, Receiver cannot be of the same address")
-        if self.amount <= 0:
-            raise Exception("Transaction amount cannot be negative or zero")
-
-               
-        transaction_id = self.generateHash()
-        if transaction_id != self.transaction_id:
-            raise Exception("Invalid transaction_id")
-
-
-
     def __repr__(self) -> str:
         return json.dumps(self.toDict(), indent=4)
         
@@ -96,7 +77,11 @@ class Transaction:
         
 
     @staticmethod
-    def parseNewTransaction(transaction_dict):
+    def parseNewTransaction(transaction_val, flag=False):
+        if flag == True: # already dictionary
+            transaction_dict = transaction_val
+        else:
+            transaction_dict = json.loads(transaction_val)
         sender_address = transaction_dict['sender_address']
         receiver_address = transaction_dict['receiver_address']
         amount = transaction_dict['amount']
@@ -104,7 +89,7 @@ class Transaction:
         transaction_outputs = transaction_dict['transaction_outputs']
         transaction_id = transaction_dict['transaction_id']
         signature = transaction_dict['signature']
-        return Transaction(sender_address,receiver_address,amount, transaction_inputs,transaction_outputs,transaction_id,signature )
+        return Transaction(sender_address, receiver_address, amount, transaction_inputs, transaction_outputs, transaction_id, signature)
         
 
 

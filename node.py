@@ -3,6 +3,8 @@ import socket ,time
 from transaction import Transaction
 from block import Block
 from blockchain import blockchain
+from functions import *
+
 class Node:
     
     def __init__(self, is_bootstrap, config):
@@ -10,6 +12,7 @@ class Node:
         self.utxos = {}
         self.blockchain = blockchain()
         self.messaging = None
+        self.list_of_transactions = []
         if is_bootstrap:
             self.current_id_count = 0
             self.config = config
@@ -32,10 +35,7 @@ class Node:
             self.ring=[]
             
             pass
-		
 
-	# def.create_new_block():
-    #     pass
 
     def register_node_to_ring(self, temp_conn, public_key_bytes, host, port ):
         self.temp_connections_list.append(temp_conn)
@@ -55,8 +55,7 @@ class Node:
             self.utxos[node['id']] = []  
         for connection in self.temp_connections_list:
             self.messaging.connection = connection
-            self.messaging.bootstrapSendRing(self.ring)
-            
+            self.messaging.bootstrapSendRing(self.ring)            
             
     def is_myself(self, node):
         return node['host'] == self.wallet.host and node['port'] == self.wallet.port    
@@ -67,7 +66,6 @@ class Node:
             if self.is_myself(node):
                self.id = node['id']
             self.utxos[node['id']] = []          
-        
 
     def id_from_pub_key(self, pub_key):
         for node in self.ring:
@@ -76,8 +74,6 @@ class Node:
     def pub_key_from_id(self, id):
         for node in self.ring:
             if node['id'] == id: return node['public_key_bytes']
-
-
     
     def close_client_temp_connections(self,):
         for t in self.temp_connections_list:
@@ -85,42 +81,34 @@ class Node:
 
         self.temp_connections_list = []
  
- 
-    def broadcast_transaction(self):
+    def broadcast_transaction(self,transaction):
         for node in self.ring:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
-                        self.messaging.startAssignmentPhaseAck()
+                        self.messaging.broadcastTransaction(transaction)
                     except socket.error as e:
                         print("Could not connect to %s:%d" % (node['host'], node['port']))
-
-
 
     def create_and_broadcast_genesis_block(self,):
         genesis_transaction = Transaction(0, self.wallet.public_key_bytes.decode() , self.config.nodes * 100)
         first_utxo = {
             'id' : genesis_transaction.transaction_id, 
-            'who' : 0,
+            'who' : self.wallet.public_key_bytes.decode(),
             'amount' : self.config.nodes * 100
         }
         genesis_transaction.transaction_outputs = [first_utxo]
         
-        
-
         self.utxos[self.id] = [first_utxo]
         genesis_transaction.signTransaction(self.wallet.key)    
-
 
         genesis_block = Block(list_of_transactions=[genesis_transaction])
         self.blockchain.add_block(genesis_block)
         
         self.broadcast_block(genesis_block)
-        
-
- 
+         
     def broadcast_block(self, block):
         for node in self.ring:
             if not self.is_myself(node): 
@@ -139,46 +127,134 @@ class Node:
             pass
             
  
-    # def create_transaction(receiver_id, amount):
-    #     self, sender_address, receiver_address, amount , transaction_inputs , transaction_outputs=[] ,transaction_id=None,signature=None
+    def create_transaction(self, receiver_id, amount):
+        # self, sender_address, receiver_address, amount , transaction_inputs , transaction_outputs=[] ,transaction_id=None,signature=None
+        receiver_address = self.pub_key_from_id(receiver_id)
+        sender_address = self.wallet.public_key_bytes.decode()
+        transactions_inputs = []
+        savings = 0
+        for prev_utxo in self.utxos[self.id]:
+            transactions_inputs.append(prev_utxo['id'])
+            savings += prev_utxo['amount']
+        if savings < amount:
+            raise Exception('not enough money')
+        new_transaction = Transaction(sender_address, receiver_address, amount, transactions_inputs)
+        utxo_sender = {
+            'id' : new_transaction.transaction_id, 
+            'who' : sender_address,
+            'amount' : savings - amount
+        }
+        utxo_receiver = {
+            'id' : new_transaction.transaction_id, 
+            'who' : receiver_address,
+            'amount' : amount
+        }
+        new_transaction.transaction_outputs = [utxo_sender, utxo_receiver]
+        new_transaction.signTransaction(self.wallet.key)
+        self.utxos[self.id] = [utxo_sender]   
+        self.utxos[receiver_id].append(utxo_receiver)
+        # add trans to list
+        self.broadcast_transaction(new_transaction)
+        # print(new_transaction)
+
+
+    def validate_transaction(self, transaction): # use of signature and NBCs balance
+        transaction_dict = transaction.toDict()
+        if transaction_dict['sender_address'] == transaction_dict['receiver_address']:
+            raise Exception('sender must be different from recepient')
+        found_sender = False
+        found_receiver = False
+        for peer in self.ring:
+            if transaction_dict['sender_address'] == peer['public_key_bytes']:
+                found_sender = True
+            if transaction_dict['receiver_address'] == peer['public_key_bytes']:
+                found_receiver = True
+            if found_receiver == True and found_sender == True:
+                break
+        if found_sender == False:
+            raise Exception('unknown sender')
+        if found_receiver == False:
+            raise Exception('unknown recepient')
+        if transaction_dict['amount'] <= 0:
+            raise Exception('negative amount')
+
+        if transaction_dict['transaction_id'] != transaction.generateHash():
+            print(transaction_dict['transaction_id'])
+            print(transaction.generateHash())
+            raise Exception('invalid hash')
+
+        # verify signature
+        id_bytes = transaction_dict['transaction_id'].encode()
+        signature_bytes = signatureStrToBytes(transaction_dict['signature'])
+        pub_key_bytes = publicKeyFromBytes(transaction_dict['sender_address'].encode())
+
+        status = verifyMessage(id_bytes, signature_bytes, pub_key_bytes)
+        if status['error_code'] == 1:
+            print(status['message'])
+            raise Exception('invalid signature')
+
+        # verify that transaction inputs are unique
+        if len(set(transaction_dict['transaction_inputs'])) != len(transaction_dict['transaction_inputs']):
+            raise Exception('duplicate inputs')
+
+        # assert that it is not using itself as input
+        if transaction_dict['transaction_id'] in transaction_dict['transaction_inputs']:
+            raise Exception('invalid inputs')
         
-        
-        
-        # t = Transaction(self.id, receiver_id , amount,  )
+        # verify that inputs are utxos
+        sender_id = self.id_from_pub_key(transaction_dict['sender_address'])
+        sender_utxos = self.utxos[sender_id]
+        # print(sender_utxos)
+        budget = 0
+        for txin_id in transaction_dict['transaction_inputs']:
+            found = False
 
-           
-        #    self.sender_address = id            #To public key του wallet από το οποίο προέρχονται τα χρήματα
-        # self.receiver_address = receiver_address# To public key του wallet στο οποίο θα καταλήξουν τα χρήματα
-        # self.amount = amount #το ποσό που θα μεταφερθεί        
-        # self.transaction_inputs = transaction_inputs
-        # self.transaction_outputs = transaction_inputs
-        # self.transaction_id = self.generateHash() if transaction_id is None else transaction_id #το hash του transaction
-        # self.signature = signature 
+            for utxo in sender_utxos:
+                # print(utxo['who'])
+                # print(transaction_dict['sender_address'])
+                if utxo['id'] == txin_id and utxo['who'] == transaction_dict['sender_address']:
+                    found = True
+                    budget += utxo['amount']
+                    sender_utxos.remove(utxo)
+                    break
 
+            if not found:
+                raise Exception('missing transaction inputs')
 
+        if sender_utxos != []:
+            raise Exception('forgot a utxo')
 
-
-	# def validdate_transaction():
-	# 	#use of signature and NBCs balance
-
-
-	# def add_transaction_to_block():
-	# 	#if enough transactions  mine
-
-
-
-	# def mine_block():
-
-
-
-
-
+        # verify money is enough
+        if budget < transaction_dict['amount']:
+            raise Exception('not enough money')
+        return True
 		
 
+    def add_transaction_to_block(self, transaction): # if enough transactions  mine
+        transaction_dict = transaction.toDict()
+        sender_id = self.id_from_pub_key(transaction_dict['sender_address'])
+        receiver_id = self.id_from_pub_key(transaction_dict['receiver_address'])
+        utxo_sender = transaction_dict['transaction_outputs'][0]
+        utxo_receiver = transaction_dict['transaction_outputs'][1]
+        self.utxos[sender_id] = [utxo_sender]   
+        self.utxos[receiver_id].append(utxo_receiver)
+
+        self.list_of_transactions.append(transaction)
+        print("SUCCESS!!")
+        if self.config.block_capacity == len(self.list_of_transactions):
+            # mine block
+            # self.mine_block()
+            pass
+		
+
+
+
+    def mine_block(self,):
+
+        pass
+
+
 	# def valid_proof(.., difficulty=MINING_DIFFICULTY):
-
-
-
 
 	# #concencus functions
 

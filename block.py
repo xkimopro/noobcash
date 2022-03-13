@@ -11,12 +11,12 @@ from functions import *
 
 class Block:
 	def __init__(self, index=0, nonce=0, list_of_transactions=[], previous_hash=1, timestamp=time.time(), current_hash=''):
-		self.index= index
-		self.nonce= nonce
+		self.index = index
+		self.nonce = nonce
 		self.list_of_transactions = list_of_transactions
-		self.previous_hash=previous_hash
+		self.previous_hash = previous_hash
 		self.timestamp = timestamp
-		self.current_hash=current_hash
+		self.current_hash = current_hash
 		if self.current_hash ==  '': 
 			self.current_hash=self.generate_hash().decode()
 
@@ -63,7 +63,7 @@ class Block:
 		index = block_dict['index']
 		nonce = block_dict['nonce']
 		list_of_transactions = block_dict['list_of_transactions']
-		lst = [ Transaction.parseNewTransaction(t) for t in list_of_transactions ]  		
+		lst = [ Transaction.parseNewTransaction(t, True) for t in list_of_transactions ]  		
 		previous_hash = block_dict['previous_hash']
 		timestamp = block_dict['timestamp']
 		current_hash = block_dict['current_hash']    

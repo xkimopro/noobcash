@@ -36,6 +36,15 @@ class Message:
             return self.payload['block'] 
         return None 
 
+    def parseBroadcastTransaction(self, ):
+        if self.code == 4 and self.payload['message'] == 'broadcastNewTransaction':
+            return self.payload['transaction'] 
+        return None 
+    
+    def parseBroadcastBlockchain(self, ):
+        if self.code == 4 and self.payload['message'] == 'broadcastNewBlockchain':
+            return self.payload['blockchain'] 
+        return None 
 
     def isServerGreetingClient(self,):
         return self.code == 1 and self.payload['message'] == 'serverGreetingClient'
@@ -113,6 +122,25 @@ class Messaging:
         }
         self.connection.send(str.encode(json.dumps(message)))
         
+    def broadcastTransaction(self, transaction):
+        message = {
+            'code' : 4,
+            'payload' : {
+                'message' : 'broadcastNewTransaction',
+                'transaction' : str(transaction)
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def broadcastBlockchain(self, blockchain):
+        message = {
+            'code' : 5,
+            'payload' : {
+                'message' : 'broadcastNewBlockchain',
+                'blockchain' : str(blockchain)
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
 
 
     def clientReplyToGreeting(self, public_key):

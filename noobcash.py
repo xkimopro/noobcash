@@ -48,7 +48,9 @@ with socket.socket() as server_socket:
     
     
     bootstrap_node.create_and_broadcast_genesis_block()
-        
+    for i in range(config.nodes - 1):
+        initial_client_transaction = bootstrap_node.create_transaction(i+1,100)
+
     while True:
         time.sleep(1)
         

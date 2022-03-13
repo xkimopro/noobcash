@@ -1,5 +1,5 @@
 class Config:
-    nodes = 2 
+    nodes = 3 
     localnet = False
     block_capacity = 5
     noobcash_ports_range = [44440,44450]
