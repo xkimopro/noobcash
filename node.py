@@ -243,16 +243,24 @@ class Node:
         print("SUCCESS!!")
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
-            # self.mine_block()
+            print("LETS MINE!!")
+            self.mine_block()
             pass
 		
 
-
-
     def mine_block(self,):
-
-        pass
-
+        timestamp = time.time()
+        last_block_of_blockchain = len(self.blockchain.block_list) - 1
+        last_block = self.blockchain.block_list[last_block_of_blockchain]
+        previous_hash = last_block.current_hash
+        index = last_block.index + 1
+        nonce = 0
+        while True:
+            block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
+            if block.is_hash_accepted():
+                self.broadcast_block(block)
+                return
+            nonce += 1
 
 	# def valid_proof(.., difficulty=MINING_DIFFICULTY):
 

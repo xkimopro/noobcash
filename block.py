@@ -3,11 +3,10 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 import json,time,base64
 
-
+from config import Config
 from functions import *
 
-
-
+config = Config()
 
 class Block:
 	def __init__(self, index=0, nonce=0, list_of_transactions=[], previous_hash=1, timestamp=time.time(), current_hash=''):
@@ -52,9 +51,12 @@ class Block:
 		return base64.b64encode(final_digest)
 	
 
-	def add_transaction():
-		pass
-		#add a transaction to the block
+	def is_hash_accepted(self,):
+		for i in range(config.difficulty):
+			if self.current_hash[i] != '0':
+				return False
+		return True
+
 
 
 	@staticmethod

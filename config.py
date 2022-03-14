@@ -7,3 +7,4 @@ class Config:
     bootstrap_node_host = "127.0.0.1"
     client_node_port = 44441
     client_node_host = "127.0.0.1"
+    difficulty = 3
