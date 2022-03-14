@@ -4,6 +4,10 @@ from transaction import Transaction
 from block import Block
 from blockchain import blockchain
 from functions import *
+import signal, os
+
+
+
 
 class Node:
     
@@ -13,6 +17,8 @@ class Node:
         self.blockchain = blockchain()
         self.messaging = None
         self.list_of_transactions = []
+        self.my_miners_pid = 0
+        
         if is_bootstrap:
             self.current_id_count = 0
             self.config = config
@@ -35,7 +41,9 @@ class Node:
             self.ring=[]
             
             pass
-
+        
+        signal.signal(signal.SIGUSR1, self.we_found_block)
+        signal.signal(signal.SIGUSR2, self.we_broadcasted_block)
 
     def register_node_to_ring(self, temp_conn, public_key_bytes, host, port ):
         self.temp_connections_list.append(temp_conn)
@@ -154,6 +162,7 @@ class Node:
         self.utxos[self.id] = [utxo_sender]   
         self.utxos[receiver_id].append(utxo_receiver)
         # add trans to list
+        self.list_of_transactions.append(new_transaction)
         self.broadcast_transaction(new_transaction)
         # print(new_transaction)
 
@@ -229,6 +238,8 @@ class Node:
             raise Exception('not enough money')
         return True
 		
+  
+    
 
     def add_transaction_to_block(self, transaction): # if enough transactions  mine
         transaction_dict = transaction.toDict()
@@ -240,30 +251,75 @@ class Node:
         self.utxos[receiver_id].append(utxo_receiver)
 
         self.list_of_transactions.append(transaction)
-        print("SUCCESS!!")
+        print("Transaction " +transaction.transaction_id+ "validated")
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
-            print("LETS MINE!!")
-            self.mine_block()
-            pass
+            print("Starting mining process")
+            pid = os.fork()
+            if pid > 0 :
+                self.my_miners_pid = pid
+            else :
+                time.sleep(1)
+                self.mine_block()
+            
 		
 
     def mine_block(self,):
         timestamp = time.time()
-        last_block_of_blockchain = len(self.blockchain.block_list) - 1
-        last_block = self.blockchain.block_list[last_block_of_blockchain]
-        previous_hash = last_block.current_hash
-        index = last_block.index + 1
+        previous_hash = self.blockchain.get_latest_blocks_hash()
+        index = self.blockchain.get_latest_blocks_index() + 1
         nonce = 0
         while True:
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
+                print("Nonce found, equals to " + str(nonce) )
+                os.kill(os.getppid(), signal.SIGUSR1)
                 self.broadcast_block(block)
+                os.kill(os.getppid(), signal.SIGUSR2)
                 return
             nonce += 1
 
-	# def valid_proof(.., difficulty=MINING_DIFFICULTY):
 
+    def we_found_block(self, signum, stack):
+        self.discard_other_blocks = True
+    
+    def we_broadcasted_block(self, signum, stack):        
+        self.discard_other_blocks = False
+        print(self.my_miners_pid)
+        os.kill(self.my_miners_pid, signal.SIGTERM)  
+        self.my_miners_pid = 0 
+
+    def valid_proof(self, block):
+        previous_hash = self.blockchain.get_latest_blocks_hash()
+        current_index = self.blockchain.get_latest_blocks_index() + 1
+        if block.previous_hash == previous_hash and current_index == block.index:
+            # Check that the contained list of transactions is the same with my list of transactions
+            received_list_of_transactions = block.list_of_transactions 
+            if len(received_list_of_transactions) == len(self.list_of_transactions):
+                for i in range(len(received_list_of_transactions)):
+                    if received_list_of_transactions[i] != self.list_of_transactions[i]: 
+                        return False
+            else:
+                return False    
+            # Check if contents have been tampered
+            # Hash must be generated with current_hash = ''
+            temp = block.current_hash
+            block.current_hash = ''
+            if block.generate_hash().decode() != temp: 
+                return False            
+            # Remember to reassign the verified hash!
+            block.current_hash = temp
+            # Check if hash fullfills mining difficulty criteria
+            if not block.is_hash_accepted(): return False
+            return True                        
+        else: 
+            return False
+            
+
+        
+        
+        
+        
 	# #concencus functions
 
 	# def valid_chain(self, chain):

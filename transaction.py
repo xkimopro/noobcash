@@ -59,7 +59,23 @@ class Transaction:
 
     def __repr__(self) -> str:
         return json.dumps(self.toDict(), indent=4)
+       
+       
+    def __eq__(self, other):
         
+        if self.sender_address==other.sender_address and self.receiver_address==other.receiver_address and self.amount==other.amount and self.transaction_id==other.transaction_id and self.signature==other.signature:
+            if len(self.transaction_inputs) == len(other.transaction_inputs) and len(self.transaction_outputs) == len(other.transaction_outputs):
+                for i in range(len(self.transaction_inputs)):
+                    if self.transaction_inputs[i] != other.transaction_inputs[i]: 
+                        return False 
+                    if self.transaction_outputs[i].keys() != other.transaction_outputs[i].keys() and self.transaction_outputs[i].values() != other.transaction_outputs[i].values(): 
+                        print("XXXXX")
+                        print(self.transaction_outputs[i].keys())
+                        print(other.transaction_outputs[i].keys())
+                        return False                                  
+                return True
+        else:
+            return False 
 
     @staticmethod
     def fromDict(d):
@@ -91,7 +107,10 @@ class Transaction:
         signature = transaction_dict['signature']
         return Transaction(sender_address, receiver_address, amount, transaction_inputs, transaction_outputs, transaction_id, signature)
         
-
+        
+        
+            
+            
 
 
 

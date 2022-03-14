@@ -58,7 +58,6 @@ class Block:
 		return True
 
 
-
 	@staticmethod
 	def parseNewBlock(block_str):
 		block_dict = json.loads(block_str)

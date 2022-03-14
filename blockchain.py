@@ -21,5 +21,11 @@ class blockchain:
             print(block)
             print("\n\n")
             
-    
+    def get_latest_blocks_hash(self,):
+        latest_block = self.block_list[-1]
+        return latest_block.current_hash
+            
+    def get_latest_blocks_index(self,):
+        latest_block = self.block_list[-1]
+        return latest_block.index
 	
