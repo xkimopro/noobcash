@@ -5,6 +5,7 @@ from block import Block
 from blockchain import blockchain
 from functions import *
 import signal, os
+import asyncio
 
 
 
@@ -39,11 +40,8 @@ class Node:
             self.wallet = Wallet(config.client_node_host , config.client_node_port)
             self.NBC = 0
             self.ring=[]
-            
-            pass
-        
-        signal.signal(signal.SIGUSR1, self.we_found_block)
-        signal.signal(signal.SIGUSR2, self.we_broadcasted_block)
+
+        signal.signal(signal.SIGUSR2, self.stop_miner)
 
     def register_node_to_ring(self, temp_conn, public_key_bytes, host, port ):
         self.temp_connections_list.append(temp_conn)
@@ -127,16 +125,9 @@ class Node:
                         self.messaging.broadcastBlock(block)
                     except socket.error as e:
                         print("Could not connect to %s:%d" % (node['host'], node['port']))
-        
- 
-    def add_block_to_blockchain(self, block):
-        block_transactions = block.transactions_
-        for t in block_transactions:
-            pass
-            
  
     def create_transaction(self, receiver_id, amount):
-        # self, sender_address, receiver_address, amount , transaction_inputs , transaction_outputs=[] ,transaction_id=None,signature=None
+        # sender_address, receiver_address, amount , transaction_inputs , transaction_outputs=[] ,transaction_id=None,signature=None
         receiver_address = self.pub_key_from_id(receiver_id)
         sender_address = self.wallet.public_key_bytes.decode()
         transactions_inputs = []
@@ -159,12 +150,12 @@ class Node:
         }
         new_transaction.transaction_outputs = [utxo_sender, utxo_receiver]
         new_transaction.signTransaction(self.wallet.key)
-        self.utxos[self.id] = [utxo_sender]   
-        self.utxos[receiver_id].append(utxo_receiver)
-        # add trans to list
-        self.list_of_transactions.append(new_transaction)
+
         self.broadcast_transaction(new_transaction)
-        # print(new_transaction)
+
+        # change utxos through add transaction to the block
+        self.add_transaction_to_block(new_transaction)
+
 
 
     def validate_transaction(self, transaction): # use of signature and NBCs balance
@@ -236,9 +227,7 @@ class Node:
         # verify money is enough
         if budget < transaction_dict['amount']:
             raise Exception('not enough money')
-        return True
-		
-  
+        return True	
     
 
     def add_transaction_to_block(self, transaction): # if enough transactions  mine
@@ -255,14 +244,54 @@ class Node:
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
             print("Starting mining process")
+            # file descriptors r, w for reading and writing
+            r, w = os.pipe()
+
             pid = os.fork()
             if pid > 0 :
                 self.my_miners_pid = pid
+                # This is the parent process 
+                # Closes file descriptor w
+                os.close(w)
+                r = os.fdopen(r)
+                print("Parent reading")
+                block_str = r.read()
+                block = Block.parseNewBlock(block_str)
+                self.blockchain.add_block(block)
+                self.list_of_transactions = []
             else :
+                # This is the child process
                 time.sleep(1)
-                self.mine_block()
-            
-		
+                os.close(r)
+                w = os.fdopen(w, 'w')
+                print("Child writing")
+                block_str = str(self.mine_block())
+                w.write(block_str)
+                w.close()
+                print("Child closing")
+                exit()
+
+
+
+
+class SubprocessProtocol(asyncio.SubprocessProtocol):
+    def pipe_data_received(self, fd, data):
+        if fd == 1: # got stdout data (bytes)
+            print(data)
+
+    def connection_lost(self, exc):
+        loop.stop() # end loop.run_forever()
+
+
+loop = asyncio.get_event_loop()
+try:
+    loop.run_until_complete(loop.subprocess_exec(SubprocessProtocol, 
+        "myprogram.exe", "arg1", "arg2"))
+    loop.run_forever()
+finally:
+    loop.close()
+
+    
 
     def mine_block(self,):
         timestamp = time.time()
@@ -273,19 +302,13 @@ class Node:
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
                 print("Nonce found, equals to " + str(nonce) )
-                os.kill(os.getppid(), signal.SIGUSR1)
-                self.broadcast_block(block)
-                os.kill(os.getppid(), signal.SIGUSR2)
-                return
+                self.broadcast_block(block)                            
+                return block
             nonce += 1
 
-
-    def we_found_block(self, signum, stack):
-        self.discard_other_blocks = True
-    
-    def we_broadcasted_block(self, signum, stack):        
-        self.discard_other_blocks = False
-        print(self.my_miners_pid)
+    def stop_miner(self, signum, stack):
+        print("lets kill a miner")        
+        print("Miner pid equals to " + self.my_miners_pid)
         os.kill(self.my_miners_pid, signal.SIGTERM)  
         self.my_miners_pid = 0 
 
@@ -314,10 +337,6 @@ class Node:
             return True                        
         else: 
             return False
-            
-
-        
-        
         
         
 	# #concencus functions

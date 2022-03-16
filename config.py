@@ -1,10 +1,10 @@
 class Config:
-    nodes = 2 
+    nodes = 3 
     localnet = False
-    block_capacity = 1
+    block_capacity = 2
     noobcash_ports_range = [44440,44450]
     bootstrap_node_port = 44439
     bootstrap_node_host = "127.0.0.1"
     client_node_port = 44441
     client_node_host = "127.0.0.1"
-    difficulty = 2
+    difficulty = 3

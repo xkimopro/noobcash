@@ -29,7 +29,7 @@ with socket.socket() as server_socket:
 
     for i in range(config.nodes - 1):
         client_conn, address = server_socket.accept()
-        client_init = client_conn.recv(2048)
+        client_init = client_conn.recv(8192)
         client_init_msg = bootstrap_node.messaging.parseToMessage(client_init)    
         public_key_bytes , host, port = client_init_msg.parseClientInitMessage()
         bootstrap_node.register_node_to_ring(client_conn, public_key_bytes, host, port)

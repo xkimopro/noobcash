@@ -23,7 +23,7 @@ with socket.socket() as client_socket:
     client_node.messaging = Messaging(client_socket,client_node.wallet.key)
     m = client_node.messaging.clientInitMessage(client_node.wallet.public_key_bytes,client_node.wallet.host, client_node.wallet.port)    
     inform("Send my credentials to bootstrap")
-    m = client_node.messaging.parseToMessage(client_socket.recv(2048))
+    m = client_node.messaging.parseToMessage(client_socket.recv(8192))
     ring = json.loads(m.parseBootstrapSendRing())
     client_node.parse_ring(ring)
     
