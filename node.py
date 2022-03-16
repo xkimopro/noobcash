@@ -5,7 +5,7 @@ from block import Block
 from blockchain import blockchain
 from functions import *
 import signal, os
-import asyncio
+import fcntl
 
 
 
@@ -247,15 +247,35 @@ class Node:
             # file descriptors r, w for reading and writing
             r, w = os.pipe()
 
+            
+
             pid = os.fork()
             if pid > 0 :
                 self.my_miners_pid = pid
                 # This is the parent process 
                 # Closes file descriptor w
                 os.close(w)
+                
+                # BLocking code
                 r = os.fdopen(r)
+                fcntl.fcntl(r, fcntl.F_SETFL, os.O_NONBLOCK) 
+                
                 print("Parent reading")
+                
                 block_str = r.read()
+                
+                print("NONBLOCK")
+                quit()
+                # Blocking code
+                
+                    
+                # x = read_nonblocking(r,4096,100)    
+                # print(x)
+                
+                
+                
+                
+                    
                 block = Block.parseNewBlock(block_str)
                 self.blockchain.add_block(block)
                 self.list_of_transactions = []
@@ -265,31 +285,12 @@ class Node:
                 os.close(r)
                 w = os.fdopen(w, 'w')
                 print("Child writing")
-                block_str = str(self.mine_block())
+                block_str = str(self.mine_block()).encode()
                 w.write(block_str)
                 w.close()
                 print("Child closing")
                 exit()
 
-
-
-
-class SubprocessProtocol(asyncio.SubprocessProtocol):
-    def pipe_data_received(self, fd, data):
-        if fd == 1: # got stdout data (bytes)
-            print(data)
-
-    def connection_lost(self, exc):
-        loop.stop() # end loop.run_forever()
-
-
-loop = asyncio.get_event_loop()
-try:
-    loop.run_until_complete(loop.subprocess_exec(SubprocessProtocol, 
-        "myprogram.exe", "arg1", "arg2"))
-    loop.run_forever()
-finally:
-    loop.close()
 
     
 
