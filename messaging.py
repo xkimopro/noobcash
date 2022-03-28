@@ -21,8 +21,13 @@ class Message:
             informProblem(f"Message from {bytesFromPublicKeyObj(sender_public_key).decode()} discarded \n-Reason: {json.dumps(status)}")
 
     def parseClientInitMessage(self, ):
-        if self.code == 1 and self.payload['message'] == 'clientInitMessage':
+        if self.code == 0 and self.payload['message'] == 'clientInitMessage':
             return self.payload['public_key_bytes'] , self.payload['host'] , self.payload['port']
+        return None
+
+    def parseCliInitMessage(self, ):
+        if self.code == 1 and self.payload['message'] == 'cliInitMessage':
+            return self.payload['id'] , self.payload['host'] , self.payload['port']
         return None
 
     def parseBootstrapSendRing(self, ):
@@ -66,10 +71,22 @@ class Messaging:
 
     def clientInitMessage(self, public_key_bytes, host , port):
         message = {
-            'code' : 1,
+            'code' : 0,
             'payload' : {
                 'message' : 'clientInitMessage',
                 'public_key_bytes' : public_key_bytes.decode(), 
+                'host' : host ,
+                'port' : port
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def cliInitMessage(self, id, host , port):
+        message = {
+            'code' : 1,
+            'payload' : {
+                'message' : 'cliInitMessage',
+                'id' : id, 
                 'host' : host ,
                 'port' : port
             }

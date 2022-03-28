@@ -48,6 +48,16 @@ def attemptBootstrapConnection(client_socket: socket, config : Config):
         exitNoobcash(1, "Cannot connect to bootstrap node at {}:{}".format(config.bootstrap_node_host , config.bootstrap_node_port) )
     inform(f"Connected through TCP at {config.bootstrap_node_host}:{config.bootstrap_node_port}")
 
+def attemptCliConnection(client_socket: socket, config : Config):
+    boldInform("Noobcash client cli started")
+    inform("Trying to connect to cli node socket server")
+    try:
+        client_socket.connect((config.cli_node_host, config.cli_node_port))
+    except socket.error as e:
+        client_socket.close()
+        exitNoobcash(1, "Cannot connect to cli node at {}:{}".format(config.cli_node_host , config.cli_node_port) )
+    inform(f"Connected through TCP at {config.cli_node_host}:{config.cli_node_port}")
+
 
 def generateInitialkey():
     key = rsa.generate_private_key(backend=default_backend(), public_exponent=65537, \

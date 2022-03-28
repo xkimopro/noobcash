@@ -27,6 +27,11 @@ with socket.socket() as server_socket:
     bootstrap_node.messaging = Messaging(None, bootstrap_node.wallet.key)
     server_socket.listen(5)
 
+    # 2) to cli
+    attemptCliConnection(bootstrap_node, config)
+    m = bootstrap_node.messaging.cliInitMessage(bootstrap_node.id,config.cli_client_node_host, config.cli_client_node_port)
+    inform("Send my credentials to cli")
+
     for i in range(config.nodes - 1):
         client_conn, address = server_socket.accept()
         client_init = client_conn.recv(8192)
@@ -52,7 +57,21 @@ with socket.socket() as server_socket:
         initial_client_transaction = bootstrap_node.create_transaction(i+1,100)
 
     while True:
-        time.sleep(1)
+        # Initiate your socket to connect to cli 
+        with socket.socket() as cli_server_socket:
+            try:
+                cli_server_socket.bind((config.cli_client_node_host, config.cli_client_node_port))
+            except socket.error as e:
+                exitNoobcash(1,"Cli Client cannot start its socket server at specified port")  
+            
+            cli_server_socket.listen(5)
+            
+            # # Start Event Listening Thread
+            # cli_event_listening_thread = EventListeningThread(bootstrap_node, cli_server_socket)
+            # cli_event_listening_thread.start()
+
+            while True:
+                time.sleep(1)
         
     
     
