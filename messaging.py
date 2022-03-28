@@ -52,7 +52,7 @@ class Message:
 
 
 class Messaging:
-    def __init__(self,connection, key):
+    def __init__(self,connection, key=0):
         self.connection = connection
         self.key = key
     
@@ -91,6 +91,7 @@ class Messaging:
                 'port' : port
             }
         }
+        print(str.encode(json.dumps(message)))
         self.connection.send(str.encode(json.dumps(message)))
 
 

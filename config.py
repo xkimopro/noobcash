@@ -9,6 +9,6 @@ class Config:
     client_node_host = "127.0.0.1"
     cli_node_port = 44460
     cli_node_host = "127.0.0.1"
-    cli_client_node_port = 44460
+    cli_client_node_port = 44461
     cli_client_node_host = "127.0.0.1"
     difficulty = 3

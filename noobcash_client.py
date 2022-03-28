@@ -4,7 +4,6 @@ import socket , json , os , time,sys
 from functions import *
 from config import Config
 
-
 from messaging import *
 from node import *    
 
@@ -24,16 +23,18 @@ with socket.socket() as client_socket:
     # 1) to bootstrap
     attemptBootstrapConnection(client_socket, config)
     client_node.messaging = Messaging(client_socket,client_node.wallet.key)
-    m = client_node.messaging.clientInitMessage(client_node.wallet.public_key_bytes,client_node.wallet.host, client_node.wallet.port)    
+    client_node.messaging.clientInitMessage(client_node.wallet.public_key_bytes,client_node.wallet.host, client_node.wallet.port)    
     inform("Send my credentials to bootstrap")
     m = client_node.messaging.parseToMessage(client_socket.recv(8192))
     ring = json.loads(m.parseBootstrapSendRing())
     client_node.parse_ring(ring)
-
-    # 2) to cli
-    attemptCliConnection(client_socket, config)
-    m = client_node.messaging.cliInitMessage(client_node.id,config.cli_client_node_host, config.cli_client_node_port)
-    inform("Send my credentials to cli")
+    with socket.socket() as cli_socket: 
+        # 2) to cli
+        attemptCliConnection(cli_socket, config)
+        client_node.messaging.cliInitMessage(client_node.id,config.cli_client_node_host, config.cli_client_node_port)
+        # print(m)
+        inform("Send my credentials to cli")
+        time.sleep(1)
   
     
 # Initiate your socket to connect to bootstrap   
