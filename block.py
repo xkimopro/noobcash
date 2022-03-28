@@ -23,7 +23,6 @@ class Block:
 	def is_genesis(self,):
 		return self.index == 0 and self.nonce == 0 and len(self.list_of_transactions) == 1 and self.previous_hash == 1
 
-
 	def block_to_dict(self):			
 		
 		dicted_transactions = []
@@ -38,7 +37,6 @@ class Block:
 			current_hash = self.current_hash
   		)
 		return d
-
   
 	def __repr__(self,):
 		return json.dumps(self.block_to_dict(), indent=4)

@@ -7,11 +7,6 @@ from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.backends import default_backend
 
 import base64
-# from block import Block 
-# from transaction import Transaction 
-
-
-
 
 class bcolors:
     HEADER = '\033[95m'
@@ -43,16 +38,6 @@ def boldInform(msg):
     print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
 
 
-
-def getAllLanIPs():
-    full_results = [re.findall('^[\w\?\.]+|(?<=\s)\([\d\.]+\)|(?<=at\s)[\w\:]+', i) for i in os.popen('arp -a')]
-    final_results = [dict(zip(['HOSTNAME', 'LAN_IP', 'MAC_ADDRESS'], i)) for i in full_results]
-    final_results = [{**i, **{'LAN_IP':i['LAN_IP'][1:-1]}} for i in final_results]
-    return [  f['LAN_IP'] for f in final_results ]
-
-
-
-
 def attemptBootstrapConnection(client_socket: socket, config : Config):
     boldInform("Noobcash client started")
     inform("Trying to connect to bootstrap node socket server")
@@ -62,7 +47,6 @@ def attemptBootstrapConnection(client_socket: socket, config : Config):
         client_socket.close()
         exitNoobcash(1, "Cannot connect to bootstrap node at {}:{}".format(config.bootstrap_node_host , config.bootstrap_node_port) )
     inform(f"Connected through TCP at {config.bootstrap_node_host}:{config.bootstrap_node_port}")
-
 
 
 def generateInitialkey():
@@ -80,14 +64,11 @@ def bytesFromPublicKeyObj(public_key_obj):
     serialization.PublicFormat.OpenSSH)
     return public_key
 
-
 def privateKeyBytes(initial_key):
     pem = initial_key.private_bytes(encoding=serialization.Encoding.PEM,
     format=serialization.PrivateFormat.TraditionalOpenSSL,
     encryption_algorithm=serialization.NoEncryption())
     return pem
-
-
 
 def publicKeyFromBytes(public_key_bytes):
     loaded_public_key = serialization.load_ssh_public_key(
@@ -142,39 +123,3 @@ def verifyMessage(message ,  signature , public_key ):
 def startBootstrapSocketServer(server_socket):
     while True:
         server_socket.accept()
-
-
-def read_nonblocking(path, bufferSize=4096, timeout=.100):
-    grace = True
-    result = []
-    try:
-        pipe = os.open(path, os.O_RDONLY | os.O_NONBLOCK)
-        while True:
-            try:
-                buf = os.read(pipe, bufferSize)
-                if not buf:
-                    break
-                else:
-                    content = buf.decode("utf-8")
-                    line = content.split("\n")
-                    result.extend(line)
-            except OSError as e:
-                if e.errno == 11 and grace:
-                    # grace period, first write to pipe might take some time
-                    # further reads after opening the file are then successful
-                    time.sleep(timeout)
-                    grace = False
-                else:
-                    break
-
-    except OSError as e:
-        if e.errno == errno.ENOENT:
-            pipe = None
-        else:
-            raise e
-
-    return result
-
-    
-    
-

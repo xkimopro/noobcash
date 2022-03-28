@@ -13,14 +13,12 @@ class EventListeningThread(Thread):
 
     def terminate(self):
         pass
-
-
+    
     def run(self, *args, **kwargs):
         i = 0
         while True:     
             i += 1
             conn, _ = self.server_socket.accept()
-            
             data = conn.recv(40960)
             if len(data) != 0:
                 # print(data)
@@ -33,26 +31,31 @@ class EventListeningThread(Thread):
                     block = Block.parseNewBlock(block)
                     print("Received block #" + str(block.index))
                     if block.is_genesis():
+                        print("Block is of genesis type")
                         self.node.utxos[0] = [block.list_of_transactions[0].transaction_outputs[0]]
                         self.node.blockchain.add_block(block)
                     else:
-                        valid_block = self.node.valid_proof(block)
-                        if (valid_block):
-                            print("He got me, now I have to add his block!")
-
-                            self.node.stop_miner()
+                        is_valid = self.node.valid_proof(block)
+                        if is_valid and not self.node.miner_broadcasting:
+                            self.node.stop_miner_thread = True 
+                            print("Block validated and added to my blockchain. Miner thread stopped for efficiency")
                             self.node.blockchain.add_block(block)
                             self.node.list_of_transactions = []
-
                             print("Block #"+str(block.index)+" is valid and ready to be added to the blockchain")
-                    
+                        else: 
+                            
+                            print("Valid block discarded. Checking if received block's previous hash matches current block hash or not")                    
+                            if block.previous_hash != self.node.blockchain.get_latest_blocks_hash():
+                                print("Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm")
+                                self.resolve_conflicts()
                     self.node.blockchain.print_blockchain()
 
                 if transaction is not None:
-                    print("Im here")
+                    print("Received new transaction")
                     transaction = Transaction.parseNewTransaction(transaction)
                     valid = self.node.validate_transaction(transaction)
                     if valid:
+                        print("Transaction validated. Adding to transaction list ( current block under construction )")
                         self.node.add_transaction_to_block(transaction)
                 if blockchain is not None:
                     pass

@@ -4,10 +4,7 @@ from transaction import Transaction
 from block import Block
 from blockchain import blockchain
 from functions import *
-import signal, os
-import fcntl
-
-
+import signal, os, threading
 
 
 class Node:
@@ -18,7 +15,9 @@ class Node:
         self.blockchain = blockchain()
         self.messaging = None
         self.list_of_transactions = []
-        self.my_miners_pid = 0
+        
+        self.stop_miner_thread = False 
+        self.miner_broadcasting = False
         
         if is_bootstrap:
             self.current_id_count = 0
@@ -40,9 +39,7 @@ class Node:
             self.wallet = Wallet(config.client_node_host , config.client_node_port)
             self.NBC = 0
             self.ring=[]
-
-        signal.signal(signal.SIGUSR2, self.stop_miner)
-
+            
     def register_node_to_ring(self, temp_conn, public_key_bytes, host, port ):
         self.temp_connections_list.append(temp_conn)
         self.current_id_count += 1
@@ -244,55 +241,8 @@ class Node:
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
             print("Starting mining process")
-            # file descriptors r, w for reading and writing
-            r, w = os.pipe()
-
-            
-
-            pid = os.fork()
-            if pid > 0 :
-                self.my_miners_pid = pid
-                # This is the parent process 
-                # Closes file descriptor w
-                os.close(w)
-                
-                # BLocking code
-                r = os.fdopen(r)
-                fcntl.fcntl(r, fcntl.F_SETFL, os.O_NONBLOCK) 
-                
-                print("Parent reading")
-                
-                block_str = r.read()
-                
-                print("NONBLOCK")
-                quit()
-                # Blocking code
-                
-                    
-                # x = read_nonblocking(r,4096,100)    
-                # print(x)
-                
-                
-                
-                
-                    
-                block = Block.parseNewBlock(block_str)
-                self.blockchain.add_block(block)
-                self.list_of_transactions = []
-            else :
-                # This is the child process
-                time.sleep(1)
-                os.close(r)
-                w = os.fdopen(w, 'w')
-                print("Child writing")
-                block_str = str(self.mine_block()).encode()
-                w.write(block_str)
-                w.close()
-                print("Child closing")
-                exit()
-
-
-    
+            miner_thread = MinerThread(self)
+            miner_thread.start()                  
 
     def mine_block(self,):
         timestamp = time.time()
@@ -300,18 +250,17 @@ class Node:
         index = self.blockchain.get_latest_blocks_index() + 1
         nonce = 0
         while True:
+            if self.stop_miner_thread: 
+                self.stop_miner_thread = False 
+                quit()                         
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
-                print("Nonce found, equals to " + str(nonce) )
-                self.broadcast_block(block)                            
+                if self.stop_miner_thread: 
+                    self.stop_miner_thread = False 
+                    quit()                         
+                print("Found nonce "+str(nonce)+" for block with index " + str(index))
                 return block
             nonce += 1
-
-    def stop_miner(self, signum, stack):
-        print("lets kill a miner")        
-        print("Miner pid equals to " + self.my_miners_pid)
-        os.kill(self.my_miners_pid, signal.SIGTERM)  
-        self.my_miners_pid = 0 
 
     def valid_proof(self, block):
         previous_hash = self.blockchain.get_latest_blocks_hash()
@@ -323,8 +272,7 @@ class Node:
                 for i in range(len(received_list_of_transactions)):
                     if received_list_of_transactions[i] != self.list_of_transactions[i]: 
                         return False
-            else:
-                return False    
+            else: return False    
             # Check if contents have been tampered
             # Hash must be generated with current_hash = ''
             temp = block.current_hash
@@ -336,15 +284,31 @@ class Node:
             # Check if hash fullfills mining difficulty criteria
             if not block.is_hash_accepted(): return False
             return True                        
-        else: 
-            return False
+        else: return False
         
         
-	# #concencus functions
-
 	# def valid_chain(self, chain):
 	# 	#check for the longer chain accroose all nodes
 
 
-	# def resolve_conflicts(self):
-	# 	#resolve correct chain
+    def resolve_conflicts(self):
+        # Ask nodes for longer chain
+        pass
+    
+class MinerThread(threading.Thread):
+    
+    def __init__(self, parent_node : Node):
+        threading.Thread.__init__(self)
+        self.parent_node = parent_node
+
+        
+    def run(self,*args,**kwargs):
+        mined_block = self.parent_node.mine_block()
+        self.parent_node.miner_broadcasting = True
+        # Add to yourself first
+        self.parent_node.blockchain.add_block(mined_block)
+        self.parent_node.list_of_transactions = []
+        # Then broadcast to others 
+        self.parent_node.broadcast_block(mined_block)
+        self.parent_node.miner_broadcasting = False
+        
