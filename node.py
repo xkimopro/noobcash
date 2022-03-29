@@ -387,6 +387,13 @@ class Node:
     
     def add_blockchain_block(self, block):
         self.blockchain.add_block(block)
+
+    def view_transactions(self,):
+        last_block = self.blockchain.block_list[-1]
+        dicted_transactions = []
+        for transaction in last_block.list_of_transactions:
+            dicted_transactions.append(transaction.toDict())
+        return dicted_transactions
     
     
     

@@ -25,28 +25,28 @@ def exitNoobcash(error_code, msg):
         'error_code' : error_code , 
         'msg' : msg
     }
-    print(f"{bcolors.FAIL}{json.dumps(d, indent=2)}{bcolors.ENDC}")
+    print(json.dumps(d, indent=2))
     quit()
 
-def inform(msg):
-    print(f"{bcolors.HEADER}{msg}{bcolors.ENDC}")
+# def inform(msg):
+#     print(f"{bcolors.HEADER}{msg}{bcolors.ENDC}")
 
-def informProblem(msg):
-    print(f"{bcolors.FAIL}{msg}{bcolors.ENDC}")
+# def informProblem(msg):
+#     print(f"{bcolors.FAIL}{msg}{bcolors.ENDC}")
 
-def boldInform(msg):
-    print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
+# def boldInform(msg):
+#     print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
 
 
 def attemptBootstrapConnection(client_socket: socket, config : Config):
-    boldInform("Noobcash client started")
-    inform("Trying to connect to bootstrap node socket server")
+    print("Noobcash client started")
+    print("Trying to connect to bootstrap node socket server")
     try:
         client_socket.connect((config.bootstrap_node_host, config.bootstrap_node_port))
     except socket.error as e:
         client_socket.close()
         exitNoobcash(1, "Cannot connect to bootstrap node at {}:{}".format(config.bootstrap_node_host , config.bootstrap_node_port) )
-    inform(f"Connected through TCP at {config.bootstrap_node_host}:{config.bootstrap_node_port}")
+    print("Connected through TCP at ", config.bootstrap_node_host,":",config.bootstrap_node_port)
 
 
 def generateInitialkey():

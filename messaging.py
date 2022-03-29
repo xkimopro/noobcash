@@ -18,7 +18,7 @@ class Message:
         status = verifyMessage(json.dumps(self.payload).encode('utf-8') , signature_bytes, sender_public_key)   
         if status['error_code'] == 0: return True
         else:
-            informProblem(f"Message from {bytesFromPublicKeyObj(sender_public_key).decode()} discarded \n-Reason: {json.dumps(status)}")
+            print("Message from ",bytesFromPublicKeyObj(sender_public_key).decode()," discarded \n-Reason: ", json.dumps(status))
 
     def parseClientInitMessage(self, ):
         if self.code == 1 and self.payload['message'] == 'clientInitMessage':

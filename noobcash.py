@@ -19,8 +19,8 @@ with socket.socket() as server_socket:
         server_socket.bind((config.bootstrap_node_host, config.bootstrap_node_port))
     except socket.error as e:
         exitNoobcash(1,"Cannot start noobcash as bootstrap node")  
+    print("Noobcash bootstrap node started at ", config.bootstrap_node_host,":",config.bootstrap_node_port)
 
-    boldInform(f"Noobcash bootstrap node started at {config.bootstrap_node_host}:{config.bootstrap_node_port}")
     bootstrap_node = Node(True, config)
     bootstrap_node.messaging = Messaging(None, bootstrap_node.wallet.key)
     server_socket.listen(5)
@@ -61,6 +61,7 @@ with socket.socket() as server_socket:
         # * "view"                                                  View transactions of the latest block
         # * "balance"                                               View balance of each wallet (last validated block)
         # * "help"                                                  Print this help message
+        # * "file"                                                  Read from file transactions
         # * "exit"                                                  Exit client 
         # '''
 
@@ -73,20 +74,28 @@ with socket.socket() as server_socket:
         #     choice = input()
 
         #     # Transaction
+        #     # t receiver amount
         #     if choice.startswith('t'):
-        #         print("hello1")
+        #         # client_node.create_transaction(receiver_id, amount)
+        #         pass
 
         #     # View last transaction
         #     elif choice == 'view':
-        #         print("hello2")
-                
+        #         print(client_node.view_transactions())
+
         #     # Balance
         #     elif choice == 'balance':
-        #         print("hello3")
+        #         balance = 0
+        #         for utxo in client_node.utxos[client_node.id]:
+        #             balance += utxo['amount']
+        #         print("My balance is: ", balance)
 
         #     # Help
         #     elif choice == 'help':
         #         print(help_message)
+
+        #     # elif choice == file:
+        #     #     blabla
 
         #     elif (choice == 'exit'):
         #         sys.exit(0)
@@ -94,6 +103,4 @@ with socket.socket() as server_socket:
         #     else:
         #         print("Invalid action")
 
-    
-    
-    
+
