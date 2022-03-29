@@ -14,7 +14,6 @@ from event_listener import EventListeningThread
 
 config = Config()
 
-
 with socket.socket() as server_socket:
     try:
         server_socket.bind((config.bootstrap_node_host, config.bootstrap_node_port))

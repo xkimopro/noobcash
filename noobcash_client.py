@@ -10,15 +10,11 @@ from node import *
 from event_listener import EventListeningThread
 
 config = Config()
-
-config.client_node_port = int(sys.argv[1])
-# config.cli_client_node_port = int(sys.argv[2])
-
-# config.client_node_host = socket.gethostbyname(socket.gethostname())
-config.client_node_host = '127.0.0.1'
+ 
+config.client_node_port = int(sys.argv[1]) 
 
 # Send credentials to bootstrap
-with socket.socket() as client_socket: 
+with socket.socket() as client_socket:
     client_node = Node(False, config)
     attemptBootstrapConnection(client_socket, config)
     client_node.messaging = Messaging(client_socket,client_node.wallet.key)

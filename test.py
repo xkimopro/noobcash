@@ -107,20 +107,10 @@
 # status = verifyMessage(message, signature, loaded_key)
 # print(status)
     
-from block import Block
-from transaction import Transaction
+import socket
 
-genesis_transaction = Transaction(0, 'public123' , 5 * 100, [] , None, 'agsdhasdiuaiusd', 'xxxx')
-first_utxo = {
-    'id' : genesis_transaction.transaction_id, 
-    'who' : 0,
-    'amount' : 5 * 100
-}
-genesis_transaction.transaction_outputs = [first_utxo]
-genesis_transaction.signature = 'signature123'
 
-b = Block(True, genesis_transaction)
 
-d = b.block_to_dict()
-print(d)
+
+
 
