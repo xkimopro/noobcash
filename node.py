@@ -19,6 +19,9 @@ class Node:
         self.stop_miner_thread = False 
         self.miner_broadcasting = False
         
+        self.resolving_confilct = False
+        self.votes = {}
+
         if is_bootstrap:
             self.current_id_count = 0
             self.config = config
@@ -303,6 +306,7 @@ class Node:
 
     def resolve_conflicts(self):
         # Ask nodes for longer chain
+        self.resolving_confilct = True
         self.broadcast_chain_request()
         pass
     
@@ -320,6 +324,71 @@ class Node:
                         break
                     except socket.error as e:
                         print("Could not connect to %s:%d" % (node['host'], node['port']))
+    
+    def add_vote(self, key, val):
+        if self.resolving_confilct:
+            if not key in self.votes: self.votes[key] = [val]
+            else: self.votes[key].append(val)
+            print(self.votes)
+            num_votes = 0
+            for len_hash in self.votes:
+                num_votes += len(self.votes[len_hash]) 
+            if (num_votes == self.config.nodes - 1):
+                max_len = -1
+                request_id = -1
+                
+                for len_hash in self.votes: max_len = max(max_len, int(len_hash.split(' ')[0]))
+                max_votes = -1
+                for len_hash in self.votes:
+                    if int(len_hash.split(' ')[0]) == max_len: max_votes = max(len(self.votes[len_hash]),max_votes)
+                for len_hash in self.votes:
+                    if len(self.votes[len_hash]) == max_votes: request_id = self.votes[len_hash][0]                              
+                self.request_longest_blockchain(request_id)
+                        
+        else:
+            print("Received a vote for a hash and length while not in resolve conflict phase") 
+               
+    def request_longest_blockchain(self,request_id):
+        for node in self.ring:
+            if node['id'] == request_id: 
+                with socket.socket() as temp_socket:                
+                    try:
+                        temp_socket.connect((node['host'], node['port']))
+                        self.messaging.connection = temp_socket
+                        self.messaging.requestBlockchainFromNode(self.id)
+                        break
+                    except socket.error as e:
+                        print("Could not connect to %s:%d" % (node['host'], node['port']))
+    
+    def send_blockchain(self, request_id):
+        for node in self.ring:
+            if node['id'] == request_id: 
+                for block in self.blockchain.block_list:
+                    with socket.socket() as temp_socket:                
+                        try:
+                            temp_socket.connect((node['host'], node['port']))
+                            self.messaging.connection = temp_socket
+                            self.messaging.sendBlockchainBlock(block)
+                        except socket.error as e:
+                            print("Could not connect to %s:%d" % (node['host'], node['port']))
+                with socket.socket() as temp_socket:                
+                    try:
+                        temp_socket.connect((node['host'], node['port']))
+                        self.messaging.connection = temp_socket
+                        dicted_transactions = []
+                        for transaction in self.list_of_transactions:
+                            dicted_transactions.append(transaction.toDict())
+                        self.messaging.sendTransactionListAndUtxos(dicted_transactions, self.utxos)
+                    except socket.error as e:
+                        print("Could not connect to %s:%d" % (node['host'], node['port']))       
+    
+    def discard_current_blockchain(self,):
+        self.blockchain = blockchain()
+    
+    def add_blockchain_block(self, block):
+        self.blockchain.add_block(block)
+    
+    
     
 class MinerThread(threading.Thread):
     

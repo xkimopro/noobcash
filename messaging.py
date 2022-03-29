@@ -54,6 +54,21 @@ class Message:
         if self.code == 7 and self.payload['message'] == 'sendPrevHashAndLength':
             return (self.payload['id'], self.payload['length'], self.payload['current_hash'])
         return None 
+    
+    def parseRequestBlockchainFromNode(self, ):
+        if self.code == 8 and self.payload['message'] == 'requestBlockchainFromNode':
+            return self.payload['request_id']
+        return None 
+    
+    def parseSendBlockchainBlock(self,):
+        if self.code == 9 and self.payload['message'] == 'sendBlockchainBlock':
+            return self.payload['block']
+        return None
+
+    def parseSendTransactionListAndUtxos(self,):
+        if self.code == 10 and self.payload['message'] == 'sendTransactionListAndUtxos':
+            return (self.payload['dicted_transactions'] , self.payload['utxos']) 
+        return None
 
 
 class Messaging:
@@ -145,6 +160,37 @@ class Messaging:
                 'id' : id,
                 'length' : length,
                 'current_hash' : current_hash
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def requestBlockchainFromNode(self, request_id):
+        message = {
+            'code' : 8,
+            'payload' : {
+                'message' : 'requestBlockchainFromNode',
+                'request_id' : request_id
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def sendBlockchainBlock(self, block):
+        message = {
+            'code' : 9,
+            'payload' : {
+                'message' : 'sendBlockchainBlock',
+                'block' : str(block)
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+        
+    def sendTransactionListAndUtxos(self, dicted_transactions , utxos):
+        message = {
+            'code' : 10,
+            'payload' : {
+                'message' : 'sendTransactionListAndUtxos',
+                'dicted_transactions' : dicted_transactions,
+                'utxos' : utxos
             }
         }
         self.connection.send(str.encode(json.dumps(message)))
