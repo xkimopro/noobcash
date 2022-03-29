@@ -69,7 +69,6 @@ class Transaction:
                     if self.transaction_inputs[i] != other.transaction_inputs[i]: 
                         return False 
                     if self.transaction_outputs[i].keys() != other.transaction_outputs[i].keys() and self.transaction_outputs[i].values() != other.transaction_outputs[i].values(): 
-                        print("XXXXX")
                         print(self.transaction_outputs[i].keys())
                         print(other.transaction_outputs[i].keys())
                         return False                                  

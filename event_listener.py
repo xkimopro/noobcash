@@ -50,7 +50,6 @@ class EventListeningThread(Thread):
                             if block.previous_hash != self.node.blockchain.get_latest_blocks_hash():
                                 print("Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm")
                                 self.node.resolve_conflicts()
-                    self.node.blockchain.print_blockchain()
 
                 if transaction is not None:
                     print("Received new transaction")
@@ -76,11 +75,10 @@ class EventListeningThread(Thread):
                         print("Discarding my blockchain receiving new one")
                         self.node.discard_current_blockchain()
                     self.node.add_blockchain_block(block)
-                    self.node.blockchain.print_blockchain()
                 if transaction_utxos is not None:
                     (dicted_transactions, utxos) = transaction_utxos
                     self.node.list_of_transactions = [ Transaction.parseNewTransaction(t, True) for t in dicted_transactions ]                    
                     self.node.utxos = utxos
-                    
+
                 
                 

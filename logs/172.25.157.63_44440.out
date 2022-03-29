@@ -1,0 +1,15 @@
+Starting backend...
+Noobcash bootstrap node started at 
+172.25.157.63
+:
+44440
+Transaction lvTaGChVXVgReYVjDX4SRmjJcTxsIGx6tPFKie5RyO0=validated
+Transaction idzHPUJJakdz5ifcLaPlcpyPenLfWHqui8b+83XmSaA=validated
+Starting mining process
+Transaction fqJF5rF6DduebHRBPSaTE2silnrBgNdNWbAncnAjEwM=validated
+{'1 NLiEyT7+hFm6GbgMGCeIrawcCgSacfpX4CX+0v2XIwc=': [1]}
+{'1 NLiEyT7+hFm6GbgMGCeIrawcCgSacfpX4CX+0v2XIwc=': [1, 2]}
+Discarding my blockchain receiving new one
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #1 is valid and ready to be added to the blockchain

@@ -13,6 +13,9 @@ from event_listener import EventListeningThread
 
 
 config = Config()
+    
+clear_my_log_file()
+    
 
 with socket.socket() as server_socket:
     try:

@@ -3,15 +3,17 @@
 import socket , json , os , time,sys
 from functions import *
 from config import Config
-
 from messaging import *
 from node import *    
-
 from event_listener import EventListeningThread
+
 
 config = Config()
  
 config.client_node_port = int(sys.argv[1]) 
+
+clear_my_log_file()
+
 
 # Send credentials to bootstrap
 with socket.socket() as client_socket:

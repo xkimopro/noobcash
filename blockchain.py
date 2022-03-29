@@ -1,5 +1,5 @@
 from block import Block
-
+import functions
 class blockchain:
     
     def __init__(self, ):

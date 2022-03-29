@@ -7,6 +7,8 @@ from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.backends import default_backend
 
 import base64
+import builtins
+
 
 class bcolors:
     HEADER = '\033[95m'
@@ -37,6 +39,37 @@ def informProblem(msg):
 def boldInform(msg):
     print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
 
+
+def clear_my_log_file():
+    config = Config()    
+    if sys.argv[0] == 'noobcash.py':
+        ip = config.bootstrap_node_host
+        port = str(config.bootstrap_node_port)
+    else: 
+        ip = config.client_node_host
+        port = sys.argv[1]
+    out_file = './logs/' + ip + '_' + port + '.out'    
+    with open(out_file, 'w') as f:
+        f.write("Starting backend..." + "\n")
+        
+    
+
+def print(*args, **kwargs):
+    config = Config()    
+    if sys.argv[0] == 'noobcash.py':
+        ip = config.bootstrap_node_host
+        port = str(config.bootstrap_node_port)
+    else: 
+        ip = config.client_node_host
+        port = sys.argv[1]        
+    out_file = './logs/' + ip + '_' + port + '.out'    
+    with open(out_file, 'a') as f:
+        for a in args:
+            f.write(str(a) + "\n")
+    if sys.argv[-1] != 'DEPLOYMENT':
+        builtins.print(*args, **kwargs)
+
+    
 
 def attemptBootstrapConnection(client_socket: socket, config : Config):
     print("Noobcash client started")
