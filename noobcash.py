@@ -20,8 +20,8 @@ with socket.socket() as server_socket:
         server_socket.bind((config.bootstrap_node_host, config.bootstrap_node_port))
     except socket.error as e:
         exitNoobcash(1,"Cannot start noobcash as bootstrap node")  
+    print("Noobcash bootstrap node started at ", config.bootstrap_node_host,":",config.bootstrap_node_port)
 
-    boldInform(f"Noobcash bootstrap node started at {config.bootstrap_node_host}:{config.bootstrap_node_port}")
     bootstrap_node = Node(True, config)
     bootstrap_node.messaging = Messaging(None, bootstrap_node.wallet.key)
     server_socket.listen(5)
@@ -83,6 +83,7 @@ with socket.socket() as server_socket:
                 
         #     # Balance
         #     elif choice == 'balance':
+
         #         print("hello3")
 
         #     # Help

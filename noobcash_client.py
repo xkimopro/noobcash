@@ -63,20 +63,23 @@ with socket.socket() as server_socket:
         #     choice = input()
 
         #     # Transaction
+        #     # t receiver amount
         #     if choice.startswith('t'):
-        #         print("hello1")
+        #         client_node.
 
         #     # View last transaction
         #     elif choice == 'view':
         #         print("hello2")
         #     # Balance
         #     elif choice == 'balance':
-        #         print("hello3")
-
+        #         balance = 0
+        #         for amount in client_node.utxos[client_node.id]:
+        #             balance += amount['amount']
+        #         print("My balance is: ", balance)
         #     # Help
         #     elif choice == 'help':
         #         print(help_message)
-
+            
         #     elif (choice == 'exit'):
         #         sys.exit(0)
 
