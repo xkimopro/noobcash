@@ -288,13 +288,38 @@ class Node:
         
         
 	# def valid_chain(self, chain):
-	# 	#check for the longer chain accroose all nodes
+	# 	#check for the longer chain accross all nodes
 
+    def broadcast_chain_request(self,):
+        for node in self.ring:
+            if not self.is_myself(node): 
+                with socket.socket() as temp_socket:                
+                    try:
+                        temp_socket.connect((node['host'], node['port']))
+                        self.messaging.connection = temp_socket
+                        self.messaging.requestPrevHashAndLength(self.id)
+                    except socket.error as e:
+                        print("Could not connect to %s:%d" % (node['host'], node['port']))
 
     def resolve_conflicts(self):
         # Ask nodes for longer chain
-        self.messaging.requestPrevHashAndLength()
+        self.broadcast_chain_request()
         pass
+    
+    def send_hash_length(self,conflict_id):
+        id = self.id
+        length = len(self.blockchain.block_list)
+        current_hash = self.blockchain.get_latest_blocks_hash()
+        for node in self.ring:
+            if node['id'] == conflict_id: 
+                with socket.socket() as temp_socket:                
+                    try:
+                        temp_socket.connect((node['host'], node['port']))
+                        self.messaging.connection = temp_socket
+                        self.messaging.sendPrevHashAndLength(id, length, current_hash)
+                        break
+                    except socket.error as e:
+                        print("Could not connect to %s:%d" % (node['host'], node['port']))
     
 class MinerThread(threading.Thread):
     

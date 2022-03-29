@@ -43,7 +43,6 @@ with socket.socket() as server_socket:
     event_listening_thread = EventListeningThread(bootstrap_node, server_socket)
     event_listening_thread.start()
     
-    
     time.sleep(1)
     
     

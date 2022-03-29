@@ -47,7 +47,7 @@ class Message:
 
     def parseRequestPrevHashAndLength(self, ):
         if self.code == 6 and self.payload['message'] == 'requestPrevHashAndLength':
-            return True
+            return self.payload['id']
         return None 
 
     def parseSendPrevHashAndLength(self, ):
@@ -127,11 +127,12 @@ class Messaging:
         }
         self.connection.send(str.encode(json.dumps(message)))
 
-    def requestPrevHashAndLength(self, ):
+    def requestPrevHashAndLength(self, id):
         message = {
             'code' : 6,
             'payload' : {
                 'message' : 'requestPrevHashAndLength',
+                'id' : id
             }
         }
         self.connection.send(str.encode(json.dumps(message)))
