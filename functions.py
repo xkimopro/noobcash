@@ -28,14 +28,14 @@ def exitNoobcash(error_code, msg):
     print(json.dumps(d, indent=2))
     quit()
 
-# def inform(msg):
-#     print(f"{bcolors.HEADER}{msg}{bcolors.ENDC}")
+def inform(msg):
+    print(f"{bcolors.HEADER}{msg}{bcolors.ENDC}")
 
-# def informProblem(msg):
-#     print(f"{bcolors.FAIL}{msg}{bcolors.ENDC}")
+def informProblem(msg):
+    print(f"{bcolors.FAIL}{msg}{bcolors.ENDC}")
 
-# def boldInform(msg):
-#     print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
+def boldInform(msg):
+    print(f"{bcolors.BOLD}{bcolors.HEADER}{msg}{bcolors.ENDC}{bcolors.ENDC}")
 
 
 def attemptBootstrapConnection(client_socket: socket, config : Config):
