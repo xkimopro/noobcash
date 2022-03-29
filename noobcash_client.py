@@ -42,6 +42,7 @@ with socket.socket() as server_socket:
     
     while True:
         time.sleep(1)
+        stdout_print("Hello")
         # help_message = '''
             
         # Available commands:

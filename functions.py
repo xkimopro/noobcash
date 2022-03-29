@@ -54,6 +54,10 @@ def clear_my_log_file():
         
     
 
+def stdout_print(*args, **kwargs):
+    builtins.print(*args, **kwargs)
+    
+
 def print(*args, **kwargs):
     config = Config()    
     if sys.argv[0] == 'noobcash.py':
@@ -66,9 +70,13 @@ def print(*args, **kwargs):
     with open(out_file, 'a') as f:
         for a in args:
             f.write(str(a) + "\n")
-    if sys.argv[-1] != 'DEPLOYMENT':
+    if sys.argv[-1] == 'DEPLOYMENT':
+        if 'cli' in kwargs:
+            builtins.print(*args, **kwargs)
+    else:
         builtins.print(*args, **kwargs)
-
+        
+        
     
 
 def attemptBootstrapConnection(client_socket: socket, config : Config):

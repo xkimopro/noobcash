@@ -51,9 +51,9 @@ with socket.socket() as server_socket:
     for i in range(config.nodes - 1):
         initial_client_transaction = bootstrap_node.create_transaction(i+1,100)
 
-    initial_client_transaction = bootstrap_node.create_transaction(1,10)
-    time.sleep(1)
-    bootstrap_node.resolve_conflicts()
+    # initial_client_transaction = bootstrap_node.create_transaction(1,10)
+    # time.sleep(1)
+    # bootstrap_node.resolve_conflicts()
     
     while True:
         time.sleep(1)
