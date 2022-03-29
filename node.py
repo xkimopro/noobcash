@@ -293,6 +293,7 @@ class Node:
 
     def resolve_conflicts(self):
         # Ask nodes for longer chain
+        self.messaging.requestPrevHashAndLength()
         pass
     
 class MinerThread(threading.Thread):

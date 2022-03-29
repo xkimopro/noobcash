@@ -27,6 +27,9 @@ class EventListeningThread(Thread):
                 block = m.parseBroadcastBlock() 
                 transaction = m.parseBroadcastTransaction()
                 blockchain = m.parseBroadcastBlockchain()
+                conflict = m.parseRequestPrevHashAndLength()
+                hash_length = m.parseSendPrevHashAndLength()
+
                 if block is not None:
                     block = Block.parseNewBlock(block)
                     print("Received block #" + str(block.index))
@@ -42,6 +45,7 @@ class EventListeningThread(Thread):
                             self.node.blockchain.add_block(block)
                             self.node.list_of_transactions = []
                             print("Block #"+str(block.index)+" is valid and ready to be added to the blockchain")
+                            self.resolve_conflicts()
                         else: 
                             
                             print("Valid block discarded. Checking if received block's previous hash matches current block hash or not")                    
@@ -59,5 +63,15 @@ class EventListeningThread(Thread):
                         self.node.add_transaction_to_block(transaction)
                 if blockchain is not None:
                     pass
+                if conflict is not None:
+                    id = self.node.id
+                    length = len(self.node.blockchain.block_list)
+                    current_hash = self.node.blockchain.get_latest_blocks_hash()
+                    self.node.messaging.sendPrevHashAndLength(id,length,current_hash)
+                if hash_length is not None:
+                    (id, length, current_hash) = hash_length
+                    key = str(length) + '_' + str(current_hash)
+                    print(key)
+
                 
                 

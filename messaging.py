@@ -21,13 +21,8 @@ class Message:
             informProblem(f"Message from {bytesFromPublicKeyObj(sender_public_key).decode()} discarded \n-Reason: {json.dumps(status)}")
 
     def parseClientInitMessage(self, ):
-        if self.code == 0 and self.payload['message'] == 'clientInitMessage':
+        if self.code == 1 and self.payload['message'] == 'clientInitMessage':
             return self.payload['public_key_bytes'] , self.payload['host'] , self.payload['port']
-        return None
-
-    def parseCliInitMessage(self, ):
-        if self.code == 1 and self.payload['message'] == 'cliInitMessage':
-            return self.payload['id'] , self.payload['host'] , self.payload['port']
         return None
 
     def parseBootstrapSendRing(self, ):
@@ -46,8 +41,18 @@ class Message:
         return None 
     
     def parseBroadcastBlockchain(self, ):
-        if self.code == 4 and self.payload['message'] == 'broadcastNewBlockchain':
+        if self.code == 5 and self.payload['message'] == 'broadcastNewBlockchain':
             return self.payload['blockchain'] 
+        return None 
+
+    def parseRequestPrevHashAndLength(self, ):
+        if self.code == 6 and self.payload['message'] == 'requestPrevHashAndLength':
+            return True
+        return None 
+
+    def parseSendPrevHashAndLength(self, ):
+        if self.code == 7 and self.payload['message'] == 'sendPrevHashAndLength':
+            return (self.payload['id'], self.payload['length'], self.payload['current_hash'])
         return None 
 
 
@@ -71,7 +76,7 @@ class Messaging:
 
     def clientInitMessage(self, public_key_bytes, host , port):
         message = {
-            'code' : 0,
+            'code' : 1,
             'payload' : {
                 'message' : 'clientInitMessage',
                 'public_key_bytes' : public_key_bytes.decode(), 
@@ -79,19 +84,6 @@ class Messaging:
                 'port' : port
             }
         }
-        self.connection.send(str.encode(json.dumps(message)))
-
-    def cliInitMessage(self, id, host , port):
-        message = {
-            'code' : 1,
-            'payload' : {
-                'message' : 'cliInitMessage',
-                'id' : id, 
-                'host' : host ,
-                'port' : port
-            }
-        }
-        print(str.encode(json.dumps(message)))
         self.connection.send(str.encode(json.dumps(message)))
 
 
@@ -131,6 +123,27 @@ class Messaging:
             'payload' : {
                 'message' : 'broadcastNewBlockchain',
                 'blockchain' : str(blockchain)
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def requestPrevHashAndLength(self, ):
+        message = {
+            'code' : 6,
+            'payload' : {
+                'message' : 'requestPrevHashAndLength',
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def sendPrevHashAndLength(self, id, length, current_hash):
+        message = {
+            'code' : 7,
+            'payload' : {
+                'message' : 'sendPrevHashAndLength',
+                'id' : id,
+                'length' : length,
+                'current_hash' : current_hash
             }
         }
         self.connection.send(str.encode(json.dumps(message)))

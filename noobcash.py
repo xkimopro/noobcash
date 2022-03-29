@@ -26,12 +26,6 @@ with socket.socket() as server_socket:
     bootstrap_node = Node(True, config)
     bootstrap_node.messaging = Messaging(None, bootstrap_node.wallet.key)
     server_socket.listen(5)
-    with socket.socket() as cli_socket: 
-        # 2) to cli
-        attemptCliConnection(cli_socket, config)
-        cli_messaging = Messaging(cli_socket, bootstrap_node.wallet.key)
-        m = cli_messaging.cliInitMessage(bootstrap_node.id,config.cli_client_node_host, config.cli_client_node_port)
-        inform("Send my credentials to cli")
 
     for i in range(config.nodes - 1):
         client_conn, address = server_socket.accept()
@@ -42,11 +36,8 @@ with socket.socket() as server_socket:
         
     bootstrap_node.broadcast_ring()
 
-    # time.sleep(1)
-
-
-    # # Close Temp Connections
-    # bootstrap_node.close_client_temp_connections()
+    # Close Temp Connections
+    bootstrap_node.close_client_temp_connections()
 
     # Start Event Listening Thread
     event_listening_thread = EventListeningThread(bootstrap_node, server_socket)
@@ -61,22 +52,47 @@ with socket.socket() as server_socket:
         initial_client_transaction = bootstrap_node.create_transaction(i+1,100)
 
     while True:
-        # Initiate your socket to connect to cli 
-        with socket.socket() as cli_server_socket:
-            try:
-                cli_server_socket.bind((config.cli_client_node_host, config.cli_client_node_port))
-            except socket.error as e:
-                exitNoobcash(1,"Cli Client cannot start its socket server at specified port")  
+        time.sleep(1)
+        # help_message = '''
             
-            cli_server_socket.listen(5)
-            
-            # # Start Event Listening Thread
-            # cli_event_listening_thread = EventListeningThread(bootstrap_node, cli_server_socket)
-            # cli_event_listening_thread.start()
+        # Available commands:
+        # * "t [recepient_address] [amount]"                        Send `amount` NBC to `recepient` node
+        # * "view"                                                  View transactions of the latest block
+        # * "balance"                                               View balance of each wallet (last validated block)
+        # * "help"                                                  Print this help message
+        # * "exit"                                                  Exit client 
+        # '''
 
-            while True:
-                time.sleep(1)
-        
+        # print("====================")
+        # print(" WELCOME TO NOOBCASH")
+        # print("====================")
+
+        # while (1):
+        #     print("Enter an action! Type help for more specific info")
+        #     choice = input()
+
+        #     # Transaction
+        #     if choice.startswith('t'):
+        #         print("hello1")
+
+        #     # View last transaction
+        #     elif choice == 'view':
+        #         print("hello2")
+                
+        #     # Balance
+        #     elif choice == 'balance':
+        #         print("hello3")
+
+        #     # Help
+        #     elif choice == 'help':
+        #         print(help_message)
+
+        #     elif (choice == 'exit'):
+        #         sys.exit(0)
+
+        #     else:
+        #         print("Invalid action")
+
     
     
     
