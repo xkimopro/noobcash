@@ -5,6 +5,7 @@ from block import Block
 from blockchain import blockchain
 from functions import *
 import signal, os, threading
+from threading import Thread, Lock
 
 
 class Node:
@@ -15,12 +16,16 @@ class Node:
         self.blockchain = blockchain()
         self.messaging = None
         self.list_of_transactions = []
+        self.timestamp = 0
+        self.transactions = 0
         
         self.stop_miner_thread = False 
         self.miner_broadcasting = False
         
         self.resolving_confilct = False
         self.votes = {}
+        self.mutex = Lock()
+
 
         if is_bootstrap:
             self.current_id_count = 0
@@ -122,6 +127,7 @@ class Node:
                     try:
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
+                        print("Broadcasting block")
                         self.messaging.broadcastBlock(block)
                     except socket.error as e:
                         print("Could not connect to %s:%d" % (node['host'], node['port']))
@@ -155,6 +161,7 @@ class Node:
 
         # change utxos through add transaction to the block
         self.add_transaction_to_block(new_transaction)
+        
 
 
 
@@ -255,11 +262,13 @@ class Node:
         while True:
             if self.stop_miner_thread: 
                 self.stop_miner_thread = False 
+                self.mutex.release()
                 quit()                         
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
                 if self.stop_miner_thread: 
                     self.stop_miner_thread = False 
+                    self.mutex.release()
                     quit()                         
                 print("Found nonce "+str(nonce)+" for block with index " + str(index))
                 return block
@@ -405,6 +414,7 @@ class MinerThread(threading.Thread):
 
         
     def run(self,*args,**kwargs):
+        self.parent_node.mutex.acquire()
         mined_block = self.parent_node.mine_block()
         self.parent_node.miner_broadcasting = True
         # Add to yourself first

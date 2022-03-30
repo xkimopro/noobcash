@@ -1,0 +1,31 @@
+Starting backend...
+Noobcash client started
+Trying to connect to bootstrap node socket server
+Connected through TCP at 
+192.168.2.9
+:
+44440
+[95mSend my credentials to bootstrap[0m
+Received block #0
+Block is of genesis type
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction UMlZr+d7UT6iFln8pNwlzX2WiF/RjOtAKmk8CKNHrTI=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction VUNWjKbTcH2FLniU4lswbNPO65yQLTBNZPguoDadeOI=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction YGYXQW58tWY8P4PKrNp6NuyF7n4oBuJDFBjGHH6zLMA=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction QO4t6bYjUXPJ76xUFooWOVyTbDkHwijI42fUH1Zkps0=validated
+Received new transaction
+Transaction tfbt6p6Ie5j1ou3H2cDOX+wDCI2Nz62r/QY5+5acAzE=validated
+Starting mining process
+Received new transaction
+Found nonce 51658 for block with index 1
+Could not connect to 192.168.2.9:44440
+Broadcasting block
+Broadcasting block
+Could not connect to 192.168.2.9:44448

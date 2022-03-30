@@ -41,6 +41,7 @@ with socket.socket() as server_socket:
     bootstrap_node.close_client_temp_connections()
 
     # Start Event Listening Thread
+    start_time = time.time()
     event_listening_thread = EventListeningThread(bootstrap_node, server_socket)
     event_listening_thread.start()
     
@@ -56,7 +57,33 @@ with socket.socket() as server_socket:
     # bootstrap_node.resolve_conflicts()
     
     while True:
-        time.sleep(1)
+        time.sleep(25)
+        File_name = "transactions" + str(0) + ".txt"
+        Path = './transactions/5nodes/' + File_name 
+
+        File = open(Path, 'r')
+        stdout_print("made it")
+        Lines = File.readlines()
+        for line in Lines:
+            input = line.split()
+            amount = int(input[1])
+            id = int(input[0][2])
+            time.sleep(0.1)
+            try:
+                bootstrap_node.mutex.acquire()
+                bootstrap_node.node.create_transaction(id, amount)
+            except:
+                stdout_print("transaction rejected")
+            bootstrap_node.mutex.release()
+
+        throughput_time = bootstrap_node.timestamp - start_time
+        completed_trans = bootstrap_node.transactions
+        stdout_print(throughput_time)
+        stdout_print(completed_trans)
+        break
+    stdout_print("Im sleeping")
+    time.sleep(20000)
+    stdout_print("I finished sleeping")
         # help_message = '''
             
         # Available commands:
@@ -65,7 +92,8 @@ with socket.socket() as server_socket:
         # * "balance"                                               View balance of each wallet (last validated block)
         # * "help"                                                  Print this help message
         # * "file"                                                  Read from file transactions
-        # * "exit"                                                  Exit client 
+        # * "exit" 
+        #                                                           Exit client 
         # '''
 
         # print("====================")

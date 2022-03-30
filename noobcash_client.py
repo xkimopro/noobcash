@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import socket , json , os , time,sys
+import socket , json , os , time,sys, time
 from functions import *
 from config import Config
 from messaging import *
@@ -37,12 +37,36 @@ with socket.socket() as server_socket:
     server_socket.listen(5)
     
     # Start Event Listening Thread
+    start_time = time.time()
+
     event_listening_thread = EventListeningThread(client_node, server_socket)
     event_listening_thread.start()
     
     while True:
-        time.sleep(1)
-        stdout_print("Hello")
+        time.sleep(25)
+        File_name = "transactions" + str(client_node.id) + ".txt"
+        Path = './transactions/5nodes/' + File_name 
+
+        File = open(Path, 'r')
+        Lines = File.readlines()
+        for line in Lines:
+            input = line.split()
+            amount = int(input[1])
+            id = int(input[0][2])
+            try:
+                client_node.mutex.acquire()
+                client_node.create_transaction(id, amount)
+            except Exception as e:
+                stdout_print("transaction rejected", str(e))
+            client_node.mutex.release()
+
+        throughput_time = client_node.timestamp - start_time
+        completed_trans = client_node.transactions
+        stdout_print(throughput_time)
+        stdout_print(completed_trans)
+        break
+    time.sleep(20000)
+
         # help_message = '''
             
         # Available commands:

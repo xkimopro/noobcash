@@ -44,6 +44,8 @@ class EventListeningThread(Thread):
                             self.node.blockchain.add_block(block)
                             self.node.list_of_transactions = []
                             print("Block #"+str(block.index)+" is valid and ready to be added to the blockchain")
+                            self.node.timestamp = time.time()
+                            self.node.transactions = self.node.transactions + 1
                         else: 
                             
                             print("Valid block discarded. Checking if received block's previous hash matches current block hash or not")                    
@@ -54,10 +56,16 @@ class EventListeningThread(Thread):
                 if transaction is not None:
                     print("Received new transaction")
                     transaction = Transaction.parseNewTransaction(transaction)
-                    valid = self.node.validate_transaction(transaction)
-                    if valid:
+                    try:
+                        self.node.mutex.acquire()
+                        self.node.validate_transaction(transaction)
                         print("Transaction validated. Adding to transaction list ( current block under construction )")
                         self.node.add_transaction_to_block(transaction)
+                        
+                    except Exception as e:
+                        stdout_print(str(e))
+                        
+                    self.node.mutex.release()
                 if conflict_id is not None:
                     self.node.send_hash_length(conflict_id)
                 if hash_length is not None:
