@@ -67,7 +67,10 @@ class Message:
 
     def parseSendTransactionListAndUtxos(self,):
         if self.code == 10 and self.payload['message'] == 'sendTransactionListAndUtxos':
-            return (self.payload['dicted_transactions'] , self.payload['utxos']) 
+            new_utxos = {}
+            for node_id in  self.payload['utxos']:
+                new_utxos[int(node_id)] = self.payload['utxos'][node_id]
+            return (self.payload['dicted_transactions'] , new_utxos) 
         return None
 
 

@@ -96,7 +96,7 @@ class Node:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
-                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
+                        temp_socket.settimeout(12)
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.broadcastTransaction(transaction)
@@ -125,7 +125,7 @@ class Node:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
-                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
+                        temp_socket.settimeout(12)
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         print("Broadcasting block")
@@ -159,13 +159,15 @@ class Node:
         new_transaction.transaction_outputs = [utxo_sender, utxo_receiver]
         new_transaction.signTransaction(self.wallet.key)
 
+        
+
+        print("Transaction with id " + str(new_transaction.transaction_id) + " issued. Now broadcasting. ")
         self.broadcast_transaction(new_transaction)
+        print("Transaction with id " + str(new_transaction.transaction_id) + " broadcasted. Now registering to block. ")
 
         # change utxos through add transaction to the block
         self.add_transaction_to_block(new_transaction)
         
-
-
 
     def validate_transaction(self, transaction): # use of signature and NBCs balance
         
@@ -219,9 +221,10 @@ class Node:
         # verify that inputs are utxos
         sender_id = self.id_from_pub_key(transaction_dict['sender_address'])
         sender_utxos = self.utxos[sender_id]
+        initial_utxos = sender_utxos.copy()
         # print(sender_utxos)
         budget = 0
-        for txin_id in transaction_dict['transaction_inputs']:
+        for txin_id in transaction_dict['transaction_inputs']:   
             found = False
             for utxo in sender_utxos:
                 # print(utxo['who'])
@@ -234,9 +237,6 @@ class Node:
 
             if not found:
                 raise Exception('missing transaction inputs')
-
-        if sender_utxos != []:
-            raise Exception('forgot a utxo')
 
         # verify money is enough
         if budget < transaction_dict['amount']:
@@ -256,11 +256,11 @@ class Node:
         self.utxos[receiver_id].append(utxo_receiver)
 
         self.list_of_transactions.append(transaction)
-        print("Transaction " +transaction.transaction_id+ "validated")
+        self.list_of_transactions.sort(key=lambda x: x.transaction_id)
+        print("Transaction " + str(transaction.transaction_id) + " added to list of transactions")
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
             print("Starting mining process. Benchmarker releasing lock")
-            self.mutex.release()
             self.mining=True
             miner_thread = MinerThread(self)
             miner_thread.start()
@@ -274,13 +274,17 @@ class Node:
         nonce = 0
         while True:
             if self.stop_miner_thread: 
+                print("Stopping nonce")
+                
                 self.stop_miner_thread = False 
                 self.mining = False
                 self.mutex.release()
+                
                 quit()                         
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
                 if self.stop_miner_thread: 
+                    print("Stopping accepted")
                     self.stop_miner_thread = False
                     self.mining = False
                     self.mutex.release() 
@@ -330,7 +334,7 @@ class Node:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
-                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
+                        temp_socket.settimeout(12)
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.requestPrevHashAndLength(self.id)
@@ -344,15 +348,15 @@ class Node:
         self.broadcast_chain_request()
         pass
     
-    def send_hash_length(self,conflict_id):
+    def send_hash_length(self,conflict_id,dont_count_me):
         id = self.id
-        length = len(self.blockchain.block_list)
+        length = len(self.blockchain.block_list) if not dont_count_me else 0
         current_hash = self.blockchain.get_latest_blocks_hash()
         for node in self.ring:
             if node['id'] == conflict_id: 
                 with socket.socket() as temp_socket:                
                     try:
-                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
+                        temp_socket.settimeout(12)
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.sendPrevHashAndLength(id, length, current_hash)
@@ -368,16 +372,18 @@ class Node:
             num_votes = 0
             for len_hash in self.votes:
                 num_votes += len(self.votes[len_hash]) 
+            
             if (num_votes == self.config.nodes - 1):
                 max_len = -1
                 request_id = -1
                 
                 for len_hash in self.votes: max_len = max(max_len, int(len_hash.split(' ')[0]))
+                print("Decided on max length = " + str(max_len))
                 max_votes = -1
                 for len_hash in self.votes:
                     if int(len_hash.split(' ')[0]) == max_len: max_votes = max(len(self.votes[len_hash]),max_votes)
                 for len_hash in self.votes:
-                    if len(self.votes[len_hash]) == max_votes: request_id = self.votes[len_hash][0]                              
+                    if max_len==int(len_hash.split(' ')[0]) and len(self.votes[len_hash]) == max_votes: request_id = self.votes[len_hash][0]                              
                 self.request_longest_blockchain(request_id)
                         
         else:
@@ -388,7 +394,7 @@ class Node:
             if node['id'] == request_id: 
                 with socket.socket() as temp_socket:                
                     try:
-                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
+                        temp_socket.settimeout(12)
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.requestBlockchainFromNode(self.id)
@@ -402,7 +408,7 @@ class Node:
                 for block in self.blockchain.block_list:
                     with socket.socket() as temp_socket:                
                         try:
-                            temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
+                            temp_socket.settimeout(12)
                             temp_socket.connect((node['host'], node['port']))
                             self.messaging.connection = temp_socket
                             self.messaging.sendBlockchainBlock(block)
@@ -442,7 +448,6 @@ class MinerThread(threading.Thread):
 
         
     def run(self,*args,**kwargs):
-        self.parent_node.mutex.acquire()
         mined_block = self.parent_node.mine_block()
 
         if self.parent_node.blockchain.get_latest_blocks_index() != mined_block.index:
@@ -452,5 +457,5 @@ class MinerThread(threading.Thread):
             self.parent_node.broadcast_block(mined_block)
         else:
             print("Someone broadcasted first. Dropping newly found block with index " + str(mined_block.index) )
-        self.mining = False
+        self.parent_node.mining = False
         self.parent_node.mutex.release()
