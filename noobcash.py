@@ -10,6 +10,7 @@ from config import Config
 from node import *
 
 from event_listener import EventListeningThread
+from benchmark import Benchmark
 
 
 config = Config()
@@ -50,40 +51,16 @@ with socket.socket() as server_socket:
     
     bootstrap_node.create_and_broadcast_genesis_block()
     for i in range(config.nodes - 1):
+        bootstrap_node.mutex.acquire()
         initial_client_transaction = bootstrap_node.create_transaction(i+1,100)
-
-    # initial_client_transaction = bootstrap_node.create_transaction(1,10)
-    # time.sleep(1)
-    # bootstrap_node.resolve_conflicts()
     
-    while True:
-        time.sleep(25)
-        File_name = "transactions" + str(0) + ".txt"
-        Path = './transactions/5nodes/' + File_name 
-
-        File = open(Path, 'r')
-        stdout_print("made it")
-        Lines = File.readlines()
-        for line in Lines:
-            input = line.split()
-            amount = int(input[1])
-            id = int(input[0][2])
-            time.sleep(0.1)
-            try:
-                bootstrap_node.mutex.acquire()
-                bootstrap_node.node.create_transaction(id, amount)
-            except:
-                stdout_print("transaction rejected")
-            bootstrap_node.mutex.release()
-
-        throughput_time = bootstrap_node.timestamp - start_time
-        completed_trans = bootstrap_node.transactions
-        stdout_print(throughput_time)
-        stdout_print(completed_trans)
-        break
-    stdout_print("Im sleeping")
-    time.sleep(20000)
-    stdout_print("I finished sleeping")
+    
+    time.sleep(1)
+    
+    benchmark = Benchmark(bootstrap_node,start_time)
+    benchmark.start()
+    
+    
         # help_message = '''
             
         # Available commands:

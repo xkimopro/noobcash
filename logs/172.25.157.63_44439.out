@@ -1,0 +1,87 @@
+Starting backend...
+Noobcash bootstrap node started at 
+172.25.157.63
+:
+44439
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Transaction ngcgzGvs1Hjx4cO7t9aNZTO+Woa7WAPuyQY/kupiWvs=validated
+Transaction PFXC26eqgloSCVJtKKQu8d1WMOFNKRdwqHMr7MHXXnw=validated
+Transaction uzgz4rMWix4Uix0/5NAFvkpRKZSPrG4UGbgTa2UZAY4=validated
+Transaction gl+XFTPfSItjuSQU2qGd2UtUXtSL+Zbc0DOP5r0hdRU=validated
+Transaction b2KmmILdyLcLtXe3aSe0dK17le359mYZ5Y8W3BC9YZs=validated
+Starting mining process. Benchmarker releasing lock
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #1 is valid and ready to be added to the blockchain
+Currently mining caching packet
+Transaction wwhp6MdovlZeNeABr49P4hXdYNnzD5VNaIAdQARhCwE=validated
+Transaction 3pi1Nbafi1I3vULeMdLGcuwhCtkriOUrOQdoTdGxdX4=validated
+Transaction IGc1zvElQg4K1L1Bdoj7NkgIIt1k4W7WRWUg+fB0H+I=validated
+Transaction NDsOXGxJd5rWoHaFWdOs37P5DhrpFspwkQFBc/hzgxI=validated
+Transaction 8xUmNDyp9aTRjDyU2x+H1dydV0h7LjXIVvL+XQGOzqg=validated
+Starting mining process. Benchmarker releasing lock
+Received block #2
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #2 is valid and ready to be added to the blockchain
+Popping message from cached messages queue instead of socket
+Transaction /HJaqj+W9NFO5Olay89H8LrucaFjgfWVrN16Y3OdAIg=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction Q7l7j8Ga3JlNP3M1VNCMju7oq/NX+ZFF1XKtifvGRCQ=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction j8W1HP68f2M9SBMsKF/L1FY91UU3zY22jZRo/DeGBSI=validated
+Received new transaction
+Received new transaction
+Transaction GGpdbeRpa/+JEr1PLW6X1w36K32CYI2dQe2DoUtAuuk=validated
+Received new transaction
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction d7ffpwXw2FDY1TAAKqJU6Fe8sRVcmCjVyP9gNgae3pA=validated
+Starting mining process. Benchmarker releasing lock
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Received block #3
+Block invalid because: Transactions lists dont match
+Valid block discarded.
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Found nonce 31316 for block with index 3
+Broadcasting newly found block with index 3
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Currently mining caching packet
+Received block #4
+Block invalid because: Wrong index or previous hash
+Valid block discarded.
+Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm
+Could not connect to 172.25.157.63:44446
+Transaction 1esrqUHskn3IAhnueiVANK8i8o+38sGiWIS9o48dhug=validated
+Lock acquired
+Could not connect to 172.25.157.63:44446
+Currently mining caching packet
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.

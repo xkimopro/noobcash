@@ -1,0 +1,120 @@
+Starting backend...
+Noobcash client started
+Trying to connect to bootstrap node socket server
+Connected through TCP at 
+172.25.157.63
+:
+44439
+[95mSend my credentials to bootstrap[0m
+Received block #0
+Block is of genesis type
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction ngcgzGvs1Hjx4cO7t9aNZTO+Woa7WAPuyQY/kupiWvs=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction PFXC26eqgloSCVJtKKQu8d1WMOFNKRdwqHMr7MHXXnw=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction uzgz4rMWix4Uix0/5NAFvkpRKZSPrG4UGbgTa2UZAY4=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction gl+XFTPfSItjuSQU2qGd2UtUXtSL+Zbc0DOP5r0hdRU=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction b2KmmILdyLcLtXe3aSe0dK17le359mYZ5Y8W3BC9YZs=validated
+Starting mining process. Benchmarker releasing lock
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #1 is valid and ready to be added to the blockchain
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction wwhp6MdovlZeNeABr49P4hXdYNnzD5VNaIAdQARhCwE=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction 3pi1Nbafi1I3vULeMdLGcuwhCtkriOUrOQdoTdGxdX4=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction IGc1zvElQg4K1L1Bdoj7NkgIIt1k4W7WRWUg+fB0H+I=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction NDsOXGxJd5rWoHaFWdOs37P5DhrpFspwkQFBc/hzgxI=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction 8xUmNDyp9aTRjDyU2x+H1dydV0h7LjXIVvL+XQGOzqg=validated
+Starting mining process. Benchmarker releasing lock
+Received block #2
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #2 is valid and ready to be added to the blockchain
+Currently mining caching packet
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction /HJaqj+W9NFO5Olay89H8LrucaFjgfWVrN16Y3OdAIg=validated
+Popping message from cached messages queue instead of socket
+Received new transaction
+Transaction Q7l7j8Ga3JlNP3M1VNCMju7oq/NX+ZFF1XKtifvGRCQ=validated
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction j8W1HP68f2M9SBMsKF/L1FY91UU3zY22jZRo/DeGBSI=validated
+Received new transaction
+Received new transaction
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction GGpdbeRpa/+JEr1PLW6X1w36K32CYI2dQe2DoUtAuuk=validated
+Received new transaction
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction d7ffpwXw2FDY1TAAKqJU6Fe8sRVcmCjVyP9gNgae3pA=validated
+Starting mining process. Benchmarker releasing lock
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Received block #3
+Block invalid because: Transactions lists dont match
+Valid block discarded.
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Received block #3
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #3 is valid and ready to be added to the blockchain
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Popping message from cached messages queue instead of socket
+Received new transaction
+Could not connect to 172.25.157.63:44446
+Transaction cxatMKz5H6KVzW1xoWa/nVV+Z2AetDSlazBwmuTLJvk=validated
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction 1esrqUHskn3IAhnueiVANK8i8o+38sGiWIS9o48dhug=validated
+Received block #2
+Block invalid because: Wrong index or previous hash
+Valid block discarded.
+Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm
+Lock acquired
+Could not connect to 172.25.157.63:44446
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.

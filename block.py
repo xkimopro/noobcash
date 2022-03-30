@@ -50,8 +50,9 @@ class Block:
 	
 
 	def is_hash_accepted(self,):
+		hex_hash =  base64.b64decode(self.current_hash).hex()
 		for i in range(config.difficulty):
-			if self.current_hash[i] != '0':
+			if hex_hash[i] != '0':
 				return False
 		return True
 

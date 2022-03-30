@@ -1,0 +1,105 @@
+Starting backend...
+Noobcash client started
+Trying to connect to bootstrap node socket server
+Connected through TCP at 
+172.25.157.63
+:
+44439
+[95mSend my credentials to bootstrap[0m
+Received block #0
+Block is of genesis type
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction ngcgzGvs1Hjx4cO7t9aNZTO+Woa7WAPuyQY/kupiWvs=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction PFXC26eqgloSCVJtKKQu8d1WMOFNKRdwqHMr7MHXXnw=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction uzgz4rMWix4Uix0/5NAFvkpRKZSPrG4UGbgTa2UZAY4=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction gl+XFTPfSItjuSQU2qGd2UtUXtSL+Zbc0DOP5r0hdRU=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction b2KmmILdyLcLtXe3aSe0dK17le359mYZ5Y8W3BC9YZs=validated
+Starting mining process. Benchmarker releasing lock
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #1 is valid and ready to be added to the blockchain
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction wwhp6MdovlZeNeABr49P4hXdYNnzD5VNaIAdQARhCwE=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction 3pi1Nbafi1I3vULeMdLGcuwhCtkriOUrOQdoTdGxdX4=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction IGc1zvElQg4K1L1Bdoj7NkgIIt1k4W7WRWUg+fB0H+I=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction NDsOXGxJd5rWoHaFWdOs37P5DhrpFspwkQFBc/hzgxI=validated
+Received new transaction
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction 8xUmNDyp9aTRjDyU2x+H1dydV0h7LjXIVvL+XQGOzqg=validated
+Starting mining process. Benchmarker releasing lock
+Found nonce 1769 for block with index 2
+Broadcasting newly found block with index 2
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Transaction 7GQMQ3jmuU6tncrWZenn6cOP64Snpk0uEwlGQlQCMss=validated
+Currently mining caching packet
+Transaction w1s7ubnSQ9VzLyEZXZ/hwlNc0seqphYHvMM9NWjGIxs=validated
+Currently mining caching packet
+Currently mining caching packet
+Currently mining caching packet
+Transaction VGFdPwlzOsIoBLOwA+rvGAxQ1qrQ59+7ZcGB9uHlBH4=validated
+Transaction 6TfbR4A+UB4Eb2IeCq0ehVqKpsK2XY1CINLv7wdPTBc=validated
+Currently mining caching packet
+Transaction qeL38s4Sp5rmjkogMY7VE9qd4SrSmw8zC+Crt6OPaGY=validated
+Starting mining process. Benchmarker releasing lock
+Currently mining caching packet
+Currently mining caching packet
+Found nonce 15554 for block with index 3
+Broadcasting newly found block with index 3
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Transaction D5nWXzBVlrFm76OvmtsoTaQgfucNGNzT7nZpOUam1OI=validated
+Transaction 5QAykyWE4BFKv5UF11yDcrWeD+CJDBDfujWRdav6xDg=validated
+Transaction IFvKf+NXLhhoDGVbCHIWg+vCG+5KuEw6rzNplXItQxM=validated
+Transaction adt6F2A4M3mOVr+9owp86ecHm/iwwBcvXWSsQ6jY7/8=validated
+Transaction GQkV0V05V+LRR/ecpttk7dQMx/IP1T781BUi5fxi4hE=validated
+Starting mining process. Benchmarker releasing lock
+Received block #3
+Block invalid because: Wrong index or previous hash
+Valid block discarded.
+Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm
+Found nonce 10467 for block with index 4
+Broadcasting newly found block with index 4
+Broadcasting block
+Could not connect to 172.25.157.63:44446
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Lock acquired
+Could not connect to 172.25.157.63:44446
+Currently mining caching packet
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.

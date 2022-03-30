@@ -4,9 +4,8 @@ from transaction import Transaction
 from block import Block
 from blockchain import blockchain
 from functions import *
-import signal, os, threading
+import signal, os, threading, random
 from threading import Thread, Lock
-
 
 class Node:
     
@@ -20,7 +19,7 @@ class Node:
         self.transactions = 0
         
         self.stop_miner_thread = False 
-        self.miner_broadcasting = False
+        self.mining = False
         
         self.resolving_confilct = False
         self.votes = {}
@@ -97,6 +96,7 @@ class Node:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
+                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.broadcastTransaction(transaction)
@@ -125,13 +125,15 @@ class Node:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
+                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         print("Broadcasting block")
                         self.messaging.broadcastBlock(block)
                     except socket.error as e:
                         print("Could not connect to %s:%d" % (node['host'], node['port']))
- 
+        print("Finished block broadcasting")
+    
     def create_transaction(self, receiver_id, amount):
         # sender_address, receiver_address, amount , transaction_inputs , transaction_outputs=[] ,transaction_id=None,signature=None
         receiver_address = self.pub_key_from_id(receiver_id)
@@ -166,6 +168,12 @@ class Node:
 
 
     def validate_transaction(self, transaction): # use of signature and NBCs balance
+        
+        # Check if already in transaction list
+        for t in self.list_of_transactions:
+            if t.transaction_id == transaction.transaction_id:
+                raise Exception("Duplicate transaction received")
+        
         transaction_dict = transaction.toDict()
         if transaction_dict['sender_address'] == transaction_dict['receiver_address']:
             raise Exception('sender must be different from recepient')
@@ -215,7 +223,6 @@ class Node:
         budget = 0
         for txin_id in transaction_dict['transaction_inputs']:
             found = False
-
             for utxo in sender_utxos:
                 # print(utxo['who'])
                 # print(transaction_dict['sender_address'])
@@ -243,6 +250,8 @@ class Node:
         receiver_id = self.id_from_pub_key(transaction_dict['receiver_address'])
         utxo_sender = transaction_dict['transaction_outputs'][0]
         utxo_receiver = transaction_dict['transaction_outputs'][1]
+        
+            
         self.utxos[sender_id] = [utxo_sender]   
         self.utxos[receiver_id].append(utxo_receiver)
 
@@ -250,9 +259,13 @@ class Node:
         print("Transaction " +transaction.transaction_id+ "validated")
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
-            print("Starting mining process")
+            print("Starting mining process. Benchmarker releasing lock")
+            self.mutex.release()
+            self.mining=True
             miner_thread = MinerThread(self)
-            miner_thread.start()                  
+            miner_thread.start()
+        else:
+            self.mutex.release()                  
 
     def mine_block(self,):
         timestamp = time.time()
@@ -262,13 +275,15 @@ class Node:
         while True:
             if self.stop_miner_thread: 
                 self.stop_miner_thread = False 
+                self.mining = False
                 self.mutex.release()
                 quit()                         
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
                 if self.stop_miner_thread: 
-                    self.stop_miner_thread = False 
-                    self.mutex.release()
+                    self.stop_miner_thread = False
+                    self.mining = False
+                    self.mutex.release() 
                     quit()                         
                 print("Found nonce "+str(nonce)+" for block with index " + str(index))
                 return block
@@ -283,20 +298,28 @@ class Node:
             if len(received_list_of_transactions) == len(self.list_of_transactions):
                 for i in range(len(received_list_of_transactions)):
                     if received_list_of_transactions[i] != self.list_of_transactions[i]: 
+                        print("Block invalid because: Transactions lists dont match")
                         return False
-            else: return False    
+            else: 
+                print("Block invalid because: Transactions lists different length")
+                return False    
             # Check if contents have been tampered
             # Hash must be generated with current_hash = ''
             temp = block.current_hash
             block.current_hash = ''
             if block.generate_hash().decode() != temp: 
+                print("Block invalid because: Hash mismatch")
                 return False            
             # Remember to reassign the verified hash!
             block.current_hash = temp
             # Check if hash fullfills mining difficulty criteria
-            if not block.is_hash_accepted(): return False
+            if not block.is_hash_accepted(): 
+                print("Block invalid because: Hash not accepted (zeroes)")
+                return False
             return True                        
-        else: return False
+        else: 
+            print("Block invalid because: Wrong index or previous hash")
+            return False
         
         
 	# def valid_chain(self, chain):
@@ -307,6 +330,7 @@ class Node:
             if not self.is_myself(node): 
                 with socket.socket() as temp_socket:                
                     try:
+                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.requestPrevHashAndLength(self.id)
@@ -315,6 +339,7 @@ class Node:
 
     def resolve_conflicts(self):
         # Ask nodes for longer chain
+        
         self.resolving_confilct = True
         self.broadcast_chain_request()
         pass
@@ -327,6 +352,7 @@ class Node:
             if node['id'] == conflict_id: 
                 with socket.socket() as temp_socket:                
                     try:
+                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.sendPrevHashAndLength(id, length, current_hash)
@@ -362,6 +388,7 @@ class Node:
             if node['id'] == request_id: 
                 with socket.socket() as temp_socket:                
                     try:
+                        temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
                         temp_socket.connect((node['host'], node['port']))
                         self.messaging.connection = temp_socket
                         self.messaging.requestBlockchainFromNode(self.id)
@@ -375,6 +402,7 @@ class Node:
                 for block in self.blockchain.block_list:
                     with socket.socket() as temp_socket:                
                         try:
+                            temp_socket.settimeout(float(random.randint(2500,5000))/float(1000))
                             temp_socket.connect((node['host'], node['port']))
                             self.messaging.connection = temp_socket
                             self.messaging.sendBlockchainBlock(block)
@@ -416,11 +444,13 @@ class MinerThread(threading.Thread):
     def run(self,*args,**kwargs):
         self.parent_node.mutex.acquire()
         mined_block = self.parent_node.mine_block()
-        self.parent_node.miner_broadcasting = True
-        # Add to yourself first
-        self.parent_node.blockchain.add_block(mined_block)
-        self.parent_node.list_of_transactions = []
-        # Then broadcast to others 
-        self.parent_node.broadcast_block(mined_block)
-        self.parent_node.miner_broadcasting = False
-        
+
+        if self.parent_node.blockchain.get_latest_blocks_index() != mined_block.index:
+            print("Broadcasting newly found block with index " + str(mined_block.index))
+            self.parent_node.blockchain.add_block(mined_block)
+            self.parent_node.list_of_transactions = []
+            self.parent_node.broadcast_block(mined_block)
+        else:
+            print("Someone broadcasted first. Dropping newly found block with index " + str(mined_block.index) )
+        self.mining = False
+        self.parent_node.mutex.release()
