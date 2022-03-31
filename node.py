@@ -164,6 +164,10 @@ class Node:
         print("Transaction with id " + str(new_transaction.transaction_id) + " issued. Now broadcasting. ")
         self.broadcast_transaction(new_transaction)
         print("Transaction with id " + str(new_transaction.transaction_id) + " broadcasted. Now registering to block. ")
+        self.timestamp = time.time()
+        self.transactions += 1
+        stdout_print("transactions number")
+        stdout_print(self.transactions)
 
         # change utxos through add transaction to the block
         self.add_transaction_to_block(new_transaction)
@@ -258,10 +262,7 @@ class Node:
         self.list_of_transactions.append(transaction)
         self.list_of_transactions.sort(key=lambda x: x.transaction_id)
         print("Transaction " + str(transaction.transaction_id) + " added to list of transactions")
-        self.timestamp = time.time()
-        self.transactions += 1
-        stdout_print("transactions number")
-        stdout_print(self.transactions)
+        
         if self.config.block_capacity == len(self.list_of_transactions):
             # mine block
             print("Starting mining process. Benchmarker releasing lock")
@@ -387,8 +388,10 @@ class Node:
                 for len_hash in self.votes:
                     if int(len_hash.split(' ')[0]) == max_len: max_votes = max(len(self.votes[len_hash]),max_votes)
                 for len_hash in self.votes:
-                    if max_len==int(len_hash.split(' ')[0]) and len(self.votes[len_hash]) == max_votes: 
-                        request_id = self.votes[len_hash][0]                              
+                    if max_len==int(len_hash.split(' ')[0]) and len(self.votes[len_hash]) == max_votes:
+                        for id in self.votes[len_hash]:
+                            request_id = max(id, request_id)
+                        # request_id = self.votes[len_hash][0]                              
                 self.request_longest_blockchain(request_id)
                         
         else:

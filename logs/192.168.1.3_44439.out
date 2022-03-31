@@ -8,1151 +8,242 @@ Broadcasting block
 Broadcasting block
 Broadcasting block
 Finished block broadcasting
-Transaction with id MxnGPVJ/YlHpJpHUX4tCFxGMLLXeMNYPwouQKsMomuI= issued. Now broadcasting. 
-Transaction with id MxnGPVJ/YlHpJpHUX4tCFxGMLLXeMNYPwouQKsMomuI= broadcasted. Now registering to block. 
-Transaction MxnGPVJ/YlHpJpHUX4tCFxGMLLXeMNYPwouQKsMomuI= added to list of transactions
-Transaction with id pHk4K/2NIw3uH6Q3ovr+K0CIc7hke6II/K5CDuVpoa4= issued. Now broadcasting. 
-Transaction with id pHk4K/2NIw3uH6Q3ovr+K0CIc7hke6II/K5CDuVpoa4= broadcasted. Now registering to block. 
-Transaction pHk4K/2NIw3uH6Q3ovr+K0CIc7hke6II/K5CDuVpoa4= added to list of transactions
-Transaction with id S2nFiTDPPpqkfCrsGpJT5KLvGzu5L7M1YKGARePRWnE= issued. Now broadcasting. 
-Transaction with id S2nFiTDPPpqkfCrsGpJT5KLvGzu5L7M1YKGARePRWnE= broadcasted. Now registering to block. 
-Transaction S2nFiTDPPpqkfCrsGpJT5KLvGzu5L7M1YKGARePRWnE= added to list of transactions
-Transaction with id Zn/B0m3onzrc8WC9lRwLKFcAtbwKdF9jF1G+qb8cllA= issued. Now broadcasting. 
-Transaction with id Zn/B0m3onzrc8WC9lRwLKFcAtbwKdF9jF1G+qb8cllA= broadcasted. Now registering to block. 
-Transaction Zn/B0m3onzrc8WC9lRwLKFcAtbwKdF9jF1G+qb8cllA= added to list of transactions
+Transaction with id stE7CIDIfE7o+n3iAk3ALex+jRMfuVM4i2r1Rdm/1qQ= issued. Now broadcasting. 
+Transaction with id stE7CIDIfE7o+n3iAk3ALex+jRMfuVM4i2r1Rdm/1qQ= broadcasted. Now registering to block. 
+Transaction stE7CIDIfE7o+n3iAk3ALex+jRMfuVM4i2r1Rdm/1qQ= added to list of transactions
+Transaction with id 7B4Y8+BRPeSkdXCSO60usHZ1BfWbsDhCommqOxwd0+I= issued. Now broadcasting. 
+Transaction with id 7B4Y8+BRPeSkdXCSO60usHZ1BfWbsDhCommqOxwd0+I= broadcasted. Now registering to block. 
+Transaction 7B4Y8+BRPeSkdXCSO60usHZ1BfWbsDhCommqOxwd0+I= added to list of transactions
+Transaction with id semBw4MMFKHsCQr1DAXf7y5CUiZJyTQgy/cY+Iqfneg= issued. Now broadcasting. 
+Transaction with id semBw4MMFKHsCQr1DAXf7y5CUiZJyTQgy/cY+Iqfneg= broadcasted. Now registering to block. 
+Transaction semBw4MMFKHsCQr1DAXf7y5CUiZJyTQgy/cY+Iqfneg= added to list of transactions
+Transaction with id PUXSqJDpqKAd+tBFmVn5jWHpCX80THk1vjU0p8SyLFs= issued. Now broadcasting. 
+Transaction with id PUXSqJDpqKAd+tBFmVn5jWHpCX80THk1vjU0p8SyLFs= broadcasted. Now registering to block. 
+Transaction PUXSqJDpqKAd+tBFmVn5jWHpCX80THk1vjU0p8SyLFs= added to list of transactions
 Issuing transaction from benchmark thread
-Transaction with id FJWG3i7xxAxq/I4o5oPM9qgzVztwzRBkKiD077WfiiM= issued. Now broadcasting. 
-Transaction with id FJWG3i7xxAxq/I4o5oPM9qgzVztwzRBkKiD077WfiiM= broadcasted. Now registering to block. 
-Transaction FJWG3i7xxAxq/I4o5oPM9qgzVztwzRBkKiD077WfiiM= added to list of transactions
+Transaction with id zB3bwHKmBjzMlJYUMKEJFmWTMFeo5Za7m24Kgl00R28= issued. Now broadcasting. 
+Transaction with id zB3bwHKmBjzMlJYUMKEJFmWTMFeo5Za7m24Kgl00R28= broadcasted. Now registering to block. 
+Transaction zB3bwHKmBjzMlJYUMKEJFmWTMFeo5Za7m24Kgl00R28= added to list of transactions
 Starting mining process. Benchmarker releasing lock
-Found nonce 923 for block with index 1
-Broadcasting newly found block with index 1
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Stopping nonce
+Block #1 is valid and ready to be added to the blockchain
 Received new transaction
 Event listening thread acquired lock
 Transaction validated. Adding to transaction list ( current block under construction )
-Transaction k+Y4z4esxcBEqr8uXwm9VJwGJOtjG8TDCNanSHRjHl8= added to list of transactions
+Transaction WSniwQI6nYrHwHKapwST+JPzb3U8S6+X6eP+la4sz+4= added to list of transactions
 Received new transaction
 Event listening thread acquired lock
 Transaction validated. Adding to transaction list ( current block under construction )
-Transaction +37ANxKcaLjK83PqbA58Mabs+bAX9kFQBm3mwsXdpGY= added to list of transactions
+Transaction 1xUZAGpLGUBoSZ7xhXaZaRErPH5AnWH4mdrqd9kkRxM= added to list of transactions
 Received new transaction
 Event listening thread acquired lock
 Transaction validated. Adding to transaction list ( current block under construction )
-Transaction TxCV8FbaKc2mTMmWWFOzN6t4LS3NJkJQ2AE71XuheWk= added to list of transactions
+Transaction mc1oKx541raSj7J/Pr1yeZLoyoUbY0Ghngp7z+aQdGg= added to list of transactions
 Received new transaction
 Event listening thread acquired lock
 Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 9KF2usrkWJOFjOllBzQcRdYXLGWwxQGT7cXQ3O7dRcg= added to list of transactions
+Transaction npJEHfEF//EZ8HxnK6yZLSv3f9jYWOdcM+y27uwEeew= added to list of transactions
+Issuing transaction from benchmark thread
+Transaction with id C7BEsitJQBbag3RchC0F7LwfhseWv0U6dC1aFQNI9Hw= issued. Now broadcasting. 
+Transaction with id C7BEsitJQBbag3RchC0F7LwfhseWv0U6dC1aFQNI9Hw= broadcasted. Now registering to block. 
+Transaction C7BEsitJQBbag3RchC0F7LwfhseWv0U6dC1aFQNI9Hw= added to list of transactions
+Starting mining process. Benchmarker releasing lock
+Currently mining caching packet
+Received block #2
+Stopping nonce
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #2 is valid and ready to be added to the blockchain
+Popping message from cached messages queue instead of socket
 Received new transaction
 Event listening thread acquired lock
 Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 9SXTwlh7TZrANXsb0UyMjvY2mzNG7TfBWG7fSBR1lLI= added to list of transactions
+Transaction XTgbpizHBRZm3uFdMWFa5O+zgFjNQQqbWAybwk90GF4= added to list of transactions
+Issuing transaction from benchmark thread
+Transaction with id hCabkIMdKYC966lJLJC8ZPFJuIw1mS6x1Mwqb/1763k= issued. Now broadcasting. 
+Transaction with id hCabkIMdKYC966lJLJC8ZPFJuIw1mS6x1Mwqb/1763k= broadcasted. Now registering to block. 
+Transaction hCabkIMdKYC966lJLJC8ZPFJuIw1mS6x1Mwqb/1763k= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction nLBh7gAt3s+5LpJWCWN5eOrPhjM2kac5VJnFMCIHojc= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction nkYhnGOvAbQyNa4gDTMn4+1zRzHMou5P1xnPQCVyybY= added to list of transactions
+Issuing transaction from benchmark thread
+Transaction with id BsYIvfJwytS6h9h264qJIDSInL3r7+Wg9nBvlGT23GM= issued. Now broadcasting. 
+Transaction with id BsYIvfJwytS6h9h264qJIDSInL3r7+Wg9nBvlGT23GM= broadcasted. Now registering to block. 
+Transaction BsYIvfJwytS6h9h264qJIDSInL3r7+Wg9nBvlGT23GM= added to list of transactions
 Starting mining process. Benchmarker releasing lock
 Received block #2
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #2 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction MrPNMFLwUPxJNxv4/S661FvufEuHbafuYEIqqpuedcM= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction TEsVIrpUjIhCCxmpMElw7qH+3cdx3cAjDPD+SH++fgQ= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id MFPIdmuVTIh3A/96ohWEcyDFUxtRBdHjyflflCqDc48= issued. Now broadcasting. 
-Transaction with id MFPIdmuVTIh3A/96ohWEcyDFUxtRBdHjyflflCqDc48= broadcasted. Now registering to block. 
-Transaction MFPIdmuVTIh3A/96ohWEcyDFUxtRBdHjyflflCqDc48= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction qUdYD8aAsxKWhX6n0qwTuth+mqlBxgqru8huw3uvo7w= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id ABFG35bfna1Xfdy3TRkvfTBbMzc52LFxKXZfLh/Txr4= issued. Now broadcasting. 
-Transaction with id ABFG35bfna1Xfdy3TRkvfTBbMzc52LFxKXZfLh/Txr4= broadcasted. Now registering to block. 
-Transaction ABFG35bfna1Xfdy3TRkvfTBbMzc52LFxKXZfLh/Txr4= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #3
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #3 is valid and ready to be added to the blockchain
-Stopping nonce
-Currently mining caching packet
-Popping message from cached messages queue instead of socket
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ptnBMLXnwZFuDc5niIBqMb/n+OLATlSYRjg7P0XOgDQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction JUcMYjF/0W71fdubbKE0CN1U2NnulCzCwyXZoP+mMUU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction hpT8B603G8s2oAhGg/FnQhWIY4XXFu0juNW1W1LpTX4= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction uqhaSprBMotHN1WRBNaQYojNdyN5Yxqs/UAkBYtiJoo= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id I1ToyfuDEL+J2/1NyZpDp1aUl7ZKQBfG+d9ECEdp094= issued. Now broadcasting. 
-Transaction with id I1ToyfuDEL+J2/1NyZpDp1aUl7ZKQBfG+d9ECEdp094= broadcasted. Now registering to block. 
-Transaction I1ToyfuDEL+J2/1NyZpDp1aUl7ZKQBfG+d9ECEdp094= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #4
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #4 is valid and ready to be added to the blockchain
-Issuing transaction from benchmark thread
-Transaction with id Km6yDtMuIEvjNlcCwL6f2wINTATfY3RiPGwATW1UqMw= issued. Now broadcasting. 
-Transaction with id Km6yDtMuIEvjNlcCwL6f2wINTATfY3RiPGwATW1UqMw= broadcasted. Now registering to block. 
-Transaction Km6yDtMuIEvjNlcCwL6f2wINTATfY3RiPGwATW1UqMw= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction F9nqTja0FhEzeRs+pDhy++EufOSY6sDMMrj1ZRzKz6I= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Z2Ne32zWaRr2/0fBfT0QfrcpvgR7n7bj+QlcH7fcodw= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id GbtPHYi1s2u8zMHmAlWHtYauMiHNSh59E7YLRZp+i3I= issued. Now broadcasting. 
-Transaction with id GbtPHYi1s2u8zMHmAlWHtYauMiHNSh59E7YLRZp+i3I= broadcasted. Now registering to block. 
-Transaction GbtPHYi1s2u8zMHmAlWHtYauMiHNSh59E7YLRZp+i3I= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 35IxcNR2ss1Zw80BTJvtyHMMPS3fXWggg1po2QRDQU8= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #5
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #5 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction XtMO8RfV9EhSIrrKMLnA8ZSGehcS1EgEpjZSGQ7rmto= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 5oDaImdjOkjk+sg5fnhv3boMSFWcT+111CTaevupJGw= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction nSC6iyYvWyAuPrh8JZGrB4YuKWIH9adSZYt9KhefzO4= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id 0qOytmfH502fd+z4TfTBowgy6Z6VeFG1G8jBCroZSok= issued. Now broadcasting. 
-Transaction with id 0qOytmfH502fd+z4TfTBowgy6Z6VeFG1G8jBCroZSok= broadcasted. Now registering to block. 
-Transaction 0qOytmfH502fd+z4TfTBowgy6Z6VeFG1G8jBCroZSok= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id Ne5ba0Ldh9u2LIVWTDvKEkpxUFk0dZk7rrzB06GfIew= issued. Now broadcasting. 
-Transaction with id Ne5ba0Ldh9u2LIVWTDvKEkpxUFk0dZk7rrzB06GfIew= broadcasted. Now registering to block. 
-Transaction Ne5ba0Ldh9u2LIVWTDvKEkpxUFk0dZk7rrzB06GfIew= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #6
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #6 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 9kctokB95pIv2mlnJxNSr9eXxmlrLXqeHF/js87W2bU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction jAqcr5jSoWri5TCL/O+v2hGK2rxjF6rHbvJwuIZPsB0= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id VEagjRIsNxwKvzN0+Vk2L6TqKzGYYbApipVHuNLFl5Q= issued. Now broadcasting. 
-Transaction with id VEagjRIsNxwKvzN0+Vk2L6TqKzGYYbApipVHuNLFl5Q= broadcasted. Now registering to block. 
-Transaction VEagjRIsNxwKvzN0+Vk2L6TqKzGYYbApipVHuNLFl5Q= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 8Klkp2M7b0O7ejFhG7/dk7kmfxCE05gxDsaBmok9ewE= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction rxZTpZeccQmG7wRbPLGA0V3jP/0tKofJ+hc0Jzcf2pw= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #7
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #7 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Kmpf0meYZCHw5TgSiycZKbrbnuybr9/dfq7AwejNjyQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction XBvTclOC9fxx9Kn+Oskeq5/Jrt+7vAM0vlK3hEQRWAg= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id GLrV5UEoUpViFPG4q7aOe3+JgDSqBoiOn/6qAOtd5JI= issued. Now broadcasting. 
-Transaction with id GLrV5UEoUpViFPG4q7aOe3+JgDSqBoiOn/6qAOtd5JI= broadcasted. Now registering to block. 
-Transaction GLrV5UEoUpViFPG4q7aOe3+JgDSqBoiOn/6qAOtd5JI= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction m6ubNBMnYdOAU0E/HAuaDzZgx6qOV9p7t6pD9YftCSQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction pYhkiVVj1rsv6Y7YqXAY3VXUVKqERI1DDq1ORpE6ehk= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #8
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #8 is valid and ready to be added to the blockchain
-Currently mining caching packet
-Popping message from cached messages queue instead of socket
-Issuing transaction from benchmark thread
-Transaction with id kKfzawf9ShrppV+yy0uF9h7E8ANgh046PXwydmJrvs4= issued. Now broadcasting. 
-Transaction with id kKfzawf9ShrppV+yy0uF9h7E8ANgh046PXwydmJrvs4= broadcasted. Now registering to block. 
-Transaction kKfzawf9ShrppV+yy0uF9h7E8ANgh046PXwydmJrvs4= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction lBmV5rWYbhRlJbt8Uh5qjRIrqV2xFuhov8hYGtl57H8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction QTy+PGwWszJrBn5vgk82EqGYrTnroEDmf+54kb/ywZs= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction GatM2B7SAYTf/Rd66jE8/p3k/rJYWC8C2IUoUwTlDGQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction SrcOHBhd+5y39ocC/qEQzvR7GQ60k8sbgfXXtuNFvYo= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #9
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #9 is valid and ready to be added to the blockchain
-Issuing transaction from benchmark thread
-Transaction with id L01ol19pDB9ZhuF/HiW3Qe4h/cHkXNCJL9TOd8+dXnQ= issued. Now broadcasting. 
-Transaction with id L01ol19pDB9ZhuF/HiW3Qe4h/cHkXNCJL9TOd8+dXnQ= broadcasted. Now registering to block. 
-Transaction L01ol19pDB9ZhuF/HiW3Qe4h/cHkXNCJL9TOd8+dXnQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction zAlWwvING4ifGmTknDs0oXUn9MmntXZnHJVvUJck5qE= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction gAi7aotmTgyHRosEKDkjYwCYh9wQ6SrKh65fyd36FCc= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction HqFReMpWphX3CrxsCbldYgXGWuE5GFi8WpGiXNvZ3f8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ktTZ5hOPIJ7+bpnacYG2CjdQiYBGeElFk0kxOqEoxtg= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #10
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #10 is valid and ready to be added to the blockchain
-Stopping nonce
-Currently mining caching packet
-Popping message from cached messages queue instead of socket
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Ar5fp2K4QqvgiOQKfWJBcA1F2FRBBfLOyk3fCg0+ZYI= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction UFQWYyLLwBBXili1RYoBaZwSgtSDSEssyB3BJAJoSdY= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id oE5I2EW6aZkPHn/pFySqUStgi/4dkoL/nXnFyubhnnI= issued. Now broadcasting. 
-Transaction with id oE5I2EW6aZkPHn/pFySqUStgi/4dkoL/nXnFyubhnnI= broadcasted. Now registering to block. 
-Transaction oE5I2EW6aZkPHn/pFySqUStgi/4dkoL/nXnFyubhnnI= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id /A8G9ecQ1yDHGXvmlsPVVEUL3jEG6fI8UYTDSmu4uM4= issued. Now broadcasting. 
-Transaction with id /A8G9ecQ1yDHGXvmlsPVVEUL3jEG6fI8UYTDSmu4uM4= broadcasted. Now registering to block. 
-Transaction /A8G9ecQ1yDHGXvmlsPVVEUL3jEG6fI8UYTDSmu4uM4= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction JynHC+6agJTCtqDye4n+8Jfu7roc3BJw2ipBhJMDVPs= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #11
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #11 is valid and ready to be added to the blockchain
-Stopping nonce
-Currently mining caching packet
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction T/fd+gg9Mfihoqdz0O54IWraAWuwvneYkU5ySKTRwWA= added to list of transactions
-Popping message from cached messages queue instead of socket
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction GNNZNDxPLMdgy2xmEaDpqmbA0keF4M8IrIqZUX3LfhM= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction QigFVZ/h0tky3YrcFCqUByAPgHtNzZTrekCkbvhCe/8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 00ySPukfotW8Hyf4KWYTq9lIN03vLd9gNyU9hZt/XsA= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction nQK2rzSQq2AXAyl47JtBiQ6J8HD6trthaaH93RzSZms= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #12
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #12 is valid and ready to be added to the blockchain
-Stopping nonce
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction NNhAeTvP+uAINtP2l66Herr0MZStm2QkeNRi8/xJG34= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction +ej2IlNpkb0GV0VJ/UbKPdjJqiGj05KLYv1NyT2TrE0= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id iPpUspu96O2D9xEwjCGBA6xP/NP+i+IchrM+CHq16BI= issued. Now broadcasting. 
-Transaction with id iPpUspu96O2D9xEwjCGBA6xP/NP+i+IchrM+CHq16BI= broadcasted. Now registering to block. 
-Transaction iPpUspu96O2D9xEwjCGBA6xP/NP+i+IchrM+CHq16BI= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction PCNXOJnoNL07mRs3TG0JVZnaHn4AjW2dRJJ2fZrucDU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Q+B7CM/k0IUjktzVc5OKCnRZ7sMEz2GdoLxfEp1HSWM= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #13
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #13 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction sjCivNiE2hUW9CvjxAAmKXKhOD9JIDdywQBPL6qTZxc= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction FjxoDD7ykMxL7HPOBUeMAzSfXEmltgl5qWwEvtSHzww= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction hB66Y2vKZganGtzIjSKL4WrjnN+/nJ37IVll1eIrO5c= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id HCc09XD/mqTpTj+A1dKP5O5pB2e2KbTuHpvo4r+/1bI= issued. Now broadcasting. 
-Transaction with id HCc09XD/mqTpTj+A1dKP5O5pB2e2KbTuHpvo4r+/1bI= broadcasted. Now registering to block. 
-Transaction HCc09XD/mqTpTj+A1dKP5O5pB2e2KbTuHpvo4r+/1bI= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction wsKguUW4n4VLwqKBK3OL/5c9mKARADEKy17+i6+PWKI= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #14
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #14 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction L2NJAJkIyUoC4ow/Wo0XoAg6VZe8KIchE319uNysk+s= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction EuV6Tom7ooeguQc6B7teROW60uq4+NH+eRWB4cEGQks= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction TEhdLk7BA6m3Ie/Yu+w32cF+1whjdm7UWl1k/Oo18ec= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id 1sqFi1fmEWi+XFEPNs2+IXBIhCsLy4UDetGBW/mEISQ= issued. Now broadcasting. 
-Transaction with id 1sqFi1fmEWi+XFEPNs2+IXBIhCsLy4UDetGBW/mEISQ= broadcasted. Now registering to block. 
-Transaction 1sqFi1fmEWi+XFEPNs2+IXBIhCsLy4UDetGBW/mEISQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction H6cOOWGocTcxNvL114bEUj7QBwp0eNwxbJIfN9o/1Mk= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #15
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #15 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction othh2Ci5IDSVFenvNUpNg1P9BRft8Z9NX0e7PsIgaxU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction V0IESX0N3GgYAXE4pslm7Hs50+UTIwBRmfAeJH99UBA= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 0frNP2IgwQnHvML2df/m8o9b+I8NuIl7MgIvtuaN7tk= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id bs49jU20RopEwCJqPAmeXsYLSSgvpcXsq8Puv1xbo08= issued. Now broadcasting. 
-Transaction with id bs49jU20RopEwCJqPAmeXsYLSSgvpcXsq8Puv1xbo08= broadcasted. Now registering to block. 
-Transaction bs49jU20RopEwCJqPAmeXsYLSSgvpcXsq8Puv1xbo08= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction jZvu2RG5hvB8+sxGI3qI5/QmfDJItpmhB+BvI5iy20Y= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #16
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #16 is valid and ready to be added to the blockchain
-Issuing transaction from benchmark thread
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction fnFhJEZwnOBEoATqm3tq0JKT+qv89aghXylgqnshK9s= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 8tSV/JQ5L4ab2W9XyQlz3e9vbFGXL4HoCCkp/ROnDbM= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction P5x8EBjODA8DSOgfKmq5jgwRN7xr/X/aHim6JPNdzpk= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id AO3gxKCQkSvox9lHBDqCsUTg8qIPj//P0EWwUbhR2Vk= issued. Now broadcasting. 
-Transaction with id AO3gxKCQkSvox9lHBDqCsUTg8qIPj//P0EWwUbhR2Vk= broadcasted. Now registering to block. 
-Transaction AO3gxKCQkSvox9lHBDqCsUTg8qIPj//P0EWwUbhR2Vk= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ewdPeH4wfqf6Fzzkkwc/8uxbU/NbQk1UxHAak4DJsoI= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 704 for block with index 17
-Broadcasting newly found block with index 17
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction TT7xWEooqOYXdnBbhCz+IPsF0hAr+VkyPl0fA4hCiEk= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction S6CACMKQvd9a64dsNc2DmVSXM1JBqc5ljdEqlGt4IGk= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction m50gi6MOqzB3W61GUcSo0rBARF2qRYbf4QX4II+GTpQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction zjq2IFzgUaPAcLXNMRrJztX51exzILcX3S0A5u5hfAg= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction fDz5Thiy9SWda51Xur81CW1de3AnNBo/dNPDMhnFXgA= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 6066 for block with index 18
-Broadcasting newly found block with index 18
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Issuing transaction from benchmark thread
-Transaction with id sbuHDKrXr3bW9P3sVnIDnEcTlpYPWP/1hWpJiLjY6Uo= issued. Now broadcasting. 
-Transaction with id sbuHDKrXr3bW9P3sVnIDnEcTlpYPWP/1hWpJiLjY6Uo= broadcasted. Now registering to block. 
-Transaction sbuHDKrXr3bW9P3sVnIDnEcTlpYPWP/1hWpJiLjY6Uo= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction D8lSnaVxKWfd71yTYu4/V1RD61QMY590aOoP3wLNuik= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction KHvt6TMWO29huivKIBaIh7Y/RthIGa6i8CBLleDtYWo= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 8rZqSfGPp4tKUq486hGF1VucOZ5L84d4oO1y1WkMqgI= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction B6DcyO5qxW4ukDjaWJ7MiGnh9kEL7SZCqlwdHffZk5g= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 11709 for block with index 19
-Broadcasting newly found block with index 19
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Issuing transaction from benchmark thread
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Dy5hzP8f1M+5RFKILrP58Wnxf6/3ntgcOmzhc799bkU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction IqFa1V9WCgSTUuCsQUvMmI19j/JFGfMZP2j0H1wAj5A= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction IvFBGKoS4B39My01LgF7/dX7muUJTrLHDBIIjrLBylU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction HrT5QLd7zHGvZ5yGL6xmY8uEAaXC63fG6fd55HlNV7o= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction /DYPXS+PkAyLkZE7xSt0mlsJYgZzpxEVB3lvnNmtuZE= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #20
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #20 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction d9E3u5yn8nS74SjJYR1iUqlzgAZaDsgEPa/EZKqjkC8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ZQB9di1j97G50BYm3px2xzNdoPlq5XtOEi15Nwc/fmg= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id r1nYTIxbN089HaCEnLgcM2fAZk+QCutN1XwaQag4vfI= issued. Now broadcasting. 
-Transaction with id r1nYTIxbN089HaCEnLgcM2fAZk+QCutN1XwaQag4vfI= broadcasted. Now registering to block. 
-Transaction r1nYTIxbN089HaCEnLgcM2fAZk+QCutN1XwaQag4vfI= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id hmNB/1TIblPSWGbikuYgB3A63tSzY7dULjmj6w2vV5g= issued. Now broadcasting. 
-Transaction with id hmNB/1TIblPSWGbikuYgB3A63tSzY7dULjmj6w2vV5g= broadcasted. Now registering to block. 
-Transaction hmNB/1TIblPSWGbikuYgB3A63tSzY7dULjmj6w2vV5g= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction b+x3/LA7IJ21tejlow7mRsKMwnem2sSJGWGeS1f4H+w= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #21
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #21 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction xDcLJs/OXBC6dHkTI/Bi3OQe05akmHAvam/OYRBScG8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ww+JqG+Z+vYKaSQEyFI1NeZ+aeiTZPEMEUn+rutjqLA= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id uanZnAoxsSNVXmpJ4YDIEknZLuPpxqVU2Rh0cFB7ekY= issued. Now broadcasting. 
-Transaction with id uanZnAoxsSNVXmpJ4YDIEknZLuPpxqVU2Rh0cFB7ekY= broadcasted. Now registering to block. 
-Transaction uanZnAoxsSNVXmpJ4YDIEknZLuPpxqVU2Rh0cFB7ekY= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 02gPsmUg9mtZK8VjcGRlTi7w+ObEekRHvU7CgD75pJg= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction QG6Hiad7QxFtHvs70WWpOW3kjjCK3HRtZLSdUf49sdk= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #22
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #22 is valid and ready to be added to the blockchain
-Issuing transaction from benchmark thread
-Transaction with id cryRYLdNLiWA05eaFvOVkbmZQ2xi8UUCYGCOQVCg97s= issued. Now broadcasting. 
-Transaction with id cryRYLdNLiWA05eaFvOVkbmZQ2xi8UUCYGCOQVCg97s= broadcasted. Now registering to block. 
-Transaction cryRYLdNLiWA05eaFvOVkbmZQ2xi8UUCYGCOQVCg97s= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 9BnZGKzFQoNf4JYdkKZ9W/ytM7z0QOuUpAZkgqKD32Y= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction qKjLvANv0QJTP9ZOoEiFCmt9D1ZdSCBurQeRdjO2h3s= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction XHxQNQTzSZSJt0lWgDAJfLYQiGtzRQFACoLhjXl5Sks= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction GSd703cFgnw5Png4a81VfJzSw1cBj6e76XplBLDXVjI= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #23
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #23 is valid and ready to be added to the blockchain
-Issuing transaction from benchmark thread
-Transaction with id fR2WyjgOR/9LR7RnIDm+Fk2sL+K7kETwt3Db/UqG9Zo= issued. Now broadcasting. 
-Transaction with id fR2WyjgOR/9LR7RnIDm+Fk2sL+K7kETwt3Db/UqG9Zo= broadcasted. Now registering to block. 
-Transaction fR2WyjgOR/9LR7RnIDm+Fk2sL+K7kETwt3Db/UqG9Zo= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction smX+4WtBhrlXrVt7ufk6L02AjA+FpvumsmoqcFIsYNE= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction +xATv01rkTpgV0dMYQevmQ6rk9BRGtkZyH+gM9VusCY= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Nzk9Arojq+x+YZvzZZcXORgdDRBOARVyonREiLZwBsI= added to list of transactions
-Issuing transaction from benchmark thread
-Received new transaction
-Event listening thread acquired lock
-Transaction i0FBsRJaWYUZtm4LBQ+dV1ckRJd7eT9GMPGBpCdBukU= Invalid.Because missing transaction inputs
-Traceback (most recent call last):
-  File "/Users/soubis/Desktop/noobcash/event_listener.py", line 82, in run
-    self.node.validate_transaction(transaction)
-  File "/Users/soubis/Desktop/noobcash/node.py", line 239, in validate_transaction
-    raise Exception('missing transaction inputs')
-Exception: missing transaction inputs
-
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ZTGmcA/X0HoPxYVvL3dLQJxoYusiozSG05EK6IDoo9g= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 2751 for block with index 24
-Broadcasting newly found block with index 24
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Received block #24
 Block invalid because: Wrong index or previous hash
 Valid block discarded.
 Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm
+Found nonce 103982 for block with index 3
+Broadcasting newly found block with index 3
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Issuing transaction from benchmark thread
+Transaction with id 2HjHcFBVwEVZIs+zhG0nHl7rRCnHC6bJWDQ4X/BTQa8= issued. Now broadcasting. 
+Could not connect to 192.168.1.3:44447
+Transaction with id 2HjHcFBVwEVZIs+zhG0nHl7rRCnHC6bJWDQ4X/BTQa8= broadcasted. Now registering to block. 
+Transaction 2HjHcFBVwEVZIs+zhG0nHl7rRCnHC6bJWDQ4X/BTQa8= added to list of transactions
 Lock acquired for conflict resolution
+Could not connect to 192.168.1.3:44447
 In resolving conflict mode.
-Received request to vote for conflict resolution by node2
+Received request to vote for conflict resolution by node2 while in conflict mode
 In resolving conflict mode.
-Received conflict resolution vote of length: 25by node1
-{'25 AADmFIcJAWFBhqK4jL9j8VaSeARn60t52U9rrJafaTc=': [1]}
-In resolving conflict mode.
-Received request to vote for conflict resolution by node3
-In resolving conflict mode.
-Received conflict resolution vote of length: 0by node2
-{'25 AADmFIcJAWFBhqK4jL9j8VaSeARn60t52U9rrJafaTc=': [1], '0 AAAZt01i+YkJQs4ZZQ9FE0/D0gvOXU+eyWR3I1k0IkY=': [2]}
-In resolving conflict mode.
-Received request to vote for conflict resolution by node4
-In resolving conflict mode.
-Received conflict resolution vote of length: 0by node3
-{'25 AADmFIcJAWFBhqK4jL9j8VaSeARn60t52U9rrJafaTc=': [1], '0 AAAZt01i+YkJQs4ZZQ9FE0/D0gvOXU+eyWR3I1k0IkY=': [2, 3]}
-In resolving conflict mode.
-Received conflict resolution vote of length: 0by node4
-{'25 AADmFIcJAWFBhqK4jL9j8VaSeARn60t52U9rrJafaTc=': [1], '0 AAAZt01i+YkJQs4ZZQ9FE0/D0gvOXU+eyWR3I1k0IkY=': [2, 3, 4]}
-Decided on max length = 25
-In resolving conflict mode.
-Received blockchain block with index 0 for conflict resolution by node4
-Discarding my blockchain receiving new one
-In resolving conflict mode.
-Received blockchain block with index 1 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 2 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 3 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 4 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 5 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 6 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 7 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 8 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 9 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 10 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 11 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 12 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 13 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 14 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 15 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 16 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 17 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 18 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 19 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 20 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 21 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 22 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 23 for conflict resolution by node4
-In resolving conflict mode.
-Received blockchain block with index 24 for conflict resolution by node4
-In resolving conflict mode.
-Received Transaction list and utxos for conflict resolution by node4
-RECEIVED UTXOS
-{0: [{'id': 'fR2WyjgOR/9LR7RnIDm+Fk2sL+K7kETwt3Db/UqG9Zo=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIo32q84vC38BzDpbz363bH2P/WhYPFIQGPHimihICE+xzypIhvIGRMVKrHkzMNtbnJQS+WN78+RJ7M/JlGChZ3GTaxUWWp1bU4+tfCpju73u/pfh1EHFdaa879PmL7lD7tfjs5k2xKzwR4XS1kEKNhlQ3GuJ020rh0CYCtv7bJoSYyYh+wojcNuMcdfIfmX11G0dpRrwC9FO+v4xbSWW0kaD7HbjArnrxDJmoH1WoUoi+MQhm9KULpCp8EsdsLx0MKHyERCI7s7kIP9uS75yFCy2WGZt5LvrFDeZ3rat9yjprYpI4XQsSwa7S0xdYNwoOXQ/B7pQOBqhqI0EUv+eh', 'amount': 103}, {'id': 'i0FBsRJaWYUZtm4LBQ+dV1ckRJd7eT9GMPGBpCdBukU=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDIo32q84vC38BzDpbz363bH2P/WhYPFIQGPHimihICE+xzypIhvIGRMVKrHkzMNtbnJQS+WN78+RJ7M/JlGChZ3GTaxUWWp1bU4+tfCpju73u/pfh1EHFdaa879PmL7lD7tfjs5k2xKzwR4XS1kEKNhlQ3GuJ020rh0CYCtv7bJoSYyYh+wojcNuMcdfIfmX11G0dpRrwC9FO+v4xbSWW0kaD7HbjArnrxDJmoH1WoUoi+MQhm9KULpCp8EsdsLx0MKHyERCI7s7kIP9uS75yFCy2WGZt5LvrFDeZ3rat9yjprYpI4XQsSwa7S0xdYNwoOXQ/B7pQOBqhqI0EUv+eh', 'amount': 6}], 1: [{'id': 'i0FBsRJaWYUZtm4LBQ+dV1ckRJd7eT9GMPGBpCdBukU=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCucszIVjJRS5Vrp17p9D6A2LcuxIReDsUvrzv+lq4sJYfZgOQsOzKGubyOnBMHi6PdApR3bI0FzTYa9RwsCtcwhcnGVibJW78wOJvd64qwTsN4C+PBclS5yxfjBq/Xai9pVjL+poTJyyfgQuWYfayDXmPQNTj+qY3mB+b+lCHsMoJXLGjhvVX381m/tjzIZQZQqF01cS06Ah3dJTmeFga1DIQfWTy+A3fshIqwoRm4OqFXNKorTMo7hKlgHfPC8n4PKhgyBd/v8z+3LIYfR3W790THV5HQ7QBVgv5eCi77Atbz/1aSjcKJFEyolmE/BiMGEGlfr+VklyatPu3afQAh', 'amount': 87}], 2: [{'id': 'GSd703cFgnw5Png4a81VfJzSw1cBj6e76XplBLDXVjI=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/pci1ZWazT9Q8bZ5eL5FM8jFfVotOEMFE20hhIe3nstmQQRY807C/w5xnKxnPEGQOnBWV3Sm9WgWy2O/91+Wm16fXDBGXUD2y9pcO8JzeeLC3Tsi2SALS7XzRUb+5DywlSZoSSUthTzjqlU9nuDdRXJT6FPDKbCjA/vHVDqg6W/T6lpKC6piAL3NZ6ytl5B65WM5iy0sR9302Uz7YEWqWKWxBLSq1s6Tqjp4SCgGn66hApgyuFK9NDuWQ6alcBqOLHUD3AFNL1RaWi5V5svkX7kJc3OW2i9w6Afsv4EbeTF1IhDDQ67hrpJGCKkORudbnVzswt9TonNaL2M9mwlvd', 'amount': 123}, {'id': 'smX+4WtBhrlXrVt7ufk6L02AjA+FpvumsmoqcFIsYNE=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/pci1ZWazT9Q8bZ5eL5FM8jFfVotOEMFE20hhIe3nstmQQRY807C/w5xnKxnPEGQOnBWV3Sm9WgWy2O/91+Wm16fXDBGXUD2y9pcO8JzeeLC3Tsi2SALS7XzRUb+5DywlSZoSSUthTzjqlU9nuDdRXJT6FPDKbCjA/vHVDqg6W/T6lpKC6piAL3NZ6ytl5B65WM5iy0sR9302Uz7YEWqWKWxBLSq1s6Tqjp4SCgGn66hApgyuFK9NDuWQ6alcBqOLHUD3AFNL1RaWi5V5svkX7kJc3OW2i9w6Afsv4EbeTF1IhDDQ67hrpJGCKkORudbnVzswt9TonNaL2M9mwlvd', 'amount': 9}], 3: [{'id': '+xATv01rkTpgV0dMYQevmQ6rk9BRGtkZyH+gM9VusCY=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSV2s1bU1IYTAwgPJwP2iilEIOL01+o00e1WYzS1dp0xD/AaSvIe75dBS+S1D1zCXYSiLtoB2hNoN8U+lnROg2wOiPIbXgIOG8n5bdonJB1wj0/ONMXNUZxhHHUApZTTwdci00/2sXDi5+E05UgjyzogG88DOAQJSn4k7mV+LwekmrtF8sUfDXL44kcGyQbZnGqyZAWk86Sf/BC6Tnl9EI7noejKkyj339LU9XirdUj8jq9yVval53+8QzGnIz+24RlPBlKfA61sGszNk/8ZdYykWaUpMCiGp3tThiWXvGyH11Qzw2G4A/3x3c6gAU4/yTnNFKLngDE2xOLbuErF1P', 'amount': 40}, {'id': 'Nzk9Arojq+x+YZvzZZcXORgdDRBOARVyonREiLZwBsI=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSV2s1bU1IYTAwgPJwP2iilEIOL01+o00e1WYzS1dp0xD/AaSvIe75dBS+S1D1zCXYSiLtoB2hNoN8U+lnROg2wOiPIbXgIOG8n5bdonJB1wj0/ONMXNUZxhHHUApZTTwdci00/2sXDi5+E05UgjyzogG88DOAQJSn4k7mV+LwekmrtF8sUfDXL44kcGyQbZnGqyZAWk86Sf/BC6Tnl9EI7noejKkyj339LU9XirdUj8jq9yVval53+8QzGnIz+24RlPBlKfA61sGszNk/8ZdYykWaUpMCiGp3tThiWXvGyH11Qzw2G4A/3x3c6gAU4/yTnNFKLngDE2xOLbuErF1P', 'amount': 6}], 4: [{'id': 'Nzk9Arojq+x+YZvzZZcXORgdDRBOARVyonREiLZwBsI=', 'who': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57l/nJPzXR3ePmdPtT0Yu7YwJOddqD4ja4oEUwlufpJ2YOHdHKCyoxAXUBoUpZY+rFQv9eiIuHhxI7Q5Cfrq5xgty+ickXo6JNyNordlVVCQxX8po6KkLJC4zdVIDM7P/ZjAl53dUxi5ISpU/m6Rl/nErK5pRpId2tndaNAnMaHA/H5dszceTJljioCN9MLkp1z92EgMMyIUfpsWN6+UGD1N5qdlNcRsNIEusJsRAhuSEJGl8R9ujBGnlnxqkLalW8lib0oC0iDC06bwMDt0GW8eJOIxzgh4d7Of7Y8AURlS2Yxq8YbM4NgR2f3IMsZrljpqsP+Dn99sBAASZqniB', 'amount': 126}]}
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction iBzBI2H7xubFKO4Vun6lQzB7/K1Gl65rLf1S2wZvCDg= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id biIJFFJhnFYDoQ2+m3r+9mTznXAa6mcjna75xjSd8zM= issued. Now broadcasting. 
-Transaction with id biIJFFJhnFYDoQ2+m3r+9mTznXAa6mcjna75xjSd8zM= broadcasted. Now registering to block. 
-Transaction biIJFFJhnFYDoQ2+m3r+9mTznXAa6mcjna75xjSd8zM= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction mENL1vcxUnJdu6Jk9azbUr+kwtr/SIQz6cPz/vHhjBA= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction y2QiZjXfvZspowKhmb9bL6fHtjDO+NYTx0c3l6Fu/GA= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction xiweb2NkycGjiO0ntsF76UK/KucOkmTVqEgp3iEsShk= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #25
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #25 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction euq4B09gJ6mFjEYQ+UUKkr7HceKZ8+FeIN5Tahsx1wk= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 41Zlalnux88S9bUSKamIaLxe523lKMUzAtQ4pYxcejk= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction eJcSIloSwQxqfq50Oz4/onMEbPXZ+hAwQ7cmPQXsXBU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Wa9nNqCK1THLBmoOBhTeCe2iSKvaeoR+7Eq7b8vdZiQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction jjNFzE1b0KjLrF1Do0O19qQZQ3cAesUnZlBUEGuDRNs= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 5817 for block with index 26
-Broadcasting newly found block with index 26
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction aKkWM34cLVqSt8hHn8q7bJjPNflYZr4tGkWis3DVlTE= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id HBjQb/ib/4Gfj+Ocp97/9s8VUHGlZ+NonUWQxpQrOns= issued. Now broadcasting. 
-Transaction with id HBjQb/ib/4Gfj+Ocp97/9s8VUHGlZ+NonUWQxpQrOns= broadcasted. Now registering to block. 
-Transaction HBjQb/ib/4Gfj+Ocp97/9s8VUHGlZ+NonUWQxpQrOns= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction tEjfaIKoxo4nKsGjM/sph0RWc5NqgEx6y7A3EoZXcnM= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction P8rJdW5UBpmhegyy1Av24eRx39VM4m9wu6SMn5R3nkM= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id jfjd1czisqIuiLSMdgzlegTX4Pr124nCXfvRapTmJjE= issued. Now broadcasting. 
-Transaction with id jfjd1czisqIuiLSMdgzlegTX4Pr124nCXfvRapTmJjE= broadcasted. Now registering to block. 
-Transaction jfjd1czisqIuiLSMdgzlegTX4Pr124nCXfvRapTmJjE= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #27
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #27 is valid and ready to be added to the blockchain
-Currently mining caching packet
-Popping message from cached messages queue instead of socket
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction qVLX+z/fhEjCUuJ1IOvIma72BFPwNgau1+7bWWXzOr0= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction xQz0EQu1LWM695+q+49rTjW05qKGTp+zw2YZMzit9w4= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id qCkpj4BWxfcG3x5R0K8fCT8atP6q2lFffDi35nTvZxo= issued. Now broadcasting. 
-Transaction with id qCkpj4BWxfcG3x5R0K8fCT8atP6q2lFffDi35nTvZxo= broadcasted. Now registering to block. 
-Transaction qCkpj4BWxfcG3x5R0K8fCT8atP6q2lFffDi35nTvZxo= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Xk0NT13JV9CWRmUrb1sy3OGCHg0kb5QcPA7kuRgVCbE= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id sWwyKR/yUxc5GqZTmaqGH+GaiVlO8CwEwOya/f8Ls9A= issued. Now broadcasting. 
-Transaction with id sWwyKR/yUxc5GqZTmaqGH+GaiVlO8CwEwOya/f8Ls9A= broadcasted. Now registering to block. 
-Transaction sWwyKR/yUxc5GqZTmaqGH+GaiVlO8CwEwOya/f8Ls9A= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #28
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #28 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction l6w3QDwY0QPpcX6EcFNlxOzLW2q7tPFIHesrIYlo1CE= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id YvL9kESfO7rh3tTP3avvgYhj122dK3fB9P3o6sQ/Xj0= issued. Now broadcasting. 
-Transaction with id YvL9kESfO7rh3tTP3avvgYhj122dK3fB9P3o6sQ/Xj0= broadcasted. Now registering to block. 
-Transaction YvL9kESfO7rh3tTP3avvgYhj122dK3fB9P3o6sQ/Xj0= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 975yJDAhfQmZdwp59tXJLyCNgFps8W1MQO4wHvP4MQo= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction wn5R0XViMqh1CFz6xHV9sTldlXE2ObwHJrk7xnRZNAI= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction FsJggBPRpv3C/YWsEVvntsU8UnPVfN3/+hyU5bnEKDE= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #29
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #29 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction bAviMBDunjTDu1AR0mm6ObxWCkfXCTGGicFmkm5B3ss= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction BCs3QkmkBb+dZhhbxikQj/rRIv17jQZCvYWLGIu5L8E= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id HCmG2K1Z9MaIdZrB6VSuo5g2ay5ebketsRji0a/ogkU= issued. Now broadcasting. 
-Transaction with id HCmG2K1Z9MaIdZrB6VSuo5g2ay5ebketsRji0a/ogkU= broadcasted. Now registering to block. 
-Transaction HCmG2K1Z9MaIdZrB6VSuo5g2ay5ebketsRji0a/ogkU= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Lqw4yKtmlcAaACnJMpNmYfHMUmlOH25A41jJsyk/2a8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction y/Aj60UF3JM8Y4MNj9QOgyAD09rE5LRAib+XtQqpNWE= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #30
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #30 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 00yhxSf3cc3XdWST4Y3VvzKx7I+HDv9v8o+/ABju6oQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction YO6YYP6ElyJ4yBHV2iVx2H4IgN+qoup3TI2tPycfk+A= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction YBlyqu6trNBg4cL/RjNGJ6g5cszFYAjG3/vndyxa4I4= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction VMlhxxiygQLEd5kXW6peYTkcWBtga8FHQ/xHCqWkMmE= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ioCqUSsMrvIQKz52GEjAZZYuSI8W5XIkJuUIPHKkzZ4= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #31
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #31 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction IsGJbisWwqyrQCbSCuMeneNeo8lR0LstIzn9KqYvT2s= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction I87JvsQGiFS4r8eCU6LV7DHVZgMxvsGdjvJtFtOI7CM= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id tAL4yQ0oa5OxyMLbyI/CuhLF9i/h/GzcR9OmFXGvNrs= issued. Now broadcasting. 
-Transaction with id tAL4yQ0oa5OxyMLbyI/CuhLF9i/h/GzcR9OmFXGvNrs= broadcasted. Now registering to block. 
-Transaction tAL4yQ0oa5OxyMLbyI/CuhLF9i/h/GzcR9OmFXGvNrs= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ov7p3qpktVpWaSX23+CktxTy9axJ2oL5trkMd1vd6Qc= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction UpjhxMToZq96J9f9PQYyhsHxbJR87vzDZlevXGzy+u4= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #32
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #32 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction dyenswhm5UD+tmU8tplSlzNphvvJezTWmOgiPFDpook= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id uW0o3X57BHIAb1euSLvlzcVsPZxFzOEWWQ/ySenUFgQ= issued. Now broadcasting. 
-Transaction with id uW0o3X57BHIAb1euSLvlzcVsPZxFzOEWWQ/ySenUFgQ= broadcasted. Now registering to block. 
-Transaction uW0o3X57BHIAb1euSLvlzcVsPZxFzOEWWQ/ySenUFgQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction MVpqDNp+Fhgj37V4tzLrZHC4DNMJZ2wV6V3O6CQZS3I= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction QQ6P/noa8mzxg0Vn+DORQzEpAf17sYSP+dbE8wCGb9c= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction di1UqlCUthGnx+61OyE69vr7a+Bpl5a9ZkFoNVM1dAo= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 24731 for block with index 33
-Broadcasting newly found block with index 33
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction IMsjOj5xYBX38OD5Mwt9W90bcv02VvG3ZyLQ1W+Mqu8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction imm+ub9OLbxsDGa366nD3dY1zoieInmnu55TiNROGQg= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction aULrSkNu7KdzsyUklhWf9XPuxX0u4ZJKEcyOBn76kCg= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction DpidJq4RM4XoSfqv6q56HhyMwnfb3Ql7J1MWZNCVrbw= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 24wAgneFfemdYSn1aoV9ljAHoRXGjWh/NmmA8cHwX+s= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #34
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #34 is valid and ready to be added to the blockchain
-Issuing transaction from benchmark thread
-Transaction with id L+kTQFh8MK7y1v4FtGEX5iKqLY0BjeMLU4Pp8f7keqo= issued. Now broadcasting. 
-Received new transaction
-Transaction with id L+kTQFh8MK7y1v4FtGEX5iKqLY0BjeMLU4Pp8f7keqo= broadcasted. Now registering to block. 
-Transaction L+kTQFh8MK7y1v4FtGEX5iKqLY0BjeMLU4Pp8f7keqo= added to list of transactions
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction jSDZxzYJ/MrzXAj5mygmT2dgHUpgfAux6x719gZEzLw= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction tY1tqiubt/JwrlZ2c3754sP4qVqDUqpDDQw1WdSLbdQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Ecqwi7rqEd7QjA7v60uwVYdU5TRZOvOrs/zLbi9pEkc= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction AH2JHRv05KQmWBNG0S2G+YBXXsnxaeLhVTXaWDNyEVE= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #35
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #35 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction FtEfNDBllMVuKbJzFcLQaG6TuMoPhsx403lXq0si7aA= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id Cx8uaZHFxPSqIYELnUZB4TU05mVHBpYYZt+uKBOVJrY= issued. Now broadcasting. 
-Transaction with id Cx8uaZHFxPSqIYELnUZB4TU05mVHBpYYZt+uKBOVJrY= broadcasted. Now registering to block. 
-Transaction Cx8uaZHFxPSqIYELnUZB4TU05mVHBpYYZt+uKBOVJrY= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction QU+FFf3YiyVAU8TKaIZfj16W/XhThNND8+QsZQjhz70= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction ZVKmw0X6fKeI3K4ja89ck3+nZdXCJVjLRSITyS2p+MM= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction kGOE47SjY2G4PnEIEStY/aFKA155pOjDDPKtO14LCvQ= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #36
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #36 is valid and ready to be added to the blockchain
-Received block #35
-Block invalid because: Wrong index or previous hash
-Valid block discarded.
-Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm
-Lock acquired for conflict resolution
-In resolving conflict mode.
-Received request to vote for conflict resolution by node2
-In resolving conflict mode.
-Received request to vote for conflict resolution by node3
-In resolving conflict mode.
-Received conflict resolution vote of length: 0by node2
-{'0 AACuJEG+0jSnhRmlxq+mrvoyUXIxekJUPKL86MiUjSo=': [2]}
-In resolving conflict mode.
-Received request to vote for conflict resolution by node4
-In resolving conflict mode.
-Received conflict resolution vote of length: 0by node3
-{'0 AACuJEG+0jSnhRmlxq+mrvoyUXIxekJUPKL86MiUjSo=': [2, 3]}
-In resolving conflict mode.
-Received conflict resolution vote of length: 0by node4
-{'0 AACuJEG+0jSnhRmlxq+mrvoyUXIxekJUPKL86MiUjSo=': [2, 3, 4]}
+Received request to vote for conflict resolution by node3 while in conflict mode
 In resolving conflict mode.
 In resolving conflict mode.
-Received request to vote for conflict resolution by node1
+Received request to vote for conflict resolution by node1 while in conflict mode
 In resolving conflict mode.
-Received conflict resolution vote of length: 0by node1
-{'0 AACuJEG+0jSnhRmlxq+mrvoyUXIxekJUPKL86MiUjSo=': [2, 3, 4], '0 AAAcOGcdHOY/Xi5YiF9WV3tR2F0XsClr7fUYS3cYT5k=': [1]}
-Decided on max length = 0
 In resolving conflict mode.
-blockchain_requested from node #4
-blockchain_requested from node #2
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id 7fhPGHseZcx7+lOnFp2oX1vYAUdf69cv/aRrTmLA3Hg= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id 7fhPGHseZcx7+lOnFp2oX1vYAUdf69cv/aRrTmLA3Hg= broadcasted. Now registering to block. 
-Transaction 7fhPGHseZcx7+lOnFp2oX1vYAUdf69cv/aRrTmLA3Hg= added to list of transactions
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id q6bBX9WOSFWIF++pVNMq4XoOxU5AmH2RH6j6KZBnbbQ= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id q6bBX9WOSFWIF++pVNMq4XoOxU5AmH2RH6j6KZBnbbQ= broadcasted. Now registering to block. 
-Transaction q6bBX9WOSFWIF++pVNMq4XoOxU5AmH2RH6j6KZBnbbQ= added to list of transactions
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id ycYhgKYqjJqilIsiBybC9lzD692cuKtLl0H5YnXugAY= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id ycYhgKYqjJqilIsiBybC9lzD692cuKtLl0H5YnXugAY= broadcasted. Now registering to block. 
-Transaction ycYhgKYqjJqilIsiBybC9lzD692cuKtLl0H5YnXugAY= added to list of transactions
-Issuing transaction from benchmark thread
-Transaction with id phLG8oBvcaA7ZGjEwSdReppY/acBSVO3nXe9xfNJNCQ= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id phLG8oBvcaA7ZGjEwSdReppY/acBSVO3nXe9xfNJNCQ= broadcasted. Now registering to block. 
-Transaction phLG8oBvcaA7ZGjEwSdReppY/acBSVO3nXe9xfNJNCQ= added to list of transactions
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id JZVg1iB7gX2Z3GKUNN3z4xrKo/w5MKVsttgnTQLs5jg= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id JZVg1iB7gX2Z3GKUNN3z4xrKo/w5MKVsttgnTQLs5jg= broadcasted. Now registering to block. 
-Transaction JZVg1iB7gX2Z3GKUNN3z4xrKo/w5MKVsttgnTQLs5jg= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 8638 for block with index 37
-Broadcasting newly found block with index 37
-Broadcasting block
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Issuing transaction from benchmark thread
-Transaction with id yIEESGNlgZnnxqMCsJVVQJ1H0rLhIkXrwv2eQ9rq4QA= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id yIEESGNlgZnnxqMCsJVVQJ1H0rLhIkXrwv2eQ9rq4QA= broadcasted. Now registering to block. 
-Transaction yIEESGNlgZnnxqMCsJVVQJ1H0rLhIkXrwv2eQ9rq4QA= added to list of transactions
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id Q+29jZ7NqGPkzQdGy0T82dLg7ndW4PhDJNeIJSclDlw= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id Q+29jZ7NqGPkzQdGy0T82dLg7ndW4PhDJNeIJSclDlw= broadcasted. Now registering to block. 
-Transaction Q+29jZ7NqGPkzQdGy0T82dLg7ndW4PhDJNeIJSclDlw= added to list of transactions
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id PALK/vPzOibszCNliIDYUL54aQeF/tOI8drm8Qh7+5E= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id PALK/vPzOibszCNliIDYUL54aQeF/tOI8drm8Qh7+5E= broadcasted. Now registering to block. 
-Transaction PALK/vPzOibszCNliIDYUL54aQeF/tOI8drm8Qh7+5E= added to list of transactions
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id cI5AbTMCAuccHdPFSdSiPw3cyRxbJ5qJwmBRGqpXbw8= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id cI5AbTMCAuccHdPFSdSiPw3cyRxbJ5qJwmBRGqpXbw8= broadcasted. Now registering to block. 
-Transaction cI5AbTMCAuccHdPFSdSiPw3cyRxbJ5qJwmBRGqpXbw8= added to list of transactions
-Issuing transaction from benchmark thread
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id Az7tUOEEy4It8Z4xqXtCdcd+jU9MgvDBh83sA6eG/+U= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id Az7tUOEEy4It8Z4xqXtCdcd+jU9MgvDBh83sA6eG/+U= broadcasted. Now registering to block. 
-Transaction Az7tUOEEy4It8Z4xqXtCdcd+jU9MgvDBh83sA6eG/+U= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 102650 for block with index 38
-Broadcasting newly found block with index 38
-Broadcasting block
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-Could not connect to 192.168.1.3:44445
-Issuing transaction from benchmark thread
-Transaction with id rOedpSrIc0dmzgg//nxjOCsukEoNDjZ/TsdQKCcaUHE= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44445
-Could not connect to 192.168.1.3:44445
-Transaction with id rOedpSrIc0dmzgg//nxjOCsukEoNDjZ/TsdQKCcaUHE= broadcasted. Now registering to block. 
-Transaction rOedpSrIc0dmzgg//nxjOCsukEoNDjZ/TsdQKCcaUHE= added to list of transactions
-Could not connect to 192.168.1.3:44445
+Received request to vote for conflict resolution by node4 while in conflict mode
+Could not connect to 192.168.1.3:44447
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node2 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node1 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node4 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node3 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node1 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node2 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node1 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node2 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node1 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node2 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node4 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node2 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node3 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node1 while in conflict mode
+In resolving conflict mode.
+Received request to vote for conflict resolution by node4 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node3 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+Received request to vote for conflict resolution by node2 while in conflict mode
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.
+In resolving conflict mode.

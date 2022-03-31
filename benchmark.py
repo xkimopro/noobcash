@@ -38,7 +38,7 @@ class Benchmark:
                     stdout_print(traceback.format_exc())
                     self.node.mutex.release()
                 
-                time.sleep(float(random.randint(0,30000))/float(1000))
+                time.sleep(float(random.randint(0,15000))/float(1000))
                                 
             throughput_time = self.node.timestamp - self.start_time
             completed_trans = self.node.transactions
