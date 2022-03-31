@@ -8,6 +8,8 @@ class Benchmark:
         # self.num_of_nodes = num_of_nodes
         
      
+    
+
     def start(self):
         time.sleep(6)
         file_name = "transactions" + str(self.node.id) + ".txt"
@@ -26,7 +28,13 @@ class Benchmark:
                 id = int(input[0][2])
                 try:
                     self.node.mutex.acquire()
-                    
+                    while self.node.all_false() == False:
+                        if self.node.conflict_occured[self.node.id] == True:
+                            time_temp = time.time()
+                            if time_temp - self.node.time > 30:
+                                self.node.resolve_conflicts()
+                        time.sleep(0.25)
+                    print("now to issue",self.node.conflict_occured)
                     print("Issuing transaction from benchmark thread")
                     self.node.create_transaction(id, amount)
                     # stdout_print("Transaction validated")
@@ -37,13 +45,15 @@ class Benchmark:
                     stdout_print(str(e))
                     stdout_print(traceback.format_exc())
                     self.node.mutex.release()
-                
                 time.sleep(float(random.randint(0,15000))/float(1000))
-                                
+                # while self.node.resolving_confilct:
+                #     time.sleep(0.25)
+                
+          
             throughput_time = self.node.timestamp - self.start_time
             completed_trans = self.node.transactions
             stdout_print("FINISHED MY TRANSACTIONS!!!")
-            stdout_print(self.node.blockchain.time_to_add_new_block)
+            stdout_print(self.node.time_to_add_new_block)
             stdout_print(throughput_time)
             stdout_print(completed_trans)
 

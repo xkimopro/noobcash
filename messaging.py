@@ -73,6 +73,11 @@ class Message:
             return (self.payload['dicted_transactions'] , new_utxos) 
         return None
 
+    def parseSendContinue(self,):
+        if self.code == 11 and self.payload['message'] == 'sendContinue':
+            return self.payload['id'] 
+        return None
+
 class Messaging:
     def __init__(self,connection, key=0):
         self.connection = connection
@@ -193,6 +198,16 @@ class Messaging:
                 'message' : 'sendTransactionListAndUtxos',
                 'dicted_transactions' : dicted_transactions,
                 'utxos' : utxos
+            }
+        }
+        self.connection.send(str.encode(json.dumps(message)))
+
+    def sendContinue(self,id):
+        message = {
+            'code' : 11,
+            'payload' : {
+                'message' : 'sendContinue',
+                'id' : id
             }
         }
         self.connection.send(str.encode(json.dumps(message)))
