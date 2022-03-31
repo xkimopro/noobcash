@@ -73,7 +73,6 @@ class Message:
             return (self.payload['dicted_transactions'] , new_utxos) 
         return None
 
-
 class Messaging:
     def __init__(self,connection, key=0):
         self.connection = connection

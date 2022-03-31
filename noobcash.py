@@ -59,6 +59,9 @@ with socket.socket() as server_socket:
     
     benchmark = Benchmark(bootstrap_node,start_time)
     benchmark.start()
+
+    while True:
+        time.sleep(1)
     
     
         # help_message = '''

@@ -58,27 +58,16 @@ class EventListeningThread(Thread):
                                 self.node.blockchain.add_block(block)
                                 self.node.list_of_transactions = []
                                 print("Block #"+str(block.index)+" is valid and ready to be added to the blockchain")
-                                self.node.timestamp = time.time()
-                                self.node.transactions = self.node.transactions + 1
-                                stdout_print("time is")
-                                stdout_print(self.node.timestamp)
-                                stdout_print("transactions number")
-                                stdout_print(self.node.transactions)
+                                # stdout_print("time is")
+                                # stdout_print(self.node.timestamp)
+                                
                             else: 
                                 print("Valid block discarded.")                    
                                 if block.previous_hash != self.node.blockchain.get_latest_blocks_hash():
                                     print("Previous hash mismatch. Received block belongs to a different blockchain initializing consensus algorithm")
                                     self.node.mutex.acquire()
                                     print("Lock acquired for conflict resolution")
-                                    self.node.resolve_conflicts()
-                    
-                    
-                        
-                        
-                    if blockchain_request is not None:
-                        request_id = blockchain_request
-                        print("blockchain_requested from node #" + str(request_id) )
-                        self.node.send_blockchain(request_id)  
+                                    self.node.resolve_conflicts() 
                      
                     
                     # If not mining receive messages                
@@ -136,6 +125,16 @@ class EventListeningThread(Thread):
                             self.node.send_hash_length(conflict_id,False)
                         else:
                             self.node.send_hash_length(conflict_id,True)
+                if blockchain_request is not None:
+                    request_id = blockchain_request
+                    print("blockchain_requested from node #" + str(request_id) )
+                    self.node.send_blockchain(request_id)
+                    if self.node.resolving_confilct:
+                        print("I sent my blocks now I continue #" + str(request_id) )
+                        self.node.resolving_confilct = False
+                        self.node.votes = {}
+                        self.node.mutex.release()
+
                             
                             
                         
