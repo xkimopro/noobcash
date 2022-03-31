@@ -23,7 +23,9 @@ class Benchmark:
                     
                     print("Issuing transaction from benchmark thread")
                     self.node.create_transaction(id, amount)
-                    stdout_print("Transaction validated")
+                    # stdout_print("Transaction validated")
+                    test = self.node.timestamp - self.start_time
+                    stdout_print(test)
                     
                 except Exception as e:
                     stdout_print(str(e))
@@ -34,8 +36,9 @@ class Benchmark:
                                 
             throughput_time = self.node.timestamp - self.start_time
             completed_trans = self.node.transactions
-            # stdout_print(throughput_time)
-            # stdout_print(completed_trans)
+            stdout_print(self.node.blockchain.time_to_add_new_block)
+            stdout_print(throughput_time)
+            stdout_print(completed_trans)
             
         
 

@@ -1,9 +1,13 @@
 from block import Block
 import functions
+import time, random,traceback
+
 class blockchain:
     
     def __init__(self, ):
         self.block_list = []
+        self.prev_time = time.time()
+        self.time_to_add_new_block = []
     			
 		
 	
@@ -13,6 +17,9 @@ class blockchain:
 
 
     def add_block(self, new_block):
+        new_time = time.time()
+        self.time_to_add_new_block.append(new_time - self.prev_time)
+        self.prev_time = new_time
         self.block_list.append(new_block)        
 
     

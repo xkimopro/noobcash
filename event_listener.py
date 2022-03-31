@@ -1,3 +1,4 @@
+from sqlite3 import Timestamp
 from threading import Thread
 from messaging import *
 from block import Block
@@ -59,6 +60,10 @@ class EventListeningThread(Thread):
                                 print("Block #"+str(block.index)+" is valid and ready to be added to the blockchain")
                                 self.node.timestamp = time.time()
                                 self.node.transactions = self.node.transactions + 1
+                                stdout_print("time is")
+                                stdout_print(self.node.timestamp)
+                                stdout_print("transactions number")
+                                stdout_print(self.node.transactions)
                             else: 
                                 print("Valid block discarded.")                    
                                 if block.previous_hash != self.node.blockchain.get_latest_blocks_hash():
