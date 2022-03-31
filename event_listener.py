@@ -26,7 +26,7 @@ class EventListeningThread(Thread):
             else:     
                 i += 1
                 conn, _ = self.server_socket.accept()
-                data = conn.recv(4096000)
+                data = conn.recv(409600000)
                 if len(data) != 0:
                     try:
                         m = self.node.messaging.parseToMessage(data)
