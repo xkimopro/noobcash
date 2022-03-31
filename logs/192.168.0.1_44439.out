@@ -1,0 +1,5 @@
+Starting backend...
+{
+  "error_code": 1,
+  "msg": "Cannot start noobcash as bootstrap node"
+}

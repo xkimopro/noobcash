@@ -26,13 +26,18 @@ class EventListeningThread(Thread):
             else:     
                 i += 1
                 conn, _ = self.server_socket.accept()
-                data = conn.recv(409600000)
-                if len(data) != 0:
+                final = ''
+                data = conn.recv(1024)
+                final = data
+                while len(data) == 1024:
+                    data = conn.recv(1024)
+                    final += data
+                if len(final) != 0:
                     try:
-                        m = self.node.messaging.parseToMessage(data)
+                        m = self.node.messaging.parseToMessage(final)
                     except Exception as e:
                         print("Exception in parseToMessage" + str(e))
-                        print(data)                
+                        print(final)                
                 
             block = m.parseBroadcastBlock() 
             transaction = m.parseBroadcastTransaction()
