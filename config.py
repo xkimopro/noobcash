@@ -13,10 +13,10 @@ class Config:
     localnet = False
     block_capacity = 5
     noobcash_ports_range = [44440,44450]
-    bootstrap_node_port = 44439
-    bootstrap_node_host = '192.168.0.1'
+    bootstrap_node_port = 44450
+    # bootstrap_node_host = '192.168.0.1'
 
-    # bootstrap_node_host = local_ip()
+    bootstrap_node_host = local_ip()
     client_node_port = 44441
     client_node_host = local_ip()
     difficulty = 4

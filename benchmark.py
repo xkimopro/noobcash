@@ -13,7 +13,7 @@ class Benchmark:
     def start(self):
         time.sleep(6)
         file_name = "transactions" + str(self.node.id) + ".txt"
-        path = './transactions/5nodes/' + file_name 
+        path = './transactions/10nodes/' + file_name 
 
         # if self.num_of_nodes == '10':
         #     path = './transactions/10nodes/' + file_name

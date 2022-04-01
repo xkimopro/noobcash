@@ -12,6 +12,3 @@ class Wallet:
                 self.host = host 
                 self.port = port 
                 self.transactions = []
-
-        def balance():
-                pass

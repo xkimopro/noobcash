@@ -64,6 +64,9 @@ class Node:
         
     # add this node to the ring, only the bootstrap node can add a node to the ring after checking his wallet and ip:port address
     def broadcast_ring(self):
+        print(len(self.ring))
+        print(self.ring)
+        print(self.temp_connections_list)
         for i in range(len(self.ring)):
             self.conflict_occured.append(False)
         for node in self.ring: 

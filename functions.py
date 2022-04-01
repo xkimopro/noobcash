@@ -56,6 +56,7 @@ def clear_my_log_file():
 
 def stdout_print(*args, **kwargs):
     builtins.print(*args, **kwargs)
+    # sys.stdout(*args, **kwargs)
     
 
 def print(*args, **kwargs):

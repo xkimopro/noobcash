@@ -1,0 +1,38 @@
+Starting backend...
+Noobcash bootstrap node started at 
+192.168.1.3
+:
+44450
+5
+[{'id': 0, 'host': '192.168.1.3', 'port': 44450, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLNQXpj5y1UTFkD2k0hau0Q2oFIcIYLM7DcU4KbiGdTVxXPkBWWpBOEuTJ4S38eS5ftG2Oce0Cuuz0nF4AVeWbH3AiR0jI9H7ydT5cK7LYPuIp5zLrujwmntpgjn8kPZhdY/uw1Sx/LL0C50dXk0czi0E3vccKPiawxx+nY/SFsy+6JFNZkOW2vQRTG1BzBnDveK6YtBqpjzrjVmTg5hmvu5q9Yb0QKrgu9ZGoBBKlVUedZlSEU9CPAY/pfxYoWl9QlMBN8Qm1zjJ2PB5lDa3/jxsCIOiQH59o30e6tzvityGEjHTDIYqn8vnAaX8TsF/mVtCmzVjGGBO+gZ1kZfxT', 'balance': 500}, {'id': 1, 'host': '192.168.1.3', 'port': 44440, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCaZ6+JhJ8HomEYG2M9dbKHq1pFsuIZwJia7nrftZJCQG5ZdKyZpmCCTpBpuX2douiANVNIzE+bZVmYn1A5gUvDyEQ8VPyOjW93uU2kilLU+qq4KPyxCNteAy2DrK+5dxYdNPoygg0d0nNg3aMV51CtOYxC31OBLLTeJFpUPxYJqRDJdGXVTTOImKIganB/HkVKhbHjR3ZioF57sqY8z0OLAulciWvhvUgkbWJN5Njespa2vGEf6arLH74jSgI8uuE8+EGxPz+GvjxsiPF4bJHL1rXZLdgkrLqDteUkWdnzMm08dkjUw/ZRHp7Adc8fhjhBjnmLs4gZi/jJM9OEoedv', 'balance': 0}, {'id': 2, 'host': '192.168.1.3', 'port': 44441, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDfg235vq30jU3hUp2+xJMwZ3JXmm9yQiIQIW6xWzpLf3l92p3BjBrS/1LPJgUv8lyYmgpCCufbhFYGNNsuZ28Nu42tTQ6MbFMDtw1OA6358K9dXBhSrXgnmmGzfFjQf2DA07enB0643HgJKa7gkprx/NfzzDzmnRDeu+tQqwRuzUlcXunNsUUDryGeYu7XQvV+jGSvqcFcmMNGv9GBydSjLnmeBjV2CoLe8L0Usn+t+nV8W3ZmIz0KB3+Swu2V4Z13/dB0y0nFVA6u5lbCcQTK43fFpeVudvqEssWfABztlTrQRTvzlSnoGfI/UaFuKSKkBxrbjuwm9yUw+WNJ2EJl', 'balance': 0}, {'id': 3, 'host': '192.168.1.3', 'port': 44442, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDdP4M4vN2bKK5AFVhmtToOrLhAP5Kuvjn1AUzqaxUqgZZhHBwiXvA0hEsfuhJhHDqBw+1HVHtf77A4Hpcc23N+PEGdRXd26mbbtUR6xAiJAYB028ZfFONnt3OEZb+OEebFmBgfTRtM63P8IRTUDcXDrbNl7kIWgc8FnkSzhBnO9XFdYekqnxYVM+6eSB36j7glKX81wzdPHo7pu+tQ4eqB2nP+td5yItS+zjEfcZtMgKKg142jNhd3frrX3nsQGvweYWnxCXNYLsTyWh7RyAq+k3t29j1688+txBJRcaoj8e77drTaHR4H/8zm1H8es7qqbkp39zSDfwPgV5/xKIvz', 'balance': 0}, {'id': 4, 'host': '192.168.1.3', 'port': 44443, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDp2Da9XJk32o3rfohZFgS0nqu5sGBXGXxiRYCruIeoAJOhD+MUQ8MtLJ8wcIzqVIoOsK6dDLz4YD9JY6KCeyiNteq3+lSCFwjoGg+aREaqeCsrOoJ62FbGIPPG9eWWeo3+m7tCXNDaENwVsVbEJ2msZIpZH4tBM9q/0FmZQOu43rHJG8b8zIcjChiYDceJexg8uHSMqynwtipW8wGThbPe9m9ODuAfoWV/yfysaVu1MBqbt7d2+eIquvUI2N7WpjpaFWCAqkS4Kydxl8zCgf7xw0QO5d0/7L6AOS+WbI5jchcMlTvEFSHm8RwBZk9CBG0l3eQLpsoEFBwGjmbbyshT', 'balance': 0}]
+[<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.3', 44450), raddr=('192.168.1.3', 54214)>, <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.3', 44450), raddr=('192.168.1.3', 54215)>, <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.3', 44450), raddr=('192.168.1.3', 54216)>, <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.3', 44450), raddr=('192.168.1.3', 54217)>]
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Transaction with id sABLks41VpmhJFPUxH1SJMZEn4Le/EFrPeIMDSsUa+Y= issued. Now broadcasting. 
+Transaction with id sABLks41VpmhJFPUxH1SJMZEn4Le/EFrPeIMDSsUa+Y= broadcasted. Now registering to block. 
+Transaction sABLks41VpmhJFPUxH1SJMZEn4Le/EFrPeIMDSsUa+Y= added to list of transactions
+Transaction with id FzwoSnQPfT18Pa3UgANogW5FLNrpBUHAnoyvkCLb0SU= issued. Now broadcasting. 
+Transaction with id FzwoSnQPfT18Pa3UgANogW5FLNrpBUHAnoyvkCLb0SU= broadcasted. Now registering to block. 
+Transaction FzwoSnQPfT18Pa3UgANogW5FLNrpBUHAnoyvkCLb0SU= added to list of transactions
+Transaction with id 4DN3sSI30Na7nBgzeD/Nq5ewBMaOn5F34WLfaxsDZE0= issued. Now broadcasting. 
+Transaction with id 4DN3sSI30Na7nBgzeD/Nq5ewBMaOn5F34WLfaxsDZE0= broadcasted. Now registering to block. 
+Transaction 4DN3sSI30Na7nBgzeD/Nq5ewBMaOn5F34WLfaxsDZE0= added to list of transactions
+Transaction with id Y8K00rnBbBArJZLWjMuesHHTnH6aXmADS0nT+GkdZJI= issued. Now broadcasting. 
+Transaction with id Y8K00rnBbBArJZLWjMuesHHTnH6aXmADS0nT+GkdZJI= broadcasted. Now registering to block. 
+Transaction Y8K00rnBbBArJZLWjMuesHHTnH6aXmADS0nT+GkdZJI= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction IM0zQ4bWEXij6MQbsGhteNeMTlBvpidhY5zklYLKtYA= added to list of transactions
+Starting mining process. Benchmarker releasing lock
+Found nonce 1559 for block with index 1
+Broadcasting newly found block with index 1
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+[0.22962117195129395]

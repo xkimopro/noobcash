@@ -4,167 +4,26 @@ Trying to connect to bootstrap node socket server
 Connected through TCP at 
 192.168.1.3
 :
-44439
+44450
 [95mSend my credentials to bootstrap[0m
-Received block #0
-Block is of genesis type
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction hPBQuIRCeWB5RrH4j0YmxJU999Iy3cCV+mXLhqHmxJQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction baMO/5kgc5QCFhcGPll8r0xV7+EBytyWKE9mf3BEoy8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction U4zqiXz2oix/dwD1GOdXrla+OWd35Vx+XYXdt+etIVQ= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction Lwo2u8lshUuZNtRO3FQTypfBeetmykIYHe18hRxJ5Rg= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction yUMNyPr9CNzbQMMetfIq9VsGU6dkOFynLSh/HbvF5mQ= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #1
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #1 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 84fxmhVIpEU2hC5ddYwRShE2q69xP61xbRPrpJybCZY= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction W32qd32iHO0vFjblZf6HxtuZ2WyT0UORVL7VlGcGlu8= added to list of transactions
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id rC2r+WE+mrTS114F5PytNyzrAnxWChgcPo9Q2RVlJC8= issued. Now broadcasting. 
-Transaction with id rC2r+WE+mrTS114F5PytNyzrAnxWChgcPo9Q2RVlJC8= broadcasted. Now registering to block. 
-Transaction rC2r+WE+mrTS114F5PytNyzrAnxWChgcPo9Q2RVlJC8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction xZQxgmdvrzXmKCBM/DzwAg9dPS/G99ei9WUsqm7WqKo= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction VkSBXT20vGZ/pzp/q8HxC7yc0A0kUiYW9IU/+NSmlmQ= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #2
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #2 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction swvZQX0q1e1a1vWzAvf3gujg6dNZhNpj/bcIeC6Hgo8= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction MyIMGr+WfpwYIHqqWrIA+Tgx3Y4l8vBze6WbfwN6ldU= added to list of transactions
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id D/oRkbRr7+elNTv0wqxEgro3jJ+RRwU1zGjmlnSOJsY= issued. Now broadcasting. 
-Transaction with id D/oRkbRr7+elNTv0wqxEgro3jJ+RRwU1zGjmlnSOJsY= broadcasted. Now registering to block. 
-Transaction D/oRkbRr7+elNTv0wqxEgro3jJ+RRwU1zGjmlnSOJsY= added to list of transactions
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id L+l6pf4UkPe+k7XHCX3ji7+rzwT6NUqpMDoFWFGC7+M= issued. Now broadcasting. 
-Transaction with id L+l6pf4UkPe+k7XHCX3ji7+rzwT6NUqpMDoFWFGC7+M= broadcasted. Now registering to block. 
-Transaction L+l6pf4UkPe+k7XHCX3ji7+rzwT6NUqpMDoFWFGC7+M= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction S57oNq9h23fEzqSdMdea0Gxs//5WJ8+YX7H1LokXDpM= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Found nonce 724 for block with index 3
-Broadcasting newly found block with index 3
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Broadcasting block
-Finished block broadcasting
-[0.1324779987335205]
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction bw4up4KhLtgOv5ri0gUUjg0pgBU2mZHfe1ncAC/L4+Q= added to list of transactions
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id DTXvybc8+ZSQ/SkWzAq2eQe02ARjeDyYOX1gz1vh5nw= issued. Now broadcasting. 
-Transaction with id DTXvybc8+ZSQ/SkWzAq2eQe02ARjeDyYOX1gz1vh5nw= broadcasted. Now registering to block. 
-Transaction DTXvybc8+ZSQ/SkWzAq2eQe02ARjeDyYOX1gz1vh5nw= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction eIXWRV8oyiWPw4NM9auUi+FN808Ra8AheigGtgyPhcA= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 49QdG6sX//Av3NogZzt9ta7dnxnFg/rbTX2L2zDW/S0= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction H7lESreE21VY5RK07C3WAxZmmD/MvmVJIkehnszqJ/I= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #4
-Stopping nonce
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Block #4 is valid and ready to be added to the blockchain
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id 1Vve7/TUqD8NNQwjs6eD066zp6WI5loRQUT9QbcCKQc= issued. Now broadcasting. 
-Transaction with id 1Vve7/TUqD8NNQwjs6eD066zp6WI5loRQUT9QbcCKQc= broadcasted. Now registering to block. 
-Transaction 1Vve7/TUqD8NNQwjs6eD066zp6WI5loRQUT9QbcCKQc= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction dRufMy2k/nJUX/aX+s4cigIh/nLAhUxx1NK1TZdM4G8= added to list of transactions
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id L4CdosTini2oxrOrQsvqKXt0//mkECaNu32Ezb98BWs= issued. Now broadcasting. 
-Transaction with id L4CdosTini2oxrOrQsvqKXt0//mkECaNu32Ezb98BWs= broadcasted. Now registering to block. 
-Transaction L4CdosTini2oxrOrQsvqKXt0//mkECaNu32Ezb98BWs= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction EloPUyDIR8oiScdu7JMJvcuYHHOor3fBchN62TkUH1Y= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction hgic0/M/K5G7XGqQFqkeGyDJO4vwC0ia4mYvJpPUA3w= added to list of transactions
-Starting mining process. Benchmarker releasing lock
-Received block #5
-Block validated and added to my blockchain. Miner thread stopped for efficiency
-Stopping nonce
-Block #5 is valid and ready to be added to the blockchain
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction l1OtQLLQkrRlSWtR/SYULVxcB/BySyw9YhBZ7eio6bg= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 7Su/+bd2WDC827T2SDgWRljYtNkAE5SpI/76b/TFq3s= added to list of transactions
-Received new transaction
-Event listening thread acquired lock
-Transaction validated. Adding to transaction list ( current block under construction )
-Transaction 9l8X+f9x5esnJiNvG8IN37R6kYuvkdBkNvhGj4D/ki8= added to list of transactions
 now to issue
-[False, False, False, False, False]
+[False, False, False, False, False, False, False, False, False, False]
 Issuing transaction from benchmark thread
-Transaction with id 4yyBfIZW/Yku7si+nOyo3m+qrAgAk15vSOkryA2mG+A= issued. Now broadcasting. 
-Could not connect to 192.168.1.3:44447
-Transaction with id 4yyBfIZW/Yku7si+nOyo3m+qrAgAk15vSOkryA2mG+A= broadcasted. Now registering to block. 
-Transaction 4yyBfIZW/Yku7si+nOyo3m+qrAgAk15vSOkryA2mG+A= added to list of transactions

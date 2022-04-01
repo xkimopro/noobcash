@@ -10,6 +10,8 @@ from config import Config
 from node import *
 
 from event_listener import EventListeningThread
+from cli_listener import CliListeningThread
+
 from benchmark import Benchmark
 
 
@@ -35,7 +37,7 @@ with socket.socket() as server_socket:
         client_init_msg = bootstrap_node.messaging.parseToMessage(client_init)    
         public_key_bytes , host, port = client_init_msg.parseClientInitMessage()
         bootstrap_node.register_node_to_ring(client_conn, public_key_bytes, host, port)
-        
+    
     bootstrap_node.broadcast_ring()
 
     # Close Temp Connections
@@ -57,61 +59,12 @@ with socket.socket() as server_socket:
     
     time.sleep(1)
     
-    benchmark = Benchmark(bootstrap_node,start_time)
-    benchmark.start()
+    # benchmark = Benchmark(bootstrap_node,start_time)
+    # benchmark.start()
+
+    cli_listening_thread = CliListeningThread(bootstrap_node, server_socket)
+    cli_listening_thread.start()
 
     while True:
         time.sleep(1)
     
-    
-        # help_message = '''
-            
-        # Available commands:
-        # * "t [recepient_address] [amount]"                        Send `amount` NBC to `recepient` node
-        # * "view"                                                  View transactions of the latest block
-        # * "balance"                                               View balance of each wallet (last validated block)
-        # * "help"                                                  Print this help message
-        # * "file"                                                  Read from file transactions
-        # * "exit" 
-        #                                                           Exit client 
-        # '''
-
-        # print("====================")
-        # print(" WELCOME TO NOOBCASH")
-        # print("====================")
-
-        # while (1):
-        #     print("Enter an action! Type help for more specific info")
-        #     choice = input()
-
-        #     # Transaction
-        #     # t receiver amount
-        #     if choice.startswith('t'):
-        #         # client_node.create_transaction(receiver_id, amount)
-        #         pass
-
-        #     # View last transaction
-        #     elif choice == 'view':
-        #         print(client_node.view_transactions())
-
-        #     # Balance
-        #     elif choice == 'balance':
-        #         balance = 0
-        #         for utxo in client_node.utxos[client_node.id]:
-        #             balance += utxo['amount']
-        #         print("My balance is: ", balance)
-
-        #     # Help
-        #     elif choice == 'help':
-        #         print(help_message)
-
-        #     # elif choice == file:
-        #     #     blabla
-
-        #     elif (choice == 'exit'):
-        #         sys.exit(0)
-
-        #     else:
-        #         print("Invalid action")
-
-
