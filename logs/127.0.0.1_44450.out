@@ -1,0 +1,60 @@
+Starting backend...
+Noobcash bootstrap node started at 
+127.0.0.1
+:
+44450
+5
+[{'id': 0, 'host': '127.0.0.1', 'port': 44450, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDr3A5vbpqczGgYrs1TztJrBd9lmtamc0bT4gMjH4HlQ9f1yWFcrgpIGk/gRb2JmdwMMOM0VVPVm/INqdOCzYjw4AbTnjCS/SzvMH87U9lzauNbOvcLWxaZpXE2OA33ulyY2J5H+b3accZmMd9K+WsgRK2nPd3D5wpSQRma9QpbrFFeF3Zl178o1mk8Jv0Yw7UDq+TLxsQjXRa+qFE24KHjkx9U6klwGmyLWqMOcUnuPWHTKzsnIH0qFYOos7gB5w4kpQeAOQQkEo/qdtsQw0KR5CBBvG6+BxIkgVwr2LI1ltfbFnedmykdQo766f5YjT64jvWV/JuTUvlcf46a7QHH', 'balance': 500}, {'id': 1, 'host': '127.0.0.1', 'port': 44444, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDB/2EfF5WiqZRDBb+E2u4/ZL0jIR6r4CTrU38GRgjcSnEwida5nFt7uhtKe+L1WRSINEQf6wf85XcUbc9b2YSZ7k18k2xtiS2GtFBUrz1yfFoGyUfINWvDNrDE8iTy9d/uKWhou1OOWY+5ZuQSCtCwEIiItBP13YaZLUqes5x2VmdTmNnhCxHfP1gtIXTvRkmJOUXbqiZDPpxfxRK+1HR7eGcm0aAPj080ibmP3LGTAvJ1gLNkxLlxdft4ul0RZ6cBE+Ls45ez4dkmgdTM+ffzrcJ/HT+0ZOY71v+RygeM6nv9qOaXAKvmki703Vw4nMo8sgDoRefFlfyB8oXFINop', 'balance': 0}, {'id': 2, 'host': '127.0.0.1', 'port': 44445, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5ZRS5lbt017rz/n52ur+Cm0xjaNpenjjxAiySenedZdRSdHzw756b5ivo8+AfpUK5tF0b+Hg7BtUav+eru0z3zyM5ZdettZaRyEECa7GvhYkSDKpBqQhh1fitacHqxgRLlPD7jHKdYQ0Bpq3ycwj2IEuz2+Rg3cE2i2kyRnH1mjCtFZw36CmXKd3Y1704mKjzA1N0DIpHCO5NB3hY9HVDMkznsuuG/9eiU/FRNjzet310mjd7QzLhUVheXebS9x7dmriZQAWmlndWgivc9ydo509iSSDOvH1fw2U0BvCwAVUihY7UsbXF5EQEcWnR3iVDFM6pl4aOshyHWubpR2H3', 'balance': 0}, {'id': 3, 'host': '127.0.0.1', 'port': 44446, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDojPFOZzQB6Dmfoebzl7wcPe/ydH1e4svFd/AjEnCSmCtmO/D50LcNf2vn8C0dKCunK2bF0Bq/vvQOAF+IKZP241jHVKs72X+eRK2pPpBt+optqzT3QetfgHthjCJLc5RPTD0HH9BjnWt2e9uquzqQoJdP4blN0/jcFZl3/uffV5HTO7DHbKrVoz+Vhi4LeQuX8ipbC1GYqw8zmFs86j7UpHjTfZ/Pg3BFKdppwgICZMBouLgEwsNl18y5p1ws5nT/xlDLSFKiVl0Q2+Fo2lWMtzLE1ZAa909cOh9WlmWjiQLjZfuD+VFeAmSCW7ueXpRmBxejn1n+/XUf7Cpmx6kV', 'balance': 0}, {'id': 4, 'host': '127.0.0.1', 'port': 44447, 'public_key_bytes': 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgMEaxkL6e/JDmjq5kaXCAUYV9zFtnFn/GLzHb3aMvLrjYkW5RAijRXuzvoRZytBfVuPGokodPQkykPMMVeM3JEqt4Blj9A59F955w/zXGsgK0FdY8WwuSQpbjKbLNugjMJi0CyjJA4jOnQ0EyW4SL46pKVGFsgc72MmzWprkiJrtvfyFLf/15kHR/clygqr7zsNG+PpikLuInMLyRoVyd3YD/1A93o4UAP5vndZpqPiPEp+BQxWKeAplxGKtwTT4o3XmIRKgn3L20tXVERFKw+a+Ga82XqHZ2tI2cctHHgrFHcmz7dl+w3kVZtlZ+9lPa3r2zIjr9912ZLvFg3sI9', 'balance': 0}]
+[<socket.socket fd=5, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 44450), raddr=('127.0.0.1', 61814)>, <socket.socket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 44450), raddr=('127.0.0.1', 61820)>, <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 44450), raddr=('127.0.0.1', 61821)>, <socket.socket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 44450), raddr=('127.0.0.1', 61822)>]
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Broadcasting block
+Finished block broadcasting
+Transaction with id iQRM/q7uNdBajBgWPOVqObCArzWQS4kjMFpjHg2AUSY= issued. Now broadcasting. 
+Transaction with id iQRM/q7uNdBajBgWPOVqObCArzWQS4kjMFpjHg2AUSY= broadcasted. Now registering to block. 
+Transaction iQRM/q7uNdBajBgWPOVqObCArzWQS4kjMFpjHg2AUSY= added to list of transactions
+Transaction with id XPiwYadmeStHvvDdZ0CAoiaUAH9sW8j5X4LySt1PuHg= issued. Now broadcasting. 
+Transaction with id XPiwYadmeStHvvDdZ0CAoiaUAH9sW8j5X4LySt1PuHg= broadcasted. Now registering to block. 
+Transaction XPiwYadmeStHvvDdZ0CAoiaUAH9sW8j5X4LySt1PuHg= added to list of transactions
+Transaction with id lVi2Zxh9jFZ1VIl7mmULZhCR5bqxTHsBv2f3hhg7siY= issued. Now broadcasting. 
+Transaction with id lVi2Zxh9jFZ1VIl7mmULZhCR5bqxTHsBv2f3hhg7siY= broadcasted. Now registering to block. 
+Transaction lVi2Zxh9jFZ1VIl7mmULZhCR5bqxTHsBv2f3hhg7siY= added to list of transactions
+Transaction with id oFulKzL+ApzkzpEb8edwzYVNLTS0wgblu+VUzJhJ5Lo= issued. Now broadcasting. 
+Transaction with id oFulKzL+ApzkzpEb8edwzYVNLTS0wgblu+VUzJhJ5Lo= broadcasted. Now registering to block. 
+Transaction oFulKzL+ApzkzpEb8edwzYVNLTS0wgblu+VUzJhJ5Lo= added to list of transactions
+Transaction with id I6lMzht7AR+upHpGzdDLikJDlZ0/rNXY1/GXEE2fe18= issued. Now broadcasting. 
+Transaction with id I6lMzht7AR+upHpGzdDLikJDlZ0/rNXY1/GXEE2fe18= broadcasted. Now registering to block. 
+Transaction I6lMzht7AR+upHpGzdDLikJDlZ0/rNXY1/GXEE2fe18= added to list of transactions
+Starting mining process. Benchmarker releasing lock
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Stopping nonce
+Block #1 is valid and ready to be added to the blockchain
+Transaction with id +D0LgzyUOSACjxlclIyLxW2grzx1amyX1xg9ZaI3UP0= issued. Now broadcasting. 
+Transaction with id +D0LgzyUOSACjxlclIyLxW2grzx1amyX1xg9ZaI3UP0= broadcasted. Now registering to block. 
+Transaction +D0LgzyUOSACjxlclIyLxW2grzx1amyX1xg9ZaI3UP0= added to list of transactions
+Transaction with id jNUKSEluksKKQmHG7sHiljckk67VfYd/DRTJi2aMqL0= issued. Now broadcasting. 
+Transaction with id jNUKSEluksKKQmHG7sHiljckk67VfYd/DRTJi2aMqL0= broadcasted. Now registering to block. 
+Transaction jNUKSEluksKKQmHG7sHiljckk67VfYd/DRTJi2aMqL0= added to list of transactions
+Transaction with id Up9OGAHdMLITpCOuyD41kAQvDrwgJpVWKBnf8FyovJ8= issued. Now broadcasting. 
+Transaction with id Up9OGAHdMLITpCOuyD41kAQvDrwgJpVWKBnf8FyovJ8= broadcasted. Now registering to block. 
+Transaction Up9OGAHdMLITpCOuyD41kAQvDrwgJpVWKBnf8FyovJ8= added to list of transactions
+Transaction with id D6VPMPFHNhdsoge9795+OiZ0yv64tOrWZ6U7pJSsqUc= issued. Now broadcasting. 
+Transaction with id D6VPMPFHNhdsoge9795+OiZ0yv64tOrWZ6U7pJSsqUc= broadcasted. Now registering to block. 
+Transaction D6VPMPFHNhdsoge9795+OiZ0yv64tOrWZ6U7pJSsqUc= added to list of transactions
+Transaction with id i3ueBFhYlazxZOgeSd33H0YiD5xQ1NgwTZHp/F/oGFk= issued. Now broadcasting. 
+Transaction with id i3ueBFhYlazxZOgeSd33H0YiD5xQ1NgwTZHp/F/oGFk= broadcasted. Now registering to block. 
+Transaction i3ueBFhYlazxZOgeSd33H0YiD5xQ1NgwTZHp/F/oGFk= added to list of transactions
+Starting mining process. Benchmarker releasing lock
+Received block #2
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Stopping nonce
+Block #2 is valid and ready to be added to the blockchain
+Transaction with id 23z11qp+fdQoDQXMD44t87JhcHAKGBlMd8iD7WSMF9Y= issued. Now broadcasting. 
+Transaction with id 23z11qp+fdQoDQXMD44t87JhcHAKGBlMd8iD7WSMF9Y= broadcasted. Now registering to block. 
+Transaction 23z11qp+fdQoDQXMD44t87JhcHAKGBlMd8iD7WSMF9Y= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction ljfBtQnoRFlcdApI7Q8jhX4T7vy/Gx3SPagcI1z3VQc= added to list of transactions

@@ -290,8 +290,7 @@ class Node:
                 self.stop_miner_thread = False 
                 self.mining = False
                 self.mutex.release()
-                
-                quit()                         
+                sys.exit(0)                       
             block = Block(index=index, nonce=nonce, list_of_transactions=self.list_of_transactions, previous_hash=previous_hash, timestamp=timestamp, current_hash='')
             if block.is_hash_accepted():
                 if self.stop_miner_thread: 
@@ -299,7 +298,7 @@ class Node:
                     self.stop_miner_thread = False
                     self.mining = False
                     self.mutex.release() 
-                    quit()                         
+                    sys.exit(0)                    
                 print("Found nonce "+str(nonce)+" for block with index " + str(index))
                 return block
             nonce += 1

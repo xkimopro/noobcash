@@ -1,0 +1,68 @@
+Starting backend...
+Noobcash client started
+Trying to connect to bootstrap node socket server
+Connected through TCP at 
+127.0.0.1
+:
+44450
+[95mSend my credentials to bootstrap[0m
+Received block #0
+Block is of genesis type
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction iQRM/q7uNdBajBgWPOVqObCArzWQS4kjMFpjHg2AUSY= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction XPiwYadmeStHvvDdZ0CAoiaUAH9sW8j5X4LySt1PuHg= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction lVi2Zxh9jFZ1VIl7mmULZhCR5bqxTHsBv2f3hhg7siY= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction oFulKzL+ApzkzpEb8edwzYVNLTS0wgblu+VUzJhJ5Lo= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction I6lMzht7AR+upHpGzdDLikJDlZ0/rNXY1/GXEE2fe18= added to list of transactions
+Starting mining process. Benchmarker releasing lock
+Received block #1
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Stopping nonce
+Block #1 is valid and ready to be added to the blockchain
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction +D0LgzyUOSACjxlclIyLxW2grzx1amyX1xg9ZaI3UP0= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction jNUKSEluksKKQmHG7sHiljckk67VfYd/DRTJi2aMqL0= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction Up9OGAHdMLITpCOuyD41kAQvDrwgJpVWKBnf8FyovJ8= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction D6VPMPFHNhdsoge9795+OiZ0yv64tOrWZ6U7pJSsqUc= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction i3ueBFhYlazxZOgeSd33H0YiD5xQ1NgwTZHp/F/oGFk= added to list of transactions
+Starting mining process. Benchmarker releasing lock
+Received block #2
+Stopping nonce
+Block validated and added to my blockchain. Miner thread stopped for efficiency
+Block #2 is valid and ready to be added to the blockchain
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction 23z11qp+fdQoDQXMD44t87JhcHAKGBlMd8iD7WSMF9Y= added to list of transactions
+Received new transaction
+Event listening thread acquired lock
+Transaction validated. Adding to transaction list ( current block under construction )
+Transaction ljfBtQnoRFlcdApI7Q8jhX4T7vy/Gx3SPagcI1z3VQc= added to list of transactions

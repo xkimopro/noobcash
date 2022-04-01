@@ -38,11 +38,13 @@ class CliListeningThread(Thread):
             print(" WELCOME TO NOOBCASH")
             print("====================")
             print("Enter an action! Type help for more specific info")
-            for choice in sys.stdin:
-                choice = choice[:-1]
+            while True:
+                
+                choice = input()
                 # print(choice)
                 if choice.startswith('t'):
                     info = choice.split()
+                
                     self.node.mutex.acquire()
                     self.node.create_transaction(int(info[1]), int(info[2]))
 

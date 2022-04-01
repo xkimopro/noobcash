@@ -16,7 +16,8 @@ class Config:
     bootstrap_node_port = 44450
     # bootstrap_node_host = '192.168.0.1'
 
-    bootstrap_node_host = local_ip()
+    bootstrap_node_host = '127.0.0.1'
     client_node_port = 44441
-    client_node_host = local_ip()
+    
+    client_node_host = '127.0.0.1'
     difficulty = 4
